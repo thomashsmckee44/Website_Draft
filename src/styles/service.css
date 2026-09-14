@@ -1,0 +1,87 @@
+/* Shared styling for service pages (uses tokens + .wrap/.eyebrow/.btn from global.css) */
+
+.svc-hero{padding-block:clamp(40px,7vw,72px) clamp(28px,4vw,44px)}
+.svc-hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(28px,4vw,52px);align-items:start}
+.svc-hero h1{font-size:clamp(2.1rem,5vw,3.4rem);font-weight:800;letter-spacing:-0.035em;margin:18px 0 0}
+.svc-hero h1 em{font-style:normal;color:var(--ember)}
+.svc-hero .lede{margin-top:22px;font-size:clamp(1.05rem,1.4vw,1.2rem);color:var(--ink-2);max-width:46ch}
+.svc-hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+
+/* spec title-block */
+.spec{border:1px solid var(--line-2);background:var(--surface);font-family:var(--font-mono);font-size:12.5px}
+.spec-head{display:flex;justify-content:space-between;align-items:center;padding:11px 15px;border-bottom:1px solid var(--line-2);font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3)}
+.spec-price{padding:18px 15px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:10px}
+.spec-price .from{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-3)}
+.spec-price .amt{font-family:var(--font-display);font-weight:800;font-size:2rem;color:var(--ink);letter-spacing:-0.02em}
+.spec-row{display:grid;grid-template-columns:92px 1fr;border-bottom:1px solid var(--line)}
+.spec-row:last-child{border-bottom:0}
+.spec-k{padding:10px 15px;color:var(--ink-3);letter-spacing:0.06em;text-transform:uppercase;font-size:10px;border-right:1px solid var(--line);display:flex;align-items:center}
+.spec-v{padding:10px 15px;font-weight:500;color:var(--ink)}
+.spec-note{padding:11px 15px;font-size:11px;color:var(--ink-3);line-height:1.5;border-top:1px solid var(--line)}
+
+.band{border-top:1px solid var(--line);padding-block:clamp(44px,6vw,72px)}
+.band.alt{background:var(--surface-2)}
+.sec-idx{font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3)}
+
+.pain{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.pain .q{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:20px 22px}
+.pain .q .mk{font-family:var(--font-mono);color:var(--ember);font-size:13px}
+.pain .q p{margin-top:8px;font-size:1.02rem;color:var(--ink)}
+
+.deliv{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.di{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:20px 22px}
+.di .dn{font-family:var(--font-mono);font-size:11px;color:var(--ember);letter-spacing:0.1em}
+.di h3{font-size:1.12rem;margin-top:8px;letter-spacing:-0.015em}
+.di p{margin-top:7px;color:var(--ink-2);font-size:0.96rem}
+
+.steps{margin-top:28px;display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:20px 0;border-top:1px solid var(--line)}
+.step:first-child{border-top:1px solid var(--line-2)}
+.step .sn{font-family:var(--font-display);font-weight:800;font-size:1.5rem;color:var(--ember);letter-spacing:-0.02em}
+.step h3{font-size:1.14rem;letter-spacing:-0.015em}
+.step p{margin-top:6px;color:var(--ink-2);font-size:0.98rem;max-width:62ch}
+.step .meta{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);margin-top:8px;letter-spacing:0.04em}
+
+.scope{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+.scard{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:22px 24px}
+.scard.need{border-left:3px solid var(--ember)}
+.scard h3{font-size:1.1rem;display:flex;align-items:center;gap:10px}
+.scard ul{margin:14px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.scard li{display:flex;gap:11px;font-size:0.97rem;color:var(--ink-2)}
+.scard li .tick{color:var(--ember);font-family:var(--font-mono);flex:none}
+
+.svc-cred{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:22px;font-family:var(--font-mono);font-size:12.5px;color:var(--ink-2)}
+.svc-cred .ci{display:inline-flex;align-items:center;gap:9px}
+.svc-cred .ci::before{content:"";width:6px;height:6px;transform:rotate(45deg);background:var(--ember);flex:none}
+.svc-cred .ci b{color:var(--ink);font-weight:600}
+
+.faq{margin-top:26px;border-top:1px solid var(--line)}
+.fitem{border-bottom:1px solid var(--line);padding:18px 0}
+.fitem .fq{font-family:var(--font-display);font-weight:600;font-size:1.08rem;letter-spacing:-0.01em}
+.fitem .fa{margin-top:9px;color:var(--ink-2);font-size:0.99rem;max-width:70ch}
+
+.cta{margin-top:8px;border:1px solid var(--line-2);border-radius:18px;background:var(--surface);padding:clamp(32px,5vw,56px);position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 140% at 100% 0%,var(--ember-tint),transparent 55%);pointer-events:none}
+.cta .inner{position:relative;max-width:600px}
+.cta h2{font-size:clamp(1.7rem,3.6vw,2.6rem);font-weight:800;letter-spacing:-0.03em}
+.cta p{margin-top:16px;color:var(--ink-2);font-size:1.08rem}
+.cta .row{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px;align-items:center}
+.cta .price-tag{font-family:var(--font-mono);font-size:13px;color:var(--ink-2)}
+.cta .price-tag b{color:var(--ink);font-weight:600}
+
+.ladder{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.rung{font-family:var(--font-mono);font-size:11px;color:var(--ink-2);border:1px solid var(--line-2);border-radius:7px;padding:7px 11px;display:flex;align-items:center;gap:8px}
+.rung b{color:var(--ink);font-weight:600}
+.rung .n{color:var(--ember)}
+
+.proof{border:1px solid var(--line-2);border-left:3px solid var(--ember);border-radius:0 12px 12px 0;background:var(--surface);padding:22px 26px;margin-top:26px}
+.proof .pl{font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ember);margin-bottom:8px}
+.proof p{color:var(--ink-2);font-size:1rem;max-width:74ch}
+.proof p strong{color:var(--ink)}
+
+@media (max-width:820px){
+  .svc-hero-grid{grid-template-columns:1fr}
+  .pain{grid-template-columns:1fr}
+  .deliv{grid-template-columns:1fr}
+  .scope{grid-template-columns:1fr}
+}
