@@ -1,7 +1,37 @@
 ---
 import Base from "../layouts/Base.astro";
+
+const SITE = "https://www.tmdesignengineering.com";
+const jsonld = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE}/#webpage`,
+    url: `${SITE}/`,
+    name: "Thomas McKee — Design Engineer & Product Development Consultant, Edinburgh",
+    isPartOf: { "@id": `${SITE}/#website` },
+    about: { "@id": `${SITE}/#business` },
+    description:
+      "Design engineering and product development consultant in Edinburgh helping founders and startups take consumer hardware from concept to production.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    name: "Product development services",
+    provider: { "@id": `${SITE}/#business` },
+    itemListElement: [
+      { "@type": "Service", name: "Feasibility Study", url: `${SITE}/services/feasibility-study` },
+      { "@type": "Service", name: "Concept & MVP Development", url: `${SITE}/services/concept-mvp-development` },
+      { "@type": "Service", name: "Engineering Verification" },
+      { "@type": "Service", name: "Manufacturing Preparation" },
+    ],
+  },
+];
 ---
-<Base title="Thomas McKee — Design Engineering">
+<Base
+  title="Design Engineer, Edinburgh — Product Development | Thomas McKee"
+  description="Design engineering and product development consultant in Edinburgh, UK. I help founders and startups take consumer hardware from concept to production — mechanical design, firmware and design for manufacture (DFM)."
+  jsonld={jsonld}>
 <main>
   <!-- HERO -->
   <section class="hero">
@@ -151,8 +181,8 @@ import Base from "../layouts/Base.astro";
         </a>
         <div class="svc">
           <div class="svc-top"><span class="svc-num">03</span><span class="svc-stage">Service</span></div>
-          <h3>Engineering Validation</h3>
-          <p class="sub">Prove a design works and is safe — analysis, simulation and structured testing — before committing to tooling.</p>
+          <h3>Engineering Verification</h3>
+          <p class="sub">Prove a design works and is safe — engineering analysis, simulation and structured testing — before committing to tooling.</p>
           <div class="deliv"><span>Engineering analysis</span><span>Simulation</span><span>Testing</span></div>
         </div>
         <div class="svc">
@@ -181,7 +211,7 @@ import Base from "../layouts/Base.astro";
       <div class="about-grid">
         <div class="about-body">
           <p>I spent over four years developing high-end consumer products at Ooni, taking projects from first concept through to volume manufacture. Because I've held mechanical, firmware and thermal roles at once, I see how a decision in one ripples through all the others — the <strong>whole-picture view</strong> that turns the usual time-versus-cost-versus-performance trade-off into the occasional moment where all three improve together.</p>
-          <p>Today I work as an independent technical partner to founders and startups. Many have a strong product vision but limited access to experienced engineering. What I've found matters most is <strong>structure and rhythm</strong> — walking first-timers through the real development process, then running a steady plan with fast, honest prototyping that keeps momentum without losing the essence of the idea to endless late changes. And whoever I'm working with, the thing I lean on hardest is being able to <strong>explain the engineering clearly</strong> — the decisions, the trade-offs, the occasional physically impossible spec — in plain terms.</p>
+          <p>Today I work as an independent design engineer and product development consultant to founders and startups. Many have a strong product vision but limited access to experienced engineering. What I've found matters most is <strong>structure and rhythm</strong> — walking first-timers through the real development process, then running a steady plan with fast, honest prototyping that keeps momentum without losing the essence of the idea to endless late changes. And whoever I'm working with, the thing I lean on hardest is being able to <strong>explain the engineering clearly</strong> — the decisions, the trade-offs, the occasional physically impossible spec — in plain terms.</p>
           <p>Alongside commercial work, I dedicate part of my time to <strong>pro-bono engineering</strong> for initiatives with social or environmental impact. I believe good engineering should contribute beyond commercial success — so by working with me, you help support that too.</p>
         </div>
         <div class="values" aria-label="Values">

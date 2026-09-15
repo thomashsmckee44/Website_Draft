@@ -1,8 +1,52 @@
 ---
 import Base from "../../layouts/Base.astro";
 import "../../styles/service.css";
+
+const SITE = "https://www.tmdesignengineering.com";
+const url = `${SITE}/services/concept-mvp-development`;
+const faqs = [
+  ["How much does it cost?", "It depends on how far you want to go and how complex the product is, so I don't quote a single number blind. We start with a small, fixed-price discovery (from £650), and I scope and price the concept and MVP phases from there — you approve each phase before it starts."],
+  ["My idea is really rough — is it too early?", "No — early is ideal. The whole point of starting with discovery is to shape a rough idea into something concrete and buildable before any real money is spent."],
+  ["What if it turns out not to be feasible?", "Then you'll know quickly and cheaply, at the discovery stage, with the reasons and any alternative directions — long before you've sunk money into building the wrong thing."],
+  ["Do you do the industrial design / styling too?", "I'm a design engineer, so I lead on making the product work and be manufacturable, and I handle functional and early-stage industrial design. When a product needs heavy aesthetic styling I bring in a trusted ID partner, so you still get one joined-up process."],
+  ["Will you sign an NDA?", "Yes, gladly — before you share anything sensitive. Protecting your idea is part of the job, and it's a topic I can genuinely advise on."],
+  ["What happens after the MVP?", "If you want to take it to market, we move into full product development — detailed design, verification and manufacturing preparation — carrying everything the MVP taught us straight into a production-ready product."],
+];
+const jsonld = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    serviceType: "Concept and MVP development",
+    name: "Concept & MVP Development",
+    description: "Turn a product idea into an evaluated, buildable concept and a working MVP you can put in front of users, investors or a crowdfunding audience — delivered in scoped, gated phases.",
+    provider: { "@id": `${SITE}/#business` },
+    areaServed: ["United Kingdom", "Worldwide"],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "Concept & MVP Development", item: url },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(([q, a]) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a },
+    })),
+  },
+];
 ---
-<Base title="Concept & MVP Development — Thomas McKee Design Engineering" description="Turn your idea into an evaluated, buildable concept and a working MVP you can put in front of users, investors or a crowd — with the structure and momentum of someone who's shipped award-winning products.">
+<Base
+  title="Concept & MVP Development for Hardware Startups | Thomas McKee"
+  description="Turn your idea into an evaluated, buildable concept and a working MVP you can put in front of users, investors or a crowd — with the structure and momentum of someone who's shipped award-winning products."
+  type="website"
+  jsonld={jsonld}>
 <main>
   <!-- HERO -->
   <section class="svc-hero">

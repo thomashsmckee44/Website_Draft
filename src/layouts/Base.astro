@@ -1,18 +1,131 @@
 ---
-export interface Props { title: string; description?: string; }
-const { title, description = "Design engineering consultant helping founders take consumer hardware from concept to production." } = Astro.props;
+export interface Props {
+  title: string;
+  description?: string;
+  /** Canonical path override; defaults to the current page path. */
+  path?: string;
+  /** OG/Twitter share image (absolute path from site root). */
+  image?: string;
+  /** OG type — "website" for the homepage, "article" or "service" pages. */
+  type?: string;
+  /** Page-specific JSON-LD structured data (object or array of objects). */
+  jsonld?: Record<string, any> | Record<string, any>[];
+  /** Set true to keep a page out of search results. */
+  noindex?: boolean;
+}
+const {
+  title,
+  description = "Thomas McKee is a design engineering and product development consultant in Edinburgh, helping founders and startups take consumer hardware from concept to production.",
+  path,
+  image = "/og.png",
+  type = "website",
+  jsonld,
+  noindex = false,
+} = Astro.props;
+
+const site = Astro.site ?? new URL("https://www.tmdesignengineering.com");
+const canonical = new URL(path ?? Astro.url.pathname, site).href;
+const ogImage = new URL(image, site).href;
+
+// Site-wide structured data — present on every page for local + brand SEO.
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": new URL("/#business", site).href,
+  name: "Thomas McKee Design Engineering",
+  description:
+    "Independent design engineering and product development consultancy helping founders and startups take consumer hardware from concept to production.",
+  url: site.href,
+  email: "thomas.h.s.mckee@outlook.com",
+  areaServed: ["United Kingdom", "Worldwide"],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Edinburgh",
+    addressRegion: "Scotland",
+    addressCountry: "GB",
+  },
+  priceRange: "££",
+  knowsAbout: [
+    "Design engineering",
+    "Product development",
+    "Consumer hardware",
+    "Design for manufacture (DFM)",
+    "Feasibility studies",
+    "MVP development",
+    "Prototyping",
+    "Mechanical design",
+    "Firmware",
+    "Thermal analysis",
+  ],
+  founder: {
+    "@type": "Person",
+    "@id": new URL("/#thomas-mckee", site).href,
+    name: "Thomas McKee",
+    jobTitle: "Design Engineering Consultant",
+    description:
+      "Design engineer with 4+ years developing award-winning consumer products at Ooni, spanning mechanical design, firmware and manufacture.",
+    knowsAbout: [
+      "Design engineering",
+      "Consumer product development",
+      "Design for manufacture",
+      "Thermal systems",
+      "Firmware",
+    ],
+  },
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": new URL("/#website", site).href,
+  url: site.href,
+  name: "Thomas McKee Design Engineering",
+  publisher: { "@id": new URL("/#business", site).href },
+  inLanguage: "en-GB",
+};
+
+const pageSchemas = jsonld ? (Array.isArray(jsonld) ? jsonld : [jsonld]) : [];
+const schemas = [businessSchema, websiteSchema, ...pageSchemas];
+
 import "../styles/global.css";
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{title}</title>
 <meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex
+  ? <meta name="robots" content="noindex, nofollow" />
+  : <meta name="robots" content="index, follow, max-image-preview:large" />}
+<meta name="author" content="Thomas McKee" />
+<meta name="theme-color" content="#1A1B1D" />
+
+<!-- Open Graph -->
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content="Thomas McKee Design Engineering" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+{schemas.map((obj) => (
+  <script type="application/ld+json" set:html={JSON.stringify(obj)} />
+))}
 </head>
 <body>
 <header>

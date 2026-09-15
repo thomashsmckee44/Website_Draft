@@ -1,8 +1,52 @@
 ---
 import Base from "../../layouts/Base.astro";
 import "../../styles/service.css";
+
+const SITE = "https://www.tmdesignengineering.com";
+const url = `${SITE}/services/feasibility-study`;
+const faqs = [
+  ["What if you find my idea isn't feasible?", "Then it's the best £650 you'll spend. Finding out now — instead of after months of development or a tooling commitment — is the entire point. You'll still get the full report, the reasons why, and wherever possible alternative directions worth exploring."],
+  ["Do I need drawings or a CAD model?", "No. An idea, a description or a rough sketch is enough. If you do have designs, great — I'll factor them in, but they're not required."],
+  ["Will you sign an NDA?", "Yes, happily. Protecting your idea matters, and I'm glad to work under a mutual NDA before you share anything sensitive."],
+  ["What if my idea needs more than two days to assess?", "Some do. If that's the case, I'll tell you on the intro call and give you a fixed, scoped quote before any work starts — so you always know the price in advance."],
+  ["What happens after the study?", "That's your call. Many clients move into Concept & MVP Development or a phased product-development engagement — the study's roadmap makes scoping that straightforward. But there's no obligation: the report is yours to use however you like."],
+];
+const jsonld = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    serviceType: "Product feasibility study",
+    name: "Product Feasibility Study",
+    description: "A fixed-price feasibility study for a new product idea: whether it can be built, the technical risks, the indicative cost and the timeline — delivered as a written report in about a week.",
+    provider: { "@id": `${SITE}/#business` },
+    areaServed: ["United Kingdom", "Worldwide"],
+    offers: { "@type": "Offer", price: "650", priceCurrency: "GBP", url },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "Feasibility Study", item: url },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(([q, a]) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a },
+    })),
+  },
+];
 ---
-<Base title="Feasibility Study — Thomas McKee Design Engineering" description="A fixed-price feasibility study for your product idea — know whether it can be built, what it will cost and how long, before you spend real money. From £650.">
+<Base
+  title="Product Feasibility Study (from £650) | Thomas McKee"
+  description="A fixed-price feasibility study for your product idea — know whether it can be built, what it will cost and how long, before you spend real money. From £650."
+  type="website"
+  jsonld={jsonld}>
 <main>
   <!-- HERO -->
   <section class="svc-hero">
