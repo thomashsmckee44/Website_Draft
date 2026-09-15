@@ -22,8 +22,8 @@ const jsonld = [
     itemListElement: [
       { "@type": "Service", name: "Feasibility Study", url: `${SITE}/services/feasibility-study` },
       { "@type": "Service", name: "Concept & MVP Development", url: `${SITE}/services/concept-mvp-development` },
-      { "@type": "Service", name: "Engineering Verification" },
-      { "@type": "Service", name: "Manufacturing Preparation" },
+      { "@type": "Service", name: "Engineering Verification", url: `${SITE}/services/engineering-verification` },
+      { "@type": "Service", name: "Manufacturing Preparation", url: `${SITE}/services/manufacturing-preparation` },
     ],
   },
 ];
@@ -179,18 +179,18 @@ const jsonld = [
           <p class="sub">Turn an idea into an evaluated, buildable concept and a working MVP you can put in front of users, investors or a crowd.</p>
           <div class="deliv"><span>Concept &amp; evaluation</span><span>Prototyping</span><span>A working MVP</span></div>
         </a>
-        <div class="svc">
+        <a class="svc" href="/services/engineering-verification">
           <div class="svc-top"><span class="svc-num">03</span><span class="svc-stage">Service</span></div>
           <h3>Engineering Verification</h3>
           <p class="sub">Prove a design works and is safe — engineering analysis, simulation and structured testing — before committing to tooling.</p>
           <div class="deliv"><span>Engineering analysis</span><span>Simulation</span><span>Testing</span></div>
-        </div>
-        <div class="svc">
+        </a>
+        <a class="svc" href="/services/manufacturing-preparation">
           <div class="svc-top"><span class="svc-num">04</span><span class="svc-stage">Service</span></div>
           <h3>Manufacturing Preparation</h3>
           <p class="sub">Get a finished design ready for efficient, medium-to-high-volume manufacture, coordinating suppliers in the UK and China.</p>
           <div class="deliv"><span>DFM / DFA review</span><span>Manufacturing drawings</span><span>Supplier liaison</span></div>
-        </div>
+        </a>
       </div>
 
       <div class="engage">
@@ -224,15 +224,51 @@ const jsonld = [
     </section>
 
     <!-- CONTACT -->
+    <!--
+      SETUP — two free accounts, ~5 minutes each, then paste two values below:
+      1) FORM  → web3forms.com : enter your email, copy the Access Key, and replace
+                 REPLACE_WITH_WEB3FORMS_ACCESS_KEY (in the hidden input) with it.
+                 Submissions then arrive straight to your inbox. Nothing else to host.
+      2) CALENDAR → cal.com : create a free account + an event type (e.g. "Intro call, 30 min"),
+                 then replace REPLACE_WITH_CALCOM_LINK on the "Book a slot" button below with your
+                 link path, e.g. thomas-mckee/intro  (just the path, no https://cal.com/)
+    -->
     <section id="contact">
       <div class="contact">
-        <div class="inner">
+        <div class="inner" style="max-width:none">
           <span class="eyebrow">Let's talk</span>
           <h2 style="margin-top:16px">Have a product that needs to become real?</h2>
-          <p>Book a free introductory call and tell me where you're stuck. Whether it's a first concept or a design that needs to survive manufacturing, I'll tell you honestly how I can help.</p>
-          <div class="row">
-            <a class="btn btn-primary btn-lg" href="https://www.tmdesignengineering.com/book-online">Book a free intro call <span class="arw">→</span></a>
-            <a class="mailto" href="mailto:thomas.h.s.mckee@outlook.com">thomas.h.s.mckee@outlook.com</a>
+          <p>Tell me where you're stuck — a first concept, or a design that needs to survive manufacturing — and I'll tell you honestly how I can help. Send a message, or grab a time in my calendar directly.</p>
+          <div class="contact-cols">
+            <div class="cbox">
+              <h3>Send a message</h3>
+              <p class="hint">I reply personally, usually within a day.</p>
+              <form id="contact-form">
+                <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY" />
+                <input type="hidden" name="subject" value="New enquiry from tmdesignengineering.com" />
+                <input type="hidden" name="from_name" value="TMDE website" />
+                <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
+                <div class="field"><label for="cf-name">Name</label><input id="cf-name" type="text" name="name" required /></div>
+                <div class="field"><label for="cf-email">Email</label><input id="cf-email" type="email" name="email" required /></div>
+                <div class="field"><label for="cf-phone">Phone <span class="opt">(optional)</span></label><input id="cf-phone" type="tel" name="phone" /></div>
+                <div class="field"><label for="cf-msg">Your query</label><textarea id="cf-msg" name="message" required placeholder="A sentence or two on your idea or product and where you'd like help."></textarea></div>
+                <button class="btn btn-primary btn-lg" type="submit">Send message <span class="arw">→</span></button>
+                <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+              </form>
+            </div>
+            <div class="cbox book-card">
+              <h3>Book a free intro call</h3>
+              <p class="hint">30 minutes · video or phone · no obligation.</p>
+              <ul>
+                <li>Talk through where you are and what a sensible first step looks like</li>
+                <li>An honest view on whether — and how — I can help</li>
+                <li>Pick a slot that suits you and you'll get a calendar invite</li>
+              </ul>
+              <button class="btn btn-primary btn-lg" data-cal-link="REPLACE_WITH_CALCOM_LINK" data-cal-namespace="intro" data-cal-config='{"layout":"month_view"}'>Book a slot <span class="arw">→</span></button>
+            </div>
+          </div>
+          <div class="row" style="margin-top:22px">
+            <a class="mailto" href="mailto:thomas.h.s.mckee@outlook.com">…or email me directly: thomas.h.s.mckee@outlook.com</a>
           </div>
         </div>
       </div>
@@ -240,4 +276,66 @@ const jsonld = [
   </div>
 
 </main>
+
+<style>
+  .contact-cols{display:grid;grid-template-columns:1.25fr 1fr;gap:26px;margin-top:32px}
+  @media(max-width:760px){.contact-cols{grid-template-columns:1fr}}
+  .cbox{background:var(--surface);border:1px solid var(--line);border-radius:2px;padding:26px}
+  .cbox h3{font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:0 0 4px}
+  .cbox .hint{color:var(--ink-3);font-size:.88rem;margin:0 0 18px;font-family:var(--font-mono)}
+  .field{margin-bottom:14px;display:flex;flex-direction:column;gap:6px}
+  .field label{font-size:.78rem;font-family:var(--font-mono);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
+  .field label .opt{color:var(--ink-3);text-transform:none;letter-spacing:0}
+  .field input,.field textarea{font-family:var(--font-body);font-size:1rem;color:var(--ink);background:var(--surface-2);border:1px solid var(--line-2);border-radius:2px;padding:11px 12px;width:100%}
+  .field input:focus,.field textarea:focus{outline:2px solid var(--focus);outline-offset:1px;border-color:var(--focus)}
+  .field textarea{resize:vertical;min-height:110px}
+  .hp{position:absolute;left:-9999px}
+  .form-status{margin-top:12px;font-size:.9rem;color:var(--ink-2);min-height:1.2em}
+  .form-status.ok{color:var(--ember)}
+  .form-status.err{color:#c0392b}
+  .book-card{display:flex;flex-direction:column}
+  .book-card ul{list-style:none;padding:0;margin:0 0 22px;color:var(--ink-2);font-size:.95rem}
+  .book-card li{padding:7px 0 7px 22px;position:relative;line-height:1.45}
+  .book-card li::before{content:"→";position:absolute;left:0;color:var(--ember)}
+  .book-card .btn{margin-top:auto;align-self:flex-start}
+</style>
+
+<script is:inline>
+  document.addEventListener('submit', function (e) {
+    var form = e.target;
+    if (form.id !== 'contact-form') return;
+    e.preventDefault();
+    var status = document.getElementById('form-status');
+    var btn = form.querySelector('button[type=submit]');
+    var data = Object.fromEntries(new FormData(form));
+    btn.disabled = true;
+    status.textContent = 'Sending…';
+    status.className = 'form-status';
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(data)
+    }).then(function (r) { return r.json(); }).then(function (j) {
+      if (j.success) {
+        form.reset();
+        status.textContent = "Thanks — your message is on its way. I'll reply personally, usually within a day.";
+        status.className = 'form-status ok';
+      } else {
+        status.textContent = 'Something went wrong: ' + (j.message || 'please try again, or email me directly.');
+        status.className = 'form-status err';
+      }
+      btn.disabled = false;
+    }).catch(function () {
+      status.textContent = "Couldn't send just now — please email me directly at thomas.h.s.mckee@outlook.com.";
+      status.className = 'form-status err';
+      btn.disabled = false;
+    });
+  });
+</script>
+
+<script is:inline>
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "intro", { origin: "https://cal.com" });
+  Cal.ns.intro("ui", { hideEventTypeDetails: false, layout: "month_view" });
+</script>
 </Base>
