@@ -1,0 +1,165 @@
+---
+import Base from "../../layouts/Base.astro";
+import "../../styles/service.css";
+
+const SITE = "https://www.tmdesignengineering.com";
+const url = `${SITE}/services/product-development`;
+const faqs = [
+  ["How much does a full product development project cost?", "It depends entirely on the product and how far you take it, so I never quote a single number blind. We start with a small, fixed-price discovery — usually a Feasibility Study from £650 — and I scope and price each phase from there. You approve every phase before it begins, so cost never runs away from you."],
+  ["Do I have to commit to the whole journey up front?", "No, and I'd advise against it. The whole model is scoped, gated phases: you commit one step at a time, each with a clear price and deliverable. You can stop, pause or take the work elsewhere at any gate."],
+  ["Where does a project actually start?", "With discovery. I won't sell execution on an undefined idea — it's how projects waste money. A Feasibility Study or a paid discovery phase de-risks the idea and prices what follows, so we build on evidence, not optimism."],
+  ["Can you do just part of it?", "Yes. Plenty of clients bring me in for a single stage — a feasibility study, an MVP, verification before tooling, or manufacturing preparation. The full journey is for when you want one person owning the whole path."],
+  ["Do you do the industrial design too?", "I'm a design engineer, so I lead on making the product work and be manufacturable, and I handle functional and early-stage industrial design. When a product needs heavy aesthetic styling I bring in a trusted ID partner, so you still get one joined-up process."],
+  ["What about manufacturing and overseas suppliers?", "That's the end of the journey I prepare you for — and can run. I've taken products into medium-to-high-volume manufacture and can coordinate suppliers and tooling in the UK and China. See Manufacturing Preparation for detail."],
+  ["Will you sign an NDA?", "Yes, gladly, from the first conversation — before you share anything sensitive."],
+];
+const jsonld = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    serviceType: "End-to-end product development",
+    name: "Product Development",
+    description: "The full managed journey from idea to production — one experienced design engineer owning feasibility, concept and MVP, verification and manufacturing preparation, delivered in scoped, gated phases.",
+    provider: { "@id": `${SITE}/#business` },
+    areaServed: ["United Kingdom", "Worldwide"],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Development phases",
+      itemListElement: [
+        { "@type": "Service", name: "Feasibility Study", url: `${SITE}/services/feasibility-study` },
+        { "@type": "Service", name: "Concept & MVP Development", url: `${SITE}/services/concept-mvp-development` },
+        { "@type": "Service", name: "Engineering Verification", url: `${SITE}/services/engineering-verification` },
+        { "@type": "Service", name: "Manufacturing Preparation", url: `${SITE}/services/manufacturing-preparation` },
+      ],
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "Product Development", item: url },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+  },
+];
+---
+<Base
+  title="Product Development — Concept to Production | Thomas McKee"
+  description="The full managed product development journey from idea to production — feasibility, concept and MVP, verification and manufacturing preparation, delivered in scoped, gated phases by one experienced design engineer."
+  type="website"
+  jsonld={jsonld}>
+<main>
+  <section class="svc-hero">
+    <div class="wrap svc-hero-grid">
+      <div>
+        <span class="eyebrow">Service · Product Development</span>
+        <h1>Your product, taken from <em>idea to production.</em></h1>
+        <p class="lede">The full managed journey — one experienced design engineer owning the path from a first idea to a product that's ready to manufacture. Delivered in scoped, gated phases, so you commit in steps and always know the cost and the next milestone before you reach it.</p>
+        <div class="svc-hero-cta">
+          <a class="btn btn-primary" href="/#contact">Book a free intro call <span class="arw">→</span></a>
+          <a class="btn btn-ghost" href="#journey">See the journey</a>
+        </div>
+      </div>
+      <aside class="spec" aria-label="Service summary">
+        <div class="spec-head"><span>Service Spec</span><span>PD—05</span></div>
+        <div class="spec-row"><div class="spec-k">Deliver</div><div class="spec-v">Production-ready product</div></div>
+        <div class="spec-row"><div class="spec-k">Shape</div><div class="spec-v">Scoped, gated phases</div></div>
+        <div class="spec-row"><div class="spec-k">Starts with</div><div class="spec-v">Discovery</div></div>
+        <div class="spec-row"><div class="spec-k">Price</div><div class="spec-v">Scoped per phase</div></div>
+        <div class="spec-row"><div class="spec-k">You need</div><div class="spec-v">An idea onwards</div></div>
+        <div class="spec-note">Every project opens with a small, fixed-price discovery that de-risks the idea and prices the rest — so you never commit to the whole journey on day one.</div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="band alt">
+    <div class="wrap">
+      <span class="sec-idx">Who it's for</span>
+      <h2 class="sec-title">For founders who want it taken end to end</h2>
+      <div class="pain">
+        <div class="q"><span class="mk">?</span><p>"I have a product to build and I want one person I trust to own the whole thing."</p></div>
+        <div class="q"><span class="mk">?</span><p>"I'm doing this for the first time and I need structure, not just an engineer for hire."</p></div>
+        <div class="q"><span class="mk">?</span><p>"I don't want to gamble the whole budget before I know it's going to work."</p></div>
+      </div>
+      <p class="sec-intro">Most of my clients are building a physical product for the first time. What helps most is one experienced engineer carrying it the whole way — with a steady, honest process that keeps momentum without letting the excitement run ahead of the evidence.</p>
+    </div>
+  </section>
+
+  <section class="band" id="journey">
+    <div class="wrap">
+      <span class="sec-idx">The journey</span>
+      <h2 class="sec-title">Four phases, one continuous thread</h2>
+      <p class="sec-intro">Each phase is a service in its own right — scoped, priced and delivered on its own — and together they form the path from idea to shelf. You can take the whole journey, or step in wherever you are.</p>
+      <div class="deliv">
+        <div class="di"><div class="dn">01</div><h3><a href="/services/feasibility-study">Feasibility Study</a></h3><p>Prove the idea holds up — the risks, the rough cost, the timeline — before real money is spent. The usual first, de-risking step. From £650.</p></div>
+        <div class="di"><div class="dn">02</div><h3><a href="/services/concept-mvp-development">Concept &amp; MVP Development</a></h3><p>Turn the idea into an evaluated, buildable concept and a working MVP you can test, show and raise on.</p></div>
+        <div class="di"><div class="dn">03</div><h3><a href="/services/engineering-verification">Engineering Verification</a></h3><p>Prove the design works, is safe and is compliant — analysis, simulation and testing — before committing to tooling.</p></div>
+        <div class="di"><div class="dn">04</div><h3><a href="/services/manufacturing-preparation">Manufacturing Preparation</a></h3><p>Get the design ready for efficient, medium-to-high-volume manufacture, with supplier liaison in the UK and China.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt">
+    <div class="wrap">
+      <span class="sec-idx">How I work</span>
+      <h2 class="sec-title">Structure and rhythm, gated all the way</h2>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div><h3>Never execution on an undefined idea</h3><p>Every project starts with discovery. I won't take money to build something that hasn't been de-risked first — it's the fastest way to waste a budget, and I won't do it to you.</p><div class="meta">Discovery first</div></div></div>
+        <div class="step"><div class="sn">2</div><div><h3>Scoped, gated phases</h3><p>Each stage is scoped, priced and approved before it starts. You see the cost and the deliverable up front, and you commit one step at a time.</p><div class="meta">Approve each phase</div></div></div>
+        <div class="step"><div class="sn">3</div><div><h3>The whole picture</h3><p>Mechanical, firmware, thermal and manufacture seen as one system — so decisions early on don't quietly wreck something three phases later.</p><div class="meta">One system</div></div></div>
+        <div class="step"><div class="sn">4</div><div><h3>Plain-English throughout</h3><p>The decisions, the trade-offs and the occasional impossible spec, explained clearly — you always understand where your product is and why.</p><div class="meta">No jargon walls</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <span class="sec-idx">Why me</span>
+      <h2 class="sec-title">I've carried products the whole way</h2>
+      <div class="proof">
+        <div class="pl">From the work</div>
+        <p>At Ooni I took consumer products from first concept through to volume manufacture — holding mechanical, firmware and thermal roles at once and staying with them to the shelf. That end-to-end experience is exactly what a first-time founder is missing: someone who has seen how an early decision plays out at the factory, and designs for it from the start.</p>
+      </div>
+      <div class="svc-cred">
+        <span class="ci">Behind <b>Red Dot</b> &amp; <b>iF Design Award</b>–winning products</span>
+        <span class="ci"><b>Concept to volume manufacture</b>, held end to end</span>
+        <span class="ci"><b>Patent-pending</b> technologies shipped to market</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt">
+    <div class="wrap">
+      <span class="sec-idx">Questions</span>
+      <h2 class="sec-title">Common questions</h2>
+      <div class="faq">
+        {faqs.map(([q, a]) => (
+          <div class="fitem"><div class="fq">{q}</div><div class="fa">{a}</div></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="start">
+    <div class="wrap">
+      <div class="cta">
+        <div class="inner">
+          <span class="eyebrow">Start here</span>
+          <h2 style="margin-top:14px">Ready to take it all the way?</h2>
+          <p>Book a free intro call and tell me about your product and where you are with it. We'll agree a sensible first step — almost always a small, fixed-price discovery — and build from there.</p>
+          <div class="row">
+            <a class="btn btn-primary btn-lg" href="/#contact">Book a free intro call <span class="arw">→</span></a>
+            <span class="price-tag">Starts with discovery from <b>£650</b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</Base>

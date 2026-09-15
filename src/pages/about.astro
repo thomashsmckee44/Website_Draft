@@ -1,0 +1,166 @@
+---
+import Base from "../layouts/Base.astro";
+import "../styles/service.css";
+
+const SITE = "https://www.tmdesignengineering.com";
+const url = `${SITE}/about`;
+const jsonld = [
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": `${url}#aboutpage`,
+    url,
+    name: "About Thomas McKee — Design Engineer, Edinburgh",
+    isPartOf: { "@id": `${SITE}/#website` },
+    about: { "@id": `${SITE}/#thomas-mckee` },
+    mainEntity: { "@id": `${SITE}/#thomas-mckee` },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${SITE}/#thomas-mckee`,
+    name: "Thomas McKee",
+    jobTitle: "Design Engineering Consultant",
+    description: "Design engineer with over four years developing award-winning consumer products at Ooni, spanning mechanical design, firmware and thermal engineering. Now an independent product development consultant in Edinburgh.",
+    url,
+    worksFor: { "@id": `${SITE}/#business` },
+    alumniOf: { "@type": "Organization", name: "Ooni" },
+    homeLocation: { "@type": "Place", address: { "@type": "PostalAddress", addressLocality: "Edinburgh", addressCountry: "GB" } },
+    knowsAbout: [
+      "Design engineering",
+      "Consumer product development",
+      "Mechanical design",
+      "Firmware",
+      "Thermal analysis",
+      "Design for manufacture",
+      "Prototyping",
+      "Injection moulding",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "About", item: url },
+    ],
+  },
+];
+---
+<Base
+  title="About — Thomas McKee, Design Engineer in Edinburgh | Ex-Ooni"
+  description="Thomas McKee is a design engineering and product development consultant in Edinburgh with 4+ years shipping award-winning consumer hardware at Ooni — mechanical, firmware and thermal, from concept to volume manufacture."
+  type="website"
+  jsonld={jsonld}>
+<main>
+  <!-- HERO -->
+  <section class="svc-hero">
+    <div class="wrap svc-hero-grid">
+      <div>
+        <span class="eyebrow">About · Thomas McKee</span>
+        <h1>An engineer who's shipped the hard stuff — <em>and can explain it.</em></h1>
+        <p class="lede">I'm a design engineer based in Edinburgh. For over four years at Ooni I took premium consumer products from first concept to volume manufacture — and now I do the same as an independent partner to founders and startups building physical products for the first time.</p>
+        <div class="svc-hero-cta">
+          <a class="btn btn-primary" href="/#contact">Work with me <span class="arw">→</span></a>
+          <a class="btn btn-ghost" href="/#services">See services</a>
+        </div>
+      </div>
+      <aside class="spec" aria-label="Profile">
+        <div class="spec-head"><span>Profile</span><span>TMDE—001</span></div>
+        <div class="spec-row"><div class="spec-k">Engineer</div><div class="spec-v">Thomas McKee</div></div>
+        <div class="spec-row"><div class="spec-k">Discipline</div><div class="spec-v">Design Engineering</div></div>
+        <div class="spec-row"><div class="spec-k">Based</div><div class="spec-v">Edinburgh, UK</div></div>
+        <div class="spec-row"><div class="spec-k">Prev.</div><div class="spec-v">4+ yrs · Ooni</div></div>
+        <div class="spec-row"><div class="spec-k">Scope</div><div class="spec-v">Mech · Firmware · Thermal · DFM</div></div>
+        <div class="spec-row"><div class="spec-k">Status</div><div class="spec-v">Available for projects</div></div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="band alt">
+    <div class="wrap">
+      <span class="sec-idx">The background</span>
+      <h2 class="sec-title">From mechanical engineer to firmware lead</h2>
+      <div class="about-body" style="max-width:70ch">
+        <p>I trained and started out as a mechanical engineer, but consumer products don't respect the neat boundaries between disciplines — so I didn't either. On the Ooni Volt 2, an electric indoor pizza oven, I ended up as the firmware lead despite the mechanical background, because that's what the product needed and I was willing to learn it. I owned the performance and control system end to end: the thermal behaviour, the heating hardware, and the firmware that ties them together.</p>
+        <p>That pattern — following a product wherever the hard problem is, rather than staying in a lane — is the thing I've come to trust most about how I work. It means I see mechanical, firmware, thermal and manufacture as one system, and I can spot the rare moments where a single decision improves time, cost <em>and</em> performance together, instead of trading one against another.</p>
+        <p>Across four years at Ooni I took products from the first sketch through to volume manufacture, worked on the factory floor where they were built, and helped bring several award-winning consumer products to market. Today I bring that whole-picture experience to founders and startups as Thomas McKee Design Engineering.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT I BRING -->
+  <section class="band">
+    <div class="wrap">
+      <span class="sec-idx">What I bring</span>
+      <h2 class="sec-title">The things clients say matter most</h2>
+      <div class="deliv">
+        <div class="di"><div class="dn">01</div><h3>The whole picture</h3><p>Mechanical, firmware, thermal and manufacture seen as one system — so decisions are made with every consequence in view, and the occasional "unicorn moment" where everything improves at once actually gets caught.</p></div>
+        <div class="di"><div class="dn">02</div><h3>Structure &amp; rhythm</h3><p>Most of my clients are doing this for the first time. What helps most is a steady, honest process — walking through the real development journey, then a clear plan with fast, fail-fast prototyping that keeps momentum without losing the essence of the idea.</p></div>
+        <div class="di"><div class="dn">03</div><h3>Plain-English engineering</h3><p>The decisions, the trade-offs and the occasional physically impossible spec, explained clearly — whoever I'm working with. You always understand where your product is and why.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACK RECORD -->
+  <section class="band alt">
+    <div class="wrap">
+      <span class="sec-idx">Track record</span>
+      <h2 class="sec-title">Shipped, recognised, and sold worldwide</h2>
+      <div class="proof">
+        <div class="pl">The work</div>
+        <p>My work has reached the shelf and been recognised for it: the Ooni Volt 2 won a <strong>Red Dot Design Award in 2026</strong>, with the citation calling out the performance functions I led; the Ooni Karu 2 won an <strong>iF Design Award</strong> and a <strong>German Design Award in 2024</strong>. I'm named on patent-pending technologies, my products are sold worldwide and stocked in John Lewis, and the Volt 2 featured in Oprah's Favourite Things. The through-line isn't the awards, though — it's that these were hard products that had to work, be safe, be manufacturable and be loved, all at once.</p>
+      </div>
+      <div class="svc-cred">
+        <span class="ci"><b>Red Dot 2026</b> · Ooni Volt 2</span>
+        <span class="ci"><b>iF &amp; German Design Award 2024</b> · Ooni Karu 2</span>
+        <span class="ci"><b>Patent-pending</b> · sold worldwide · John Lewis</span>
+      </div>
+      <p class="sec-intro" style="margin-top:26px"><a href="/#work" style="color:var(--ember)">See the case studies →</a></p>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="band">
+    <div class="wrap">
+      <span class="sec-idx">What I stand for</span>
+      <h2 class="sec-title">How I choose to work</h2>
+      <div class="values" aria-label="Values" style="margin-top:8px">
+        <div class="val"><div class="vh"><span class="n">01</span> Integrity</div><div class="vd">Decisions made transparent and backed by evidence, so teams can move with confidence.</div></div>
+        <div class="val"><div class="vh"><span class="n">02</span> Thoughtful Innovation</div><div class="vd">Creative solutions grounded in practical engineering — never complexity for its own sake.</div></div>
+        <div class="val"><div class="vh"><span class="n">03</span> Long-Term Solutions</div><div class="vd">Designed for lifecycle, sustainability and real-world use from the very start.</div></div>
+        <div class="val"><div class="vh"><span class="n">04</span> Positive Impact</div><div class="vd">Engineering that contributes beyond the balance sheet, in client work and pro-bono alike.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRO BONO -->
+  <section class="band alt">
+    <div class="wrap">
+      <span class="sec-idx">Beyond the commercial</span>
+      <h2 class="sec-title">Engineering that gives something back</h2>
+      <div class="about-body" style="max-width:70ch">
+        <p>Alongside client work, I dedicate part of my time to <strong>pro-bono engineering</strong> for initiatives with social or environmental impact. I believe good engineering should contribute beyond commercial success — so by working with me, you help support that too.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="band" id="start">
+    <div class="wrap">
+      <div class="cta">
+        <div class="inner">
+          <span class="eyebrow">Let's talk</span>
+          <h2 style="margin-top:14px">Have a product that needs to become real?</h2>
+          <p>Tell me where you are and where you're stuck. Whether it's a first concept or a design that needs to survive manufacturing, I'll tell you honestly how I can help.</p>
+          <div class="row">
+            <a class="btn btn-primary btn-lg" href="/#contact">Book a free intro call <span class="arw">→</span></a>
+            <span class="price-tag">Or start with a <b>£50 Power Hour</b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</Base>
