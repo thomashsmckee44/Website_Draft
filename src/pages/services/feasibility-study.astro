@@ -5,11 +5,11 @@ import "../../styles/service.css";
 const SITE = "https://www.tmdesignengineering.com";
 const url = `${SITE}/services/feasibility-study`;
 const faqs = [
-  ["What if you find my idea isn't feasible?", "Then it's the best £650 you'll spend. Finding out now — instead of after months of development or a tooling commitment — is the entire point. You'll still get the full report, the reasons why, and wherever possible alternative directions worth exploring."],
-  ["Do I need drawings or a CAD model?", "No. An idea, a description or a rough sketch is enough. If you do have designs, great — I'll factor them in, but they're not required."],
+  ["What if you find my idea isn't feasible?", "Then it's the best £650 you'll spend. Finding out now, instead of after months of development or a tooling commitment, is the entire point. You'll still get the full report, the reasons why, and wherever possible alternative directions worth exploring."],
+  ["Do I need drawings or a CAD model?", "No. An idea, a description or a rough sketch is enough. If you do have designs, great, I'll factor them in, but they're not required."],
   ["Will you sign an NDA?", "Yes, happily. Protecting your idea matters, and I'm glad to work under a mutual NDA before you share anything sensitive."],
-  ["What if my idea needs more than two days to assess?", "Some do. If that's the case, I'll tell you on the intro call and give you a fixed, scoped quote before any work starts — so you always know the price in advance."],
-  ["What happens after the study?", "That's your call. Many clients move into Concept & MVP Development or a phased product-development engagement — the study's roadmap makes scoping that straightforward. But there's no obligation: the report is yours to use however you like."],
+  ["What if my idea needs more than two days to assess?", "Some do. If that's the case, I'll tell you on the intro call and give you a fixed, scoped quote before any work starts, so you always know the price in advance."],
+  ["What happens after the study?", "That's your call. Many clients move into Concept & MVP Development or a phased product-development engagement, the study's roadmap makes scoping that straightforward. But there's no obligation: the report is yours to use however you like."],
 ];
 const jsonld = [
   {
@@ -18,7 +18,7 @@ const jsonld = [
     "@id": `${url}#service`,
     serviceType: "Product feasibility study",
     name: "Product Feasibility Study",
-    description: "A fixed-price feasibility study for a new product idea: whether it can be built, the technical risks, the indicative cost and the timeline — delivered as a written report in about a week.",
+    description: "A fixed-price feasibility study for a new product idea: whether it can be built, the technical risks, the indicative cost and the timeline, delivered as a written report in about a week.",
     provider: { "@id": `${SITE}/#business` },
     areaServed: ["United Kingdom", "Worldwide"],
     offers: { "@type": "Offer", price: "650", priceCurrency: "GBP", url },
@@ -44,7 +44,7 @@ const jsonld = [
 ---
 <Base
   title="Product Feasibility Study (from £650) | Thomas McKee"
-  description="A fixed-price feasibility study for your product idea — know whether it can be built, what it will cost and how long, before you spend real money. From £650."
+  description="A fixed-price feasibility study for your product idea, know whether it can be built, what it will cost and how long, before you spend real money. From £650."
   type="website"
   jsonld={jsonld}>
 <main>
@@ -53,15 +53,15 @@ const jsonld = [
     <div class="wrap svc-hero-grid">
       <div>
         <span class="eyebrow">Service · Feasibility Study</span>
-        <h1>Find out if your idea will work — <em>before you spend real money.</em></h1>
-        <p class="lede">A fixed-price, fixed-scope study that tells you honestly whether your product can be built, how, at what cost and on what timeline — so your next decision is an informed one, not a gamble.</p>
+        <h1>Find out if your idea will work, <em>before you spend real money.</em></h1>
+        <p class="lede">A fixed-price, fixed-scope study that tells you honestly whether your product can be built, how, at what cost and on what timeline, so your next decision is an informed one, not a gamble.</p>
         <div class="svc-hero-cta">
           <a class="btn btn-primary" href="/#contact">Start a feasibility study <span class="arw">→</span></a>
           <a class="btn btn-ghost" href="#included">See what you get</a>
         </div>
       </div>
       <aside class="spec" aria-label="Service summary">
-        <div class="spec-head"><span>Service Spec</span><span>FS—01</span></div>
+        <div class="spec-head"><span>Service Spec</span><span>FS-01</span></div>
         <div class="spec-price"><span class="from">From</span><span class="amt">£650</span></div>
         <div class="spec-row"><div class="spec-k">Deliver</div><div class="spec-v">Feasibility report</div></div>
         <div class="spec-row"><div class="spec-k">Timeframe</div><div class="spec-v">≈1 week</div></div>
@@ -78,11 +78,11 @@ const jsonld = [
       <span class="sec-idx">Who it's for</span>
       <h2 class="sec-title">If you've asked yourself any of these</h2>
       <div class="pain">
-        <div class="q"><span class="mk">?</span><p>"Can this actually be made — or am I about to chase something impossible?"</p></div>
+        <div class="q"><span class="mk">?</span><p>"Can this actually be made, or am I about to chase something impossible?"</p></div>
         <div class="q"><span class="mk">?</span><p>"What will it realistically cost and how long will it take to develop?"</p></div>
-        <div class="q"><span class="mk">?</span><p>"What are the technical risks I can't see yet — and which one could sink it?"</p></div>
+        <div class="q"><span class="mk">?</span><p>"What are the technical risks I can't see yet, and which one could sink it?"</p></div>
       </div>
-      <p class="sec-intro">A feasibility study answers all three in writing, early, while changing course is still cheap. It's the single smartest first spend on a new product — and it's designed to save you far more than it costs.</p>
+      <p class="sec-intro">A feasibility study answers all three in writing, early, while changing course is still cheap. It's usually the smartest first spend on a new product, and it's designed to save you far more than it costs by reducing the risk before you commit to real development.</p>
     </div>
   </section>
 
@@ -91,12 +91,25 @@ const jsonld = [
     <div class="wrap">
       <span class="sec-idx">What you get</span>
       <h2 class="sec-title">A feasibility report you can act on</h2>
-      <p class="sec-intro">Not a verbal "yeah, that should be fine" — a clear, written document you can use to make decisions, brief a team, or take to investors.</p>
+      <p class="sec-intro">The core deliverable is a written feasibility report: a clear document you can use to make your next decision, brief a team or take to investors. It's bracketed by a discovery workshop at the start, so I properly understand what you're building, and a follow-up meeting at the end, where we go through the findings together and I give you a straight recommendation.</p>
       <div class="deliv">
-        <div class="di"><div class="dn">01</div><h3>Technical risk analysis</h3><p>The real engineering risks in your concept, ranked — and which ones need solving before anything else.</p></div>
-        <div class="di"><div class="dn">02</div><h3>Technology &amp; approach options</h3><p>The viable ways to build it, with the trade-offs between them in plain terms.</p></div>
-        <div class="di"><div class="dn">03</div><h3>Indicative cost, time &amp; complexity</h3><p>Honest ballpark figures for what developing it will take, so you can plan and budget.</p></div>
-        <div class="di"><div class="dn">04</div><h3>A clear recommendation</h3><p>A straight go / no-go / go-with-changes call — and a recommended development roadmap for the next steps.</p></div>
+        <div class="di"><div class="dn">01</div><h3>Discovery workshop</h3><p>We sit down together and work through the idea, what it has to do, who it's for and what success looks like, so the study is aimed at the questions that actually matter to you.</p></div>
+        <div class="di"><div class="dn">02</div><h3>Feasibility report</h3><p>The main deliverable. A written report covering everything below, honest about what will work, what won't and what it will take.</p></div>
+        <div class="di"><div class="dn">03</div><h3>Follow-up &amp; recommendation</h3><p>We walk through the findings together so nothing is lost in translation, and I give you a clear go / no-go / go-with-changes recommendation and a sensible next step.</p></div>
+      </div>
+      <p class="sec-intro" style="margin-top:34px">The feasibility report itself covers:</p>
+      <div class="scope" style="grid-template-columns:1fr">
+        <div class="scard">
+          <ul>
+            <li><span class="tick">✓</span> <b>Technology assessment</b>: the quick engineering maths, and an honest look at what's already out there.</li>
+            <li><span class="tick">✓</span> <b>A developed project brief</b>, turning your idea into a clear, buildable description.</li>
+            <li><span class="tick">✓</span> <b>Routes to manufacture</b>, with indicative costs for each.</li>
+            <li><span class="tick">✓</span> <b>Design directions</b>, with indicative costs for each.</li>
+            <li><span class="tick">✓</span> <b>Material selection</b>, the sensible options and why.</li>
+            <li><span class="tick">✓</span> <b>Trade-off analysis</b>, so you can see what each direction costs you and buys you.</li>
+            <li><span class="tick">✓</span> <b>A clear recommendation</b>: a straight go / no-go / go-with-changes call, and a roadmap for the next steps.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -108,9 +121,9 @@ const jsonld = [
       <h2 class="sec-title">From idea to answer in about a week</h2>
       <div class="steps">
         <div class="step"><div class="sn">1</div><div><h3>Free intro call</h3><p>You tell me the idea. I tell you honestly whether a feasibility study is the right next step, and confirm scope and price before anything starts.</p><div class="meta">Free · 30 minutes</div></div></div>
-        <div class="step"><div class="sn">2</div><div><h3>The assessment</h3><p>I dig into the concept — the engineering, the technology options, the manufacturing reality, the risks and the rough numbers. This is where the real work happens.</p><div class="meta">≈1.5 days</div></div></div>
-        <div class="step"><div class="sn">3</div><div><h3>Your report</h3><p>Everything written up as a clear feasibility report: risks, options, indicative cost and time, and a recommendation you can act on.</p><div class="meta">≈0.5 day</div></div></div>
-        <div class="step"><div class="sn">4</div><div><h3>Walk-through &amp; next steps</h3><p>We go through the findings together so nothing's lost in translation — and, if it makes sense, map out how to take it forward.</p><div class="meta">Included</div></div></div>
+        <div class="step"><div class="sn">2</div><div><h3>Discovery workshop</h3><p>We work through the idea together so I understand what you're building and what you need the study to answer. This is where the brief takes shape.</p><div class="meta">Included</div></div></div>
+        <div class="step"><div class="sn">3</div><div><h3>The assessment</h3><p>I dig into the engineering, the technology options, the routes to manufacture and their costs, the materials, the risks and the rough numbers. This is where the real work happens.</p><div class="meta">≈1.5 days</div></div></div>
+        <div class="step"><div class="sn">4</div><div><h3>Report &amp; follow-up</h3><p>Everything written up as a clear feasibility report, then a follow-up meeting to walk through it, give you my recommendation and, if it makes sense, map out how to take it forward.</p><div class="meta">≈0.5 day</div></div></div>
       </div>
     </div>
   </section>
@@ -124,7 +137,7 @@ const jsonld = [
         <div class="scard need">
           <h3>What you need to start</h3>
           <ul>
-            <li><span class="tick">→</span> An idea or concept — a description, a sketch, or a rough model. No finished design required.</li>
+            <li><span class="tick">→</span> An idea or concept, a description, a sketch, or a rough model. No finished design required.</li>
             <li><span class="tick">→</span> A sense of what you want the product to do and who it's for.</li>
             <li><span class="tick">→</span> That's genuinely it. If your idea is barely more than a thought, that's exactly what this is for.</li>
           </ul>
@@ -132,17 +145,17 @@ const jsonld = [
         <div class="scard">
           <h3>What's included as standard</h3>
           <ul>
-            <li><span class="tick">✓</span> Two days of engineering time — 1.5 assessing, 0.5 writing it up.</li>
+            <li><span class="tick">✓</span> Two days of engineering time, 1.5 assessing, 0.5 writing it up.</li>
             <li><span class="tick">✓</span> The written feasibility report and a walk-through call.</li>
-            <li><span class="tick">✓</span> Happy to work under an NDA — your idea stays yours.</li>
-            <li><span class="tick">✓</span> Bigger or more complex ideas simply get a scoped, fixed quote up front — never a surprise bill.</li>
+            <li><span class="tick">✓</span> Happy to work under an NDA, your idea stays yours.</li>
+            <li><span class="tick">✓</span> Bigger or more complex ideas simply get a scoped, fixed quote up front, never a surprise bill.</li>
           </ul>
         </div>
       </div>
       <div class="svc-cred">
         <span class="ci"><b>4+ years</b> shipping consumer products at Ooni</span>
         <span class="ci"><b>Mechanical, firmware &amp; manufacturing</b> under one roof</span>
-        <span class="ci">Award-winning, <b>patent-pending</b> work</span>
+        <span class="ci">Award-winning, <b>patented</b> work</span>
       </div>
     </div>
   </section>
@@ -153,23 +166,32 @@ const jsonld = [
       <span class="sec-idx">Questions</span>
       <h2 class="sec-title">Before you book</h2>
       <div class="faq">
-        <div class="fitem"><div class="fq">What if you find my idea isn't feasible?</div><div class="fa">Then it's the best £650 you'll spend. Finding out now — instead of after months of development or a tooling commitment — is the entire point. You'll still get the full report, the reasons why, and wherever possible alternative directions worth exploring.</div></div>
-        <div class="fitem"><div class="fq">Do I need drawings or a CAD model?</div><div class="fa">No. An idea, a description or a rough sketch is enough. If you do have designs, great — I'll factor them in, but they're not required.</div></div>
+        <div class="fitem"><div class="fq">What if you find my idea isn't feasible?</div><div class="fa">Then it's the best £650 you'll spend. Finding out now, instead of after months of development or a tooling commitment, is the entire point. You'll still get the full report, the reasons why, and wherever possible alternative directions worth exploring.</div></div>
+        <div class="fitem"><div class="fq">Do I need drawings or a CAD model?</div><div class="fa">No. An idea, a description or a rough sketch is enough. If you do have designs, great, I'll factor them in, but they're not required.</div></div>
         <div class="fitem"><div class="fq">Will you sign an NDA?</div><div class="fa">Yes, happily. Protecting your idea matters, and I'm glad to work under a mutual NDA before you share anything sensitive.</div></div>
-        <div class="fitem"><div class="fq">What if my idea needs more than two days to assess?</div><div class="fa">Some do. If that's the case, I'll tell you on the intro call and give you a fixed, scoped quote before any work starts — so you always know the price in advance.</div></div>
-        <div class="fitem"><div class="fq">What happens after the study?</div><div class="fa">That's your call. Many clients move into <a href="/services/concept-mvp-development" style="color:var(--ember)">Concept &amp; MVP Development</a> or a phased product-development engagement — the study's roadmap makes scoping that straightforward. But there's no obligation: the report is yours to use however you like.</div></div>
+        <div class="fitem"><div class="fq">What if my idea needs more than two days to assess?</div><div class="fa">Some do. If that's the case, I'll tell you on the intro call and give you a fixed, scoped quote before any work starts, so you always know the price in advance.</div></div>
+        <div class="fitem"><div class="fq">What happens after the study?</div><div class="fa">That's your call. Many clients move into <a href="/services/concept-mvp-development" style="color:var(--ember)">Concept &amp; MVP Development</a> or a phased product-development engagement, the study's roadmap makes scoping that straightforward. But there's no obligation: the report is yours to use however you like.</div></div>
       </div>
     </div>
   </section>
 
+  <!-- BRIDGE -->
+  <section class="band">
+    <div class="wrap">
+      <span class="sec-idx">Where it leads</span>
+      <h2 class="sec-title">Often the first step of the full journey</h2>
+      <p class="sec-intro">A feasibility study stands on its own, and the report is yours to use however you like. For many founders it's also the opening phase of <a href="/services/product-development" style="color:var(--ember)">full Product Development</a>, where I carry the same idea all the way through to a product that's ready to manufacture. Because the study de-risks the idea and prices what follows, moving into the next phase is straightforward when you're ready.</p>
+    </div>
+  </section>
+
   <!-- CTA -->
-  <section class="band" id="start">
+  <section class="band alt" id="start">
     <div class="wrap">
       <div class="cta">
         <div class="inner">
           <span class="eyebrow">Start here</span>
           <h2 style="margin-top:14px">Get a straight answer on your idea</h2>
-          <p>Book a free intro call. If a feasibility study is the right next step, we'll agree the scope and price before anything begins — and about a week later you'll have your answer in writing.</p>
+          <p>Book a free intro call. If a feasibility study is the right next step, we'll agree the scope and price before anything begins, and about a week later you'll have your answer in writing.</p>
           <div class="row">
             <a class="btn btn-primary btn-lg" href="/#contact">Book a free intro call <span class="arw">→</span></a>
             <span class="price-tag">Feasibility studies from <b>£650</b></span>

@@ -6,7 +6,7 @@ export interface Props {
   path?: string;
   /** OG/Twitter share image (absolute path from site root). */
   image?: string;
-  /** OG type — "website" for the homepage, "article" or "service" pages. */
+  /** OG type, "website" for the homepage, "article" or "service" pages. */
   type?: string;
   /** Page-specific JSON-LD structured data (object or array of objects). */
   jsonld?: Record<string, any> | Record<string, any>[];
@@ -27,7 +27,7 @@ const site = Astro.site ?? new URL("https://www.tmdesignengineering.com");
 const canonical = new URL(path ?? Astro.url.pathname, site).href;
 const ogImage = new URL(image, site).href;
 
-// Site-wide structured data — present on every page for local + brand SEO.
+// Site-wide structured data, present on every page for local + brand SEO.
 const businessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -135,9 +135,9 @@ import "../styles/global.css";
       <span class="disc">Design Engineering</span>
     </a>
     <nav class="nav-links">
-      <a href="/#work">Work</a>
       <a href="/#services">Services</a>
       <a href="/about">About</a>
+      <a href="/#work">Portfolio</a>
       <a href="/#contact">Contact</a>
     </nav>
     <button class="icon-btn" id="theme" aria-label="Toggle colour theme" title="Toggle theme">
@@ -155,15 +155,15 @@ import "../styles/global.css";
           <div class="disc">Consumer Product Development · Edinburgh, UK</div>
         </div>
         <nav class="foot-links">
-          <a href="/#work">Work</a>
           <a href="/#services">Services</a>
           <a href="/about">About</a>
+          <a href="/#work">Portfolio</a>
           <a href="/#contact">Contact</a>
           <a href="/services/power-hour">Power Hour</a>
           <a href="/services/design-review">Design Review</a>
           <a href="/services/feasibility-study">Feasibility Study</a>
           <a href="/services/concept-mvp-development">Concept &amp; MVP</a>
-          <a href="/services/engineering-verification">Engineering Verification</a>
+          <a href="/services/design-verification">Design Verification</a>
           <a href="/services/manufacturing-preparation">Manufacturing Preparation</a>
           <a href="/services/product-development">Product Development</a>
           <a href="/services/contract-engineering">Contract Engineering</a>

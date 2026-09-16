@@ -5,12 +5,12 @@ import "../../styles/service.css";
 const SITE = "https://www.tmdesignengineering.com";
 const url = `${SITE}/services/contract-engineering`;
 const faqs = [
-  ["How do you charge for contract work?", "Whatever fits the engagement: a day rate for ongoing capacity, a retainer for regular availability, or a fixed price for a defined deliverable. We agree it up front so there are no surprises — and for a clearly scoped piece of work, fixed price is often cleanest for both sides."],
+  ["How do you charge for contract work?", "Whatever fits the engagement: a day rate for ongoing capacity, a retainer for regular availability, or a fixed price for a defined deliverable. We agree it up front so there are no surprises, and for a clearly scoped piece of work, fixed price is often cleanest for both sides."],
   ["Remote or on-site?", "Both. I'm based in Edinburgh and work remotely with teams anywhere, and I can be on-site for kick-offs, design reviews, factory visits or crunch periods where being in the room matters."],
-  ["What kind of scope do you take on?", "Defined engineering work where you already know roughly what's needed: mechanical design, firmware-and-mechanical crossover, thermal analysis, design for manufacture, or a specific hard problem your team hasn't cracked. If the scope isn't clear yet, that's product development, not contract work — and I'll say so."],
-  ["How quickly can you start?", "Usually quickly — contract work is meant to flex around your timeline. Tell me the deadline on an intro call and I'll be straight about what's realistic."],
+  ["What kind of scope do you take on?", "Defined engineering work where you already know roughly what's needed: mechanical design, firmware-and-mechanical crossover, thermal analysis, design for manufacture, or a specific hard problem your team hasn't cracked. If the scope isn't clear yet, that's product development, not contract work, and I'll say so."],
+  ["How quickly can you start?", "Usually quickly, contract work is meant to flex around your timeline. Tell me the deadline on an intro call and I'll be straight about what's realistic."],
   ["How do you handle IP and NDAs?", "Your IP is yours; I work under your NDA and contracts as standard, and I'm used to the IP and confidentiality expectations of consumer hardware companies."],
-  ["Do you take long or short engagements?", "Both — from a few days on a specific problem to ongoing support across a project. Whatever the shape, you get senior engineering that slots into how your team already works."],
+  ["Do you take long or short engagements?", "Both, from a few days on a specific problem to ongoing support across a project. Whatever the shape, you get senior engineering that slots into how your team already works."],
 ];
 const jsonld = [
   {
@@ -19,7 +19,7 @@ const jsonld = [
     "@id": `${url}#service`,
     serviceType: "Contract design engineering",
     name: "Contract Engineering",
-    description: "Specialist or extra design engineering capacity for product teams that already know the scope — mechanical, firmware-mechanical crossover, thermal and design for manufacture, remote or on-site, on a day rate, retainer or fixed-price basis.",
+    description: "Specialist or extra design engineering capacity for product teams that already know the scope, mechanical, firmware-mechanical crossover, thermal and design for manufacture, remote or on-site, on a day rate, retainer or fixed-price basis.",
     provider: { "@id": `${SITE}/#business` },
     areaServed: ["United Kingdom", "Worldwide"],
   },
@@ -39,8 +39,8 @@ const jsonld = [
 ];
 ---
 <Base
-  title="Contract Design Engineering — Extra Capacity for Product Teams | Thomas McKee"
-  description="Specialist or extra design engineering capacity for product teams that already know the scope — mechanical, firmware-mechanical crossover, thermal and DFM, remote or on-site, on a day rate, retainer or fixed-price basis."
+  title="Contract Design Engineering, Extra Capacity for Product Teams | Thomas McKee"
+  description="Specialist or extra design engineering capacity for product teams that already know the scope, mechanical, firmware-mechanical crossover, thermal and DFM, remote or on-site, on a day rate, retainer or fixed-price basis."
   type="website"
   jsonld={jsonld}>
 <main>
@@ -49,20 +49,20 @@ const jsonld = [
       <div>
         <span class="eyebrow">Service · Contract Engineering</span>
         <h1>Experienced design engineering, <em>on your team.</em></h1>
-        <p class="lede">Specialist or extra engineering capacity for teams that already know the scope. An experienced design engineer who can drop into a project and deliver — across mechanical design, firmware-and-mechanical crossover, thermal analysis and design for manufacture — remotely or on-site, for as long as you need.</p>
+        <p class="lede">Specialist or extra engineering capacity for teams that already know the scope. An experienced design engineer who can drop into a project and deliver, across mechanical design, firmware-and-mechanical crossover, thermal analysis and design for manufacture, remotely or on-site, for as long as you need.</p>
         <div class="svc-hero-cta">
           <a class="btn btn-primary" href="/#contact">Discuss a contract <span class="arw">→</span></a>
           <a class="btn btn-ghost" href="#fit">How I fit in</a>
         </div>
       </div>
       <aside class="spec" aria-label="Service summary">
-        <div class="spec-head"><span>Service Spec</span><span>CE—06</span></div>
+        <div class="spec-head"><span>Service Spec</span><span>CE-06</span></div>
         <div class="spec-row"><div class="spec-k">Engage</div><div class="spec-v">Day rate · retainer · fixed</div></div>
         <div class="spec-row"><div class="spec-k">Mode</div><div class="spec-v">Remote or on-site</div></div>
         <div class="spec-row"><div class="spec-k">Scope</div><div class="spec-v">You define it</div></div>
         <div class="spec-row"><div class="spec-k">Areas</div><div class="spec-v">Mech · firmware · thermal · DFM</div></div>
         <div class="spec-row"><div class="spec-k">Start</div><div class="spec-v">Usually quick</div></div>
-        <div class="spec-note">For defined engineering work where you already know what's needed. If the scope isn't clear yet, that's product development — and I'll tell you.</div>
+        <div class="spec-note">For defined engineering work where you already know what's needed. If the scope isn't clear yet, that's product development, and I'll tell you.</div>
       </aside>
     </div>
   </section>
@@ -72,8 +72,8 @@ const jsonld = [
       <span class="sec-idx">Who it's for</span>
       <h2 class="sec-title">For product teams that need a safe pair of hands</h2>
       <div class="pain">
-        <div class="q"><span class="mk">?</span><p>"We're a specialist short and a deadline closing — we need experienced capacity, fast."</p></div>
-        <div class="q"><span class="mk">?</span><p>"We've hit a hard problem — thermal, firmware-mechanical, DFM — that we can't crack in-house."</p></div>
+        <div class="q"><span class="mk">?</span><p>"We're a specialist short and a deadline closing, we need experienced capacity, fast."</p></div>
+        <div class="q"><span class="mk">?</span><p>"We've hit a hard problem, thermal, firmware-mechanical, DFM, that we can't crack in-house."</p></div>
         <div class="q"><span class="mk">?</span><p>"We want someone who has actually shipped consumer hardware at volume, not just a CV."</p></div>
       </div>
     </div>
@@ -85,9 +85,9 @@ const jsonld = [
       <h2 class="sec-title">Senior engineering that slots into your team</h2>
       <div class="deliv">
         <div class="di"><div class="dn">01</div><h3>Defined deliverables</h3><p>You set the scope; I deliver against it. Clear outputs, clear timelines, and honest flags the moment something threatens either.</p></div>
-        <div class="di"><div class="dn">02</div><h3>Specialist depth</h3><p>Mechanical design, firmware-and-mechanical crossover, thermal analysis and design for manufacture — the crossover areas where projects most often stall.</p></div>
+        <div class="di"><div class="dn">02</div><h3>Specialist depth</h3><p>Mechanical design, firmware-and-mechanical crossover, thermal analysis and design for manufacture, the crossover areas where projects most often stall.</p></div>
         <div class="di"><div class="dn">03</div><h3>Works how you work</h3><p>I fit your tools, cadence and processes rather than imposing mine, remotely or on-site, so I'm useful from the first week.</p></div>
-        <div class="di"><div class="dn">04</div><h3>Factory-floor grounding</h3><p>Design decisions made by someone who has taken products through tooling and volume manufacture — and been on the floor when they were built.</p></div>
+        <div class="di"><div class="dn">04</div><h3>Factory-floor grounding</h3><p>Design decisions made by someone who has taken products through tooling and volume manufacture, and been on the floor when they were built.</p></div>
       </div>
     </div>
   </section>
@@ -98,7 +98,7 @@ const jsonld = [
       <h2 class="sec-title">Shipped, award-winning, at volume</h2>
       <div class="proof">
         <div class="pl">Track record</div>
-        <p>Over four years at Ooni I developed premium consumer products end to end — award-winning, patent-pending, and sold worldwide. I was firmware lead on an electric oven despite being a mechanical engineer, because I was willing to learn what the product needed. That whole-picture, cross-discipline range is what makes contract capacity from me worth more than an extra pair of hands.</p>
+        <p>Over four years at Ooni I developed premium consumer products end to end, award-winning, patent-pending, and sold worldwide. I was firmware lead on an electric oven despite being a mechanical engineer, because I was willing to learn what the product needed. That whole-picture, cross-discipline range is what makes contract capacity from me worth more than an extra pair of hands.</p>
       </div>
       <div class="svc-cred">
         <span class="ci"><b>4+ years</b> shipping premium consumer hardware at Ooni</span>

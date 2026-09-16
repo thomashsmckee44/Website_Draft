@@ -5,11 +5,11 @@ import "../../styles/service.css";
 const SITE = "https://www.tmdesignengineering.com";
 const url = `${SITE}/services/manufacturing-preparation`;
 const faqs = [
-  ["Do you make the product, or get it ready to be made?", "I get it ready. Manufacturing preparation is the engineering that turns a working design into something a factory can build repeatably and economically — the drawings, tolerances, DFM changes and supplier package. I then work alongside your chosen manufacturer through the first production runs."],
-  ["Can you work with my existing manufacturer?", "Yes. If you already have a supplier, I prepare the design and documentation to their processes and work with them directly. If you don't, I can help you find and select the right one — in the UK or China — and manage the technical relationship."],
-  ["Do you handle China manufacturing?", "Yes. I've taken consumer products into medium-to-high-volume manufacture with overseas suppliers, and I can coordinate tooling, first articles and quality with factories in China as well as the UK — bridging the engineering and the language of manufacture on both sides."],
-  ["Isn't this just about making it cheaper?", "It's about lifetime production cost, which is a bigger number than unit price: cycle time, assembly labour, tooling maintenance, scrap and warranty. Designing those out early is where the real, repeated savings are — without cheapening the product."],
-  ["My design isn't quite finished — is it too early?", "Possibly. Manufacturing preparation assumes a design that's functionally proven. If it isn't there yet, Engineering Verification or Concept & MVP Development comes first — and I'll say so honestly on the intro call rather than start too early."],
+  ["Do you make the product, or get it ready to be made?", "I get it ready. Manufacturing preparation is the engineering that turns a working design into something a factory can build repeatably and economically, the detail CAD, drawings, tolerances and DFMA work. I then work alongside your chosen manufacturer through tooling and the first production runs."],
+  ["Do you find the manufacturer for me?", "No, sourcing suppliers isn't my wheelhouse and I won't pretend otherwise. What I do is prepare the design and the documentation so it's ready to hand to a factory, and then act as your technical liaison with the manufacturer you've chosen, so the engineering conversation runs smoothly. If you need a recommendation, I'm happy to point you towards where founders usually look."],
+  ["Can you liaise with a factory in China?", "Yes. I've taken consumer products into medium-to-high-volume manufacture with overseas suppliers, and I can coordinate tooling, first articles and quality with your factory in China as well as the UK, bridging the engineering and the language of manufacture on both sides."],
+  ["Isn't this just about making it cheaper?", "It's about lifetime production cost, which is a bigger number than unit price: cycle time, assembly labour, tooling maintenance, scrap and warranty. Designing those out early is where the real, repeated savings are, while keeping the product as good as it was."],
+  ["My design isn't quite finished, is it too early?", "Possibly. Manufacturing preparation assumes a design that's functionally proven. If it isn't there yet, Design Verification or Concept & MVP Development comes first, and I'll say so honestly on the intro call rather than start too early."],
 ];
 const jsonld = [
   {
@@ -18,7 +18,7 @@ const jsonld = [
     "@id": `${url}#service`,
     serviceType: "Manufacturing preparation and design for manufacture (DFM)",
     name: "Manufacturing Preparation",
-    description: "Get a finished product design ready for efficient, medium-to-high-volume manufacture — DFM/DFA, tolerance analysis, a full manufacturing drawing pack, and supplier selection and liaison across the UK and China.",
+    description: "Get a finished product design ready for efficient, medium-to-high-volume manufacture: DFMA, tolerance stack analysis, detail production CAD, a full manufacturing drawing pack with GD&T, tooling support and technical liaison with your chosen manufacturer in the UK or China.",
     provider: { "@id": `${SITE}/#business` },
     areaServed: ["United Kingdom", "China", "Worldwide"],
   },
@@ -43,7 +43,7 @@ const jsonld = [
 ---
 <Base
   title="Manufacturing Preparation & DFM | Thomas McKee"
-  description="Get a finished product design ready for efficient, medium-to-high-volume manufacture — DFM/DFA, tolerance analysis, a full manufacturing drawing pack, and supplier liaison across the UK and China."
+  description="Get a finished product design ready for efficient, medium-to-high-volume manufacture: DFMA, tolerance stack analysis, detail production CAD, a full manufacturing drawing pack with GD&T, tooling support and technical liaison with your chosen manufacturer in the UK or China."
   type="website"
   jsonld={jsonld}>
 <main>
@@ -52,18 +52,18 @@ const jsonld = [
     <div class="wrap svc-hero-grid">
       <div>
         <span class="eyebrow">Service · Manufacturing Preparation</span>
-        <h1>A design that's ready to <em>build at volume — properly.</em></h1>
-        <p class="lede">A design that works as a prototype isn't yet a design a factory can build a thousand times a week. Manufacturing preparation closes that gap: design for manufacture, tolerances, a complete drawing pack and the right supplier — so production is efficient, repeatable and kind to your lifetime cost.</p>
+        <h1>A design that's ready to <em>build at volume, properly.</em></h1>
+        <p class="lede">A design that works as a prototype isn't yet a design a factory can build a thousand times a week. Manufacturing preparation closes that gap: design for manufacture and assembly, tolerances, detail production CAD and a complete drawing pack, plus technical liaison with your manufacturer, so production is efficient, repeatable and kind to your lifetime cost.</p>
         <div class="svc-hero-cta">
           <a class="btn btn-primary" href="/#contact">Book a free intro call <span class="arw">→</span></a>
           <a class="btn btn-ghost" href="#included">See what you get</a>
         </div>
       </div>
       <aside class="spec" aria-label="Service summary">
-        <div class="spec-head"><span>Service Spec</span><span>MP—04</span></div>
+        <div class="spec-head"><span>Service Spec</span><span>MP-04</span></div>
         <div class="spec-row"><div class="spec-k">Deliver</div><div class="spec-v">Manufacturing pack</div></div>
-        <div class="spec-row"><div class="spec-k">Covers</div><div class="spec-v">DFM · drawings · supply</div></div>
-        <div class="spec-row"><div class="spec-k">Suppliers</div><div class="spec-v">UK &amp; China</div></div>
+        <div class="spec-row"><div class="spec-k">Covers</div><div class="spec-v">DFMA · CAD · drawings</div></div>
+        <div class="spec-row"><div class="spec-k">Liaison</div><div class="spec-v">UK &amp; China</div></div>
         <div class="spec-row"><div class="spec-k">Price</div><div class="spec-v">Scoped up front</div></div>
         <div class="spec-row"><div class="spec-k">You need</div><div class="spec-v">A proven design</div></div>
         <div class="spec-note">Scoped and fixed-quoted after a free intro call, once we've agreed volumes, target cost and where it will be made.</div>
@@ -77,11 +77,11 @@ const jsonld = [
       <span class="sec-idx">Who it's for</span>
       <h2 class="sec-title">If your design works but isn't ready to make</h2>
       <div class="pain">
-        <div class="q"><span class="mk">?</span><p>"It works as a prototype — how do I get it built consistently, at volume?"</p></div>
-        <div class="q"><span class="mk">?</span><p>"How do I find a manufacturer I can trust, and speak to them in their own terms?"</p></div>
+        <div class="q"><span class="mk">?</span><p>"It works as a prototype, how do I get it built consistently, at volume?"</p></div>
+        <div class="q"><span class="mk">?</span><p>"I've got a factory lined up, how do I hand them a design they can build without guessing?"</p></div>
         <div class="q"><span class="mk">?</span><p>"How do I keep the cost down over a whole production run, not just on paper?"</p></div>
       </div>
-      <p class="sec-intro">Getting a product to manufacture is its own discipline. The design decisions that make something easy, cheap and reliable to build are best made now — deliberately — not discovered the hard way on a factory floor after tooling is cut.</p>
+      <p class="sec-intro">Getting a product to manufacture is its own discipline. The design decisions that make something easy, cheap and reliable to build are best made now, deliberately, not discovered the hard way on a factory floor after tooling is cut.</p>
     </div>
   </section>
 
@@ -90,12 +90,26 @@ const jsonld = [
     <div class="wrap">
       <span class="sec-idx">What you get</span>
       <h2 class="sec-title">Everything a factory needs to build it right</h2>
-      <p class="sec-intro">A production-ready design and a documentation pack that leaves no room for a supplier to guess — so what comes off the line is what you designed.</p>
+      <p class="sec-intro">A production-ready design and a documentation pack that leaves no room for a factory to guess, so what comes off the line is what you designed. The core of it is the DFMA work, the detail production CAD and a full drawing pack with GD&amp;T, the package your manufacturer quotes and builds from with confidence.</p>
       <div class="deliv">
-        <div class="di"><div class="dn">01</div><h3>DFM &amp; DFA review</h3><p>The design refined for how it will actually be made and assembled — fewer parts, simpler processes, lower cycle time and less that can go wrong at scale.</p></div>
-        <div class="di"><div class="dn">02</div><h3>Tolerance &amp; GD&amp;T analysis</h3><p>Tolerance stack-ups worked through so parts fit and function across a whole production run, not just on the first golden sample.</p></div>
-        <div class="di"><div class="dn">03</div><h3>Manufacturing drawing pack</h3><p>Complete, unambiguous drawings and specifications — the technical package a manufacturer quotes and builds from with confidence.</p></div>
-        <div class="di"><div class="dn">04</div><h3>Supplier selection &amp; liaison</h3><p>Help finding and vetting the right manufacturer in the UK or China, then managing the technical relationship through tooling and first production.</p></div>
+        <div class="di"><div class="dn">01</div><h3>Design review workshop</h3><p>We start by going through the design together against how it needs to be made, agreeing where the DFMA effort should focus and what production has to hit.</p></div>
+        <div class="di"><div class="dn">02</div><h3>DFMA report</h3><p>The design refined for how it will actually be made and assembled, fewer parts, simpler processes, lower cycle time and less that can go wrong at scale, written up as a design for manufacture and assembly report.</p></div>
+        <div class="di"><div class="dn">03</div><h3>Detail CAD &amp; drawing pack</h3><p>Detail production CAD and a complete manufacturing drawing pack with GD&amp;T, plus a tolerance stack analysis so parts fit and function across a whole production run, not just on the first golden sample.</p></div>
+        <div class="di"><div class="dn">04</div><h3>Tooling support &amp; supplier liaison</h3><p>I stay with it through tooling and design refinement, and act as your technical liaison with the manufacturer you've chosen, so the engineering conversation runs smoothly on both sides.</p></div>
+      </div>
+      <p class="sec-intro" style="margin-top:34px">Deliverables include:</p>
+      <div class="scope" style="grid-template-columns:1fr">
+        <div class="scard">
+          <ul>
+            <li><span class="tick">✓</span> Design review workshop</li>
+            <li><span class="tick">✓</span> Design for manufacture and assembly (DFMA) report</li>
+            <li><span class="tick">✓</span> Detail production CAD</li>
+            <li><span class="tick">✓</span> Production drawing pack with GD&amp;T</li>
+            <li><span class="tick">✓</span> Tolerance stack analysis report</li>
+            <li><span class="tick">✓</span> Support through tooling and design refinement</li>
+            <li><span class="tick">✓</span> Supplier liaison with your chosen manufacturer</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -107,9 +121,9 @@ const jsonld = [
       <h2 class="sec-title">From proven design to production</h2>
       <div class="steps">
         <div class="step"><div class="sn">1</div><div><h3>Free intro call</h3><p>We talk volumes, target cost and where it will be made. I confirm what preparation the design needs and scope and price it before anything starts.</p><div class="meta">Free · 30 minutes</div></div></div>
-        <div class="step"><div class="sn">2</div><div><h3>Design for manufacture</h3><p>I refine the design for its process — moulding, sheet metal, assembly — resolving tolerances and designing out cost, complexity and failure modes.</p><div class="meta">Scoped phase</div></div></div>
-        <div class="step"><div class="sn">3</div><div><h3>Documentation &amp; sourcing</h3><p>I produce the full manufacturing pack and, if you need it, find and vet suppliers and get the design quoted by people who can actually build it.</p><div class="meta">Scoped phase</div></div></div>
-        <div class="step"><div class="sn">4</div><div><h3>Tooling &amp; first production</h3><p>I stay in the loop through tooling, first articles and pre-production, resolving the issues that always surface — so ramp-up is smooth, not firefighting.</p><div class="meta">As needed</div></div></div>
+        <div class="step"><div class="sn">2</div><div><h3>Design for manufacture</h3><p>I refine the design for its process, moulding, sheet metal, assembly, resolving tolerances and designing out cost, complexity and failure modes, and write it up as a DFMA report.</p><div class="meta">Scoped phase</div></div></div>
+        <div class="step"><div class="sn">3</div><div><h3>Documentation pack</h3><p>I produce the detail production CAD and the full manufacturing drawing pack with GD&amp;T, so your chosen factory has an unambiguous package to quote and build from.</p><div class="meta">Scoped phase</div></div></div>
+        <div class="step"><div class="sn">4</div><div><h3>Tooling &amp; first production</h3><p>I stay in the loop through tooling, first articles and pre-production, liaising with your manufacturer and resolving the issues that always surface, so ramp-up is smooth, not firefighting.</p><div class="meta">As needed</div></div></div>
       </div>
     </div>
   </section>
@@ -123,17 +137,17 @@ const jsonld = [
         <div class="scard need">
           <h3>What you bring</h3>
           <ul>
-            <li><span class="tick">→</span> A functionally proven design — one that works and isn't expected to change fundamentally.</li>
+            <li><span class="tick">→</span> A functionally proven design, one that works and isn't expected to change fundamentally.</li>
             <li><span class="tick">→</span> Your target volumes, cost and timeline, and any regions you'll sell into.</li>
-            <li><span class="tick">→</span> An existing manufacturer if you have one — or the need to find the right one.</li>
+            <li><span class="tick">→</span> The manufacturer you plan to use. Sourcing suppliers isn't my wheelhouse, but I'll liaise with whichever factory you choose.</li>
           </ul>
         </div>
         <div class="scard">
           <h3>How I work</h3>
           <ul>
             <li><span class="tick">✓</span> Design decisions judged on lifetime production cost, not just unit price.</li>
-            <li><span class="tick">✓</span> Fluent working with suppliers in both the UK and China.</li>
-            <li><span class="tick">✓</span> I've been on the factory floor — preparation grounded in how things really get built.</li>
+            <li><span class="tick">✓</span> Fluent liaising with manufacturers in both the UK and China.</li>
+            <li><span class="tick">✓</span> I've been on the factory floor, so the preparation is grounded in how things really get built.</li>
             <li><span class="tick">✓</span> Happy to work under an NDA, and to fit around your existing supply chain.</li>
           </ul>
         </div>
@@ -159,17 +173,26 @@ const jsonld = [
     </div>
   </section>
 
+  <!-- BRIDGE -->
+  <section class="band">
+    <div class="wrap">
+      <span class="sec-idx">Where it fits</span>
+      <h2 class="sec-title">The last mile of the full journey</h2>
+      <p class="sec-intro">Manufacturing preparation is the stage that gets a proven design onto a production line. It's a natural final phase of <a href="/services/product-development" style="color:var(--ember)">full Product Development</a>, where I carry a product from first idea all the way to something ready to manufacture. If you've done the earlier work elsewhere and just need it made properly, this stands on its own too.</p>
+    </div>
+  </section>
+
   <!-- CTA -->
-  <section class="band" id="start">
+  <section class="band alt" id="start">
     <div class="wrap">
       <div class="cta">
         <div class="inner">
           <span class="eyebrow">Start here</span>
-          <h2 style="margin-top:14px">Get it ready to build — properly</h2>
+          <h2 style="margin-top:14px">Get it ready to build, properly</h2>
           <p>Book a free intro call and tell me about the product and where you want it made. We'll work out what it needs to be production-ready, and I'll scope and price it before anything begins.</p>
           <div class="row">
             <a class="btn btn-primary btn-lg" href="/#contact">Book a free intro call <span class="arw">→</span></a>
-            <span class="price-tag">UK &amp; China supply</span>
+            <span class="price-tag">UK &amp; China liaison</span>
           </div>
         </div>
       </div>

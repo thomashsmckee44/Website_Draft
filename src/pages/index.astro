@@ -8,7 +8,7 @@ const jsonld = [
     "@type": "WebPage",
     "@id": `${SITE}/#webpage`,
     url: `${SITE}/`,
-    name: "Thomas McKee — Design Engineer & Product Development Consultant, Edinburgh",
+    name: "Thomas McKee, Design Engineer & Product Development Consultant, Edinburgh",
     isPartOf: { "@id": `${SITE}/#website` },
     about: { "@id": `${SITE}/#business` },
     description:
@@ -24,7 +24,7 @@ const jsonld = [
       { "@type": "Service", name: "Design Review", url: `${SITE}/services/design-review` },
       { "@type": "Service", name: "Feasibility Study", url: `${SITE}/services/feasibility-study` },
       { "@type": "Service", name: "Concept & MVP Development", url: `${SITE}/services/concept-mvp-development` },
-      { "@type": "Service", name: "Engineering Verification", url: `${SITE}/services/engineering-verification` },
+      { "@type": "Service", name: "Design Verification", url: `${SITE}/services/design-verification` },
       { "@type": "Service", name: "Manufacturing Preparation", url: `${SITE}/services/manufacturing-preparation` },
       { "@type": "Service", name: "Product Development", url: `${SITE}/services/product-development` },
       { "@type": "Service", name: "Contract Engineering", url: `${SITE}/services/contract-engineering` },
@@ -33,29 +33,29 @@ const jsonld = [
 ];
 ---
 <Base
-  title="Design Engineer, Edinburgh — Product Development | Thomas McKee"
-  description="Design engineering and product development consultant in Edinburgh, UK. I help founders and startups take consumer hardware from concept to production — mechanical design, firmware and design for manufacture (DFM)."
+  title="Design Engineer, Edinburgh, Product Development | Thomas McKee"
+  description="Design engineering and product development consultant in Edinburgh, UK. I help founders and startups take consumer hardware from concept to production, mechanical design, firmware and design for manufacture (DFM)."
   jsonld={jsonld}>
 <main>
   <!-- HERO -->
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-lead">
-        <span class="eyebrow">Design Engineering Consultant · Edinburgh, UK</span>
-        <h1>Consumer hardware,<br>engineered to <em>reach the shelf.</em></h1>
-        <p class="lede">I take product ideas from first sketch to the shelf — seeing the mechanical design, firmware and manufacture as one system. I help founders and startups de-risk the hard engineering early and keep momentum, so good ideas survive the journey to a real, shipped product.</p>
+        <span class="eyebrow">Design Engineering Consultant, Edinburgh, UK</span>
+        <h1>Engineering Products from Concept to Manufacture</h1>
+        <p class="lede">Providing design engineering expertise to entrepreneurs, founders and start-ups. Solving the hard technical problems and reducing the risk and cost in the product development process.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#contact">Book a free intro call <span class="arw">→</span></a>
           <a class="btn btn-ghost" href="#work">See the work</a>
         </div>
       </div>
       <aside class="titleblock" aria-label="Practitioner details">
-        <div class="tb-head"><span>Drawing No. TMDE—001</span><span class="tb-dot" aria-hidden="true"></span></div>
+        <div class="tb-head"><span>Drawing No. TMDE-001</span><span class="tb-dot" aria-hidden="true"></span></div>
         <div class="tb-row"><div class="tb-k">Engineer</div><div class="tb-v">Thomas McKee</div></div>
         <div class="tb-row"><div class="tb-k">Discipline</div><div class="tb-v">Design Engineering</div></div>
         <div class="tb-row"><div class="tb-k">Based</div><div class="tb-v">Edinburgh, UK</div></div>
         <div class="tb-row"><div class="tb-k">Prev.</div><div class="tb-v">4+ yrs · Ooni</div></div>
-        <div class="tb-row"><div class="tb-k">Scope</div><div class="tb-v">Mech · Firmware · DFM</div></div>
+        <div class="tb-row"><div class="tb-k">Scope</div><div class="tb-v">Mech · Thermal · Structural · Firmware · UX · DFMA</div></div>
         <div class="tb-row"><div class="tb-k">Status</div><div class="tb-v avail">Available for projects</div></div>
       </aside>
     </div>
@@ -64,12 +64,12 @@ const jsonld = [
   <!-- CREDIBILITY -->
   <div class="cred">
     <div class="wrap cred-inner">
-      <span class="lbl">Shipped &amp; recognised —</span>
+      <span class="lbl">Shipped &amp; recognised</span>
       <span class="cred-item"><b>Ooni Volt 2</b> · Red Dot Design Award 2026</span>
       <span class="cred-item"><b>Ooni Karu 2</b> · iF Design Award 2024</span>
-      <span class="cred-item">2 patent-pending technologies</span>
-      <span class="cred-item">Featured in <b>Oprah's Favourite Things</b></span>
-      <span class="cred-item">Sold in John Lewis &amp; worldwide</span>
+      <span class="cred-item"><b>Ooni Karu 2 Pro</b> · iF Design Award 2025</span>
+      <span class="cred-item">3 patented or patent-pending inventions</span>
+      <span class="cred-item">Sold worldwide</span>
     </div>
   </div>
 
@@ -78,36 +78,44 @@ const jsonld = [
     <section id="work">
       <div class="sec-head no-rule">
         <div>
-          <span class="idx">01 — Selected Work</span>
-          <h2 class="sec-title" style="margin-top:12px">Products I've helped ship</h2>
+          <span class="idx">01 · Selected Work</span>
+          <h2 class="sec-title" style="margin-top:12px">Previous Projects out there in the world</h2>
         </div>
       </div>
-      <p class="sec-intro">Four years at Ooni, working across mechanical design, firmware and manufacturing on premium consumer products that reached the shelf and won international recognition. Three that show the range:</p>
+      <p class="sec-intro">I spent over 4 years at Ooni working across design, mechanical engineering, firmware, thermal performance, specialist testing, and manufacture for premium consumer products, of which many have reached the market and received international recognition or are in production stages. Some highlights shown below.</p>
 
       <div style="margin-top:8px">
         <!-- Case 1 -->
         <article class="case">
           <div>
             <span class="case-idx">CASE 01</span>
-            <h3>Ooni Volt 2 — Electric Pizza Oven</h3>
-            <span class="role">Performance architecture · Firmware · Validation</span>
-            <p>I owned the performance and control system of a compact indoor oven that reaches 450&nbsp;°C. I stepped into firmware to build the patent-pending <b>Pizza Intelligence™</b> adaptive cooking system, developed a thermal-estimation algorithm that holds accurate stone temperature from a single sensor, and designed the performance-critical cavity hardware and heating elements behind it.</p>
+            <h3>Ooni Volt 2: Indoor Electric Pizza Oven</h3>
+            <span class="role">Performance Hardware Designer · Firmware Development Lead · User Experience &amp; Product Validation</span>
+            <p>Designing the function, user experience and performance of a compact indoor oven capable of reaching 450&nbsp;°C, via both hardware and firmware development. Building the patent-pending adaptive cooking firmware, a thermal-estimation algorithm for accurate stone control from a single sensor, and the oven hardware such as heating elements and inner shells.</p>
             <div class="tags">
               <span class="tag">Control systems</span>
               <span class="tag">Thermal modelling</span>
-              <span class="tag">UI firmware</span>
-              <span class="tag">Heating elements</span>
+              <span class="tag">Thermal simulation</span>
+              <span class="tag">UI/UX</span>
+              <span class="tag">Firmware</span>
+              <span class="tag">Heating element design</span>
+              <span class="tag">High-performance design</span>
+              <span class="tag">Design for manufacture</span>
               <span class="tag">Safety compliance</span>
+              <span class="tag">Part &amp; subassembly design</span>
+              <span class="tag">Product validation</span>
+              <span class="tag">Technical documentation</span>
             </div>
             <p style="margin-top:18px"><a href="/work/ooni-volt-2" style="color:var(--ember);font-family:var(--font-mono);font-size:13px;letter-spacing:.02em">Read the full case study →</a></p>
           </div>
           <div class="outcomes">
             <div class="oc-lbl">Outcomes</div>
-            <div class="oc"><span class="mk">◆</span><span class="txt">Launched <b>October 2025</b></span></div>
-            <div class="oc"><span class="mk">◆</span><span class="txt">Featured in <b>Oprah's Favourite Things</b></span></div>
-            <div class="oc"><span class="mk">◆</span><span class="txt">Patent-pending <b>Pizza Intelligence™</b></span></div>
-            <div class="oc"><span class="mk">◆</span><span class="txt"><b>500+</b> pizzas cooked in testing</span></div>
-            <div class="oc"><span class="mk">◆</span><span class="txt">Delivered <b>on time &amp; on budget</b></span></div>
+            <div class="oc"><span class="mk">◆</span><span class="txt"><b>Red Dot Design Award</b></span></div>
+            <div class="oc"><span class="mk">◆</span><span class="txt"><b>Pizza Intelligence™</b></span></div>
+            <div class="oc"><span class="mk">◆</span><span class="txt"><b>20–450 °C</b> temperature range</span></div>
+            <div class="oc"><span class="mk">◆</span><span class="txt"><b>30%</b> smaller footprint</span></div>
+            <div class="oc"><span class="mk">◆</span><span class="txt"><b>70%</b> better stone temperature distribution</span></div>
+            <div class="oc"><span class="mk">◆</span><span class="txt"><b>23%</b> faster heat-up with a <b>64%</b> larger window</span></div>
           </div>
         </article>
 
@@ -115,25 +123,36 @@ const jsonld = [
         <article class="case">
           <div>
             <span class="case-idx">CASE 02</span>
-            <h3>Ooni Karu 2 — Multi-Fuel Pizza Oven</h3>
-            <span class="role">Performance optimisation · Door sub-assembly</span>
-            <p>I rethought the glass-door architecture to create <b>ClearView™</b> — a patent-pending anti-soot geometry that improved visibility while cutting cost and complexity at the same time. I solved high-temperature magnetic latching through flux-path analysis, and tuned multi-fuel airflow and chimney thermal safety to stay compliant across every fuel type.</p>
+            <h3>Ooni Karu 2: Multi-Fuel Outdoor Pizza Oven</h3>
+            <span class="role">Performance optimisation · Door design &amp; sub-assembly · Verification &amp; test</span>
+            <p>I redesigned an expensive, hard-to-manufacture and low-performing glass pizza oven door to invent the patented <b>ClearView™</b> technology. I solved high-temperature magnetic latching through flux-path analysis, and tuned multi-fuel airflow and chimney thermal safety to stay compliant across every fuel type, whilst boosting performance and efficiency.</p>
             <div class="tags">
-              <span class="tag">Sheet-metal DFM</span>
-              <span class="tag">Combustion tuning</span>
+              <span class="tag">Door design</span>
+              <span class="tag">Mechanism design</span>
+              <span class="tag">DFM / DFA</span>
+              <span class="tag">Sheet metal design</span>
+              <span class="tag">Casting design</span>
+              <span class="tag">Injection moulding design</span>
+              <span class="tag">CFD / airflow</span>
+              <span class="tag">Combustion optimisation</span>
               <span class="tag">Thermal simulation</span>
+              <span class="tag">Structural simulation</span>
               <span class="tag">Magnetics</span>
+              <span class="tag">Specialised testing</span>
               <span class="tag">User testing</span>
+              <span class="tag">Compliance</span>
+              <span class="tag">Technical documentation</span>
             </div>
             <p style="margin-top:18px"><a href="/work/ooni-karu-2" style="color:var(--ember);font-family:var(--font-mono);font-size:13px;letter-spacing:.02em">Read the full case study →</a></p>
           </div>
           <div class="outcomes">
             <div class="oc-lbl">Outcomes</div>
-            <div class="oc"><span class="mk">◆</span><span class="txt"><b>iF Design Award 2024</b> · German Design Awards 2024</span></div>
-            <div class="oc"><span class="mk">◆</span><span class="txt"><b>&gt;70%</b> door BOM cost reduction, larger window</span></div>
-            <div class="oc"><span class="mk">◆</span><span class="txt">Assembly <b>&gt;24 h → &lt;1 min</b></span></div>
-            <div class="oc"><span class="mk">◆</span><span class="txt">ClearView™ scaled to flagship <b>Karu 2 Pro</b></span></div>
-            <div class="oc"><span class="mk">◆</span><span class="txt">Stocked in <b>John Lewis</b> &amp; major retailers</span></div>
+            <div class="oc"><span class="mk">◆</span><span class="txt"><b>iF Design Award 2024</b> · German Design Award 2024</span></div>
+            <div class="oc"><span class="mk">◆</span><span class="txt"><b>~70%</b> BOM reduction, larger viewing window</span></div>
+            <div class="oc"><span class="mk">◆</span><span class="txt">Assembly time from <b>24 h → &lt;2 mins</b></span></div>
+            <div class="oc"><span class="mk">◆</span><span class="txt">ClearView™ scaled to iF-winning <b>Karu 2 Pro</b></span></div>
+            <div class="oc"><span class="mk">◆</span><span class="txt"><b>−27%</b> solid fuel consumption vs the previous generation</span></div>
+            <div class="oc"><span class="mk">◆</span><span class="txt"><b>4.7★</b> across 1,744 customer reviews</span></div>
           </div>
         </article>
 
@@ -142,13 +161,21 @@ const jsonld = [
           <div>
             <span class="case-idx">CASE 03</span>
             <h3>Ooni Dough Proofing Boxes</h3>
-            <span class="role">Design engineering · Concept to production</span>
-            <p>A deceptively simple stackable, nestable proofing system hiding a tightly constrained architecture — regional fridge envelopes, nesting draft, large-format injection moulding and tolerance stack-up across every stacked state. I formalised the competing constraints into a trade-off model, turning stakeholder debate into structured decisions made <em>before</em> committing to steel.</p>
+            <span class="role">Design Engineer · from concept to production</span>
+            <p>A deceptively simple stackable, nestable proofing system, but with a tightly constrained architecture including regional fridge envelopes, nesting draft, large-format injection moulding and tolerance stack-up across every stacked state. I formalised the competing constraints into a trade-off model, conceptualised the industrial design, and took them through verification, DFM and manufacture.</p>
             <div class="tags">
-              <span class="tag">Injection moulding</span>
-              <span class="tag">Tolerance analysis</span>
+              <span class="tag">Industrial design</span>
+              <span class="tag">Concept design</span>
+              <span class="tag">Geometric design</span>
               <span class="tag">Constraint modelling</span>
-              <span class="tag">DFM</span>
+              <span class="tag">Tolerance analysis</span>
+              <span class="tag">Injection moulding design</span>
+              <span class="tag">Structural simulation</span>
+              <span class="tag">DFM / DFA</span>
+              <span class="tag">Manufacturing optimisation</span>
+              <span class="tag">Range compatibility</span>
+              <span class="tag">Verification &amp; test</span>
+              <span class="tag">Technical documentation</span>
             </div>
             <p style="margin-top:18px"><a href="/work/ooni-dough-proofing-boxes" style="color:var(--ember);font-family:var(--font-mono);font-size:13px;letter-spacing:.02em">Read the full case study →</a></p>
           </div>
@@ -162,10 +189,10 @@ const jsonld = [
         </article>
       </div>
       <div class="moreproj">
-        <div class="mp-lbl">Beyond consumer products — selected analysis &amp; modelling</div>
+        <div class="mp-lbl">Beyond consumer products, selected analysis &amp; modelling</div>
         <div class="mp-grid">
-          <a class="mp" href="/work/water-rocket"><h4>Water Rocket — first-principles flight model</h4><p>Thermodynamics, compressible nozzle flow and flight dynamics, validated to ±5% and optimised entirely in software.</p></a>
-          <a class="mp" href="/work/femur-structural-analysis"><h4>Femur Structural Analysis — patient-specific FEA</h4><p>Predicting bone fracture risk from a clinical CT scan, with a novel boundary condition benchmarked against cadaver tests.</p></a>
+          <a class="mp" href="/work/water-rocket"><h4>Water Rocket, engineering analysis</h4><p>First-principles rocket model implementing thermodynamics, compressible nozzle flow and flight dynamics, validated to ±5% and optimised entirely in software.</p></a>
+          <a class="mp" href="/work/femur-structural-analysis"><h4>Femur Structural Analysis, research paper</h4><p>Patient-specific FEA for better health outcomes. Predicting bone fracture risk from a clinical CT scan, with a novel boundary condition benchmarked against cadaver tests.</p></a>
         </div>
       </div>
     </section>
@@ -174,44 +201,44 @@ const jsonld = [
     <section id="services">
       <div class="sec-head">
         <div>
-          <span class="idx">02 — Services</span>
-          <h2 class="sec-title" style="margin-top:12px">How I help you ship</h2>
+          <span class="idx">02 · Services</span>
+          <h2 class="sec-title" style="margin-top:12px">How I can help you in your project</h2>
         </div>
       </div>
-      <p class="sec-intro">Start with a single fixed-scope service, or bring me in for the full journey from idea to shelf. The earlier the hard engineering is de-risked, the cheaper every later decision becomes.</p>
+      <p class="sec-intro">Your specific needs aren't one size fits all, you can start with a single fixed-scope service, or hire me to run the full journey from the seed of an idea to the product in a shipping container.</p>
 
       <div class="svc-grid" style="margin-top:28px">
         <a class="svc" href="/services/feasibility-study">
           <div class="svc-top"><span class="svc-num">01</span><span class="svc-stage">from £650</span></div>
           <h3>Feasibility Study</h3>
-          <p class="sub">Know if your idea can be built — the risks, the rough cost and the timeline — before you spend real money.</p>
+          <p class="sub">Technical validation is as important as commercial validation, know if it can be built, and the costs involved, before real investment.</p>
           <div class="deliv"><span>Concept exploration</span><span>Technology review</span><span>Risk analysis</span></div>
         </a>
         <a class="svc" href="/services/concept-mvp-development">
           <div class="svc-top"><span class="svc-num">02</span><span class="svc-stage">Founder favourite</span></div>
           <h3>Concept &amp; MVP Development</h3>
-          <p class="sub">Turn an idea into an evaluated, buildable concept and a working MVP you can put in front of users, investors or a crowd.</p>
+          <p class="sub">Turn an idea into a working MVP you can show users, test and raise investment with.</p>
           <div class="deliv"><span>Concept &amp; evaluation</span><span>Prototyping</span><span>A working MVP</span></div>
         </a>
-        <a class="svc" href="/services/engineering-verification">
+        <a class="svc" href="/services/design-verification">
           <div class="svc-top"><span class="svc-num">03</span><span class="svc-stage">Service</span></div>
-          <h3>Engineering Verification</h3>
-          <p class="sub">Prove a design works and is safe — engineering analysis, simulation and structured testing — before committing to tooling.</p>
+          <h3>Design Verification</h3>
+          <p class="sub">Design review, engineering analysis, simulation and specialist testing before you commit to tooling.</p>
           <div class="deliv"><span>Engineering analysis</span><span>Simulation</span><span>Testing</span></div>
         </a>
         <a class="svc" href="/services/manufacturing-preparation">
           <div class="svc-top"><span class="svc-num">04</span><span class="svc-stage">Service</span></div>
           <h3>Manufacturing Preparation</h3>
-          <p class="sub">Get a finished design ready for efficient, medium-to-high-volume manufacture, coordinating suppliers in the UK and China.</p>
+          <p class="sub">Making a product ready for efficient, volume manufacture to save initial tooling investment and long-term production costs.</p>
           <div class="deliv"><span>DFM / DFA review</span><span>Manufacturing drawings</span><span>Supplier liaison</span></div>
         </a>
       </div>
 
       <div class="engage">
-        <a class="eng" href="/services/power-hour"><div class="h">Power Hour — from £50</div><div class="d">Low-commitment expert eyes on your problem, live or online. The easiest way to start.</div></a>
-        <a class="eng" href="/services/design-review"><div class="h">Design Review — from £200</div><div class="d">A half-day review of your design or concept, with a written report you can act on.</div></a>
-        <a class="eng" href="/services/product-development"><div class="h">Product Development</div><div class="d">The full managed journey, concept to production, delivered in scoped phases.</div></a>
-        <a class="eng" href="/services/contract-engineering"><div class="h">Contract Engineering</div><div class="d">Specialist or extra engineering capacity for teams that already know the scope.</div></a>
+        <a class="eng" href="/services/power-hour"><div class="h">Power Hour, from £50</div><div class="d">Low-commitment expert eyes on your problem, in-person or online. The easiest way to start.</div></a>
+        <a class="eng" href="/services/design-review"><div class="h">Design Review, from £200</div><div class="d">A half-day workshop review of your design or concept, with a written report afterwards.</div></a>
+        <a class="eng" href="/services/product-development"><div class="h">Product Development</div><div class="d">The full managed journey, from concept to production, delivered in scoped phases.</div></a>
+        <a class="eng" href="/services/contract-engineering"><div class="h">Contract Engineering</div><div class="d">Specialist or extra engineering capacity for projects that already have a scope.</div></a>
       </div>
     </section>
 
@@ -219,28 +246,62 @@ const jsonld = [
     <section id="about">
       <div class="sec-head">
         <div>
-          <span class="idx">03 — About</span>
+          <span class="idx">03 · About</span>
           <h2 class="sec-title" style="margin-top:12px">A design engineer who's shipped the hard stuff</h2>
         </div>
       </div>
       <div class="about-grid">
         <div class="about-body">
-          <p>I spent over four years developing high-end consumer products at Ooni, taking projects from first concept through to volume manufacture. Because I've held mechanical, firmware and thermal roles at once, I see how a decision in one ripples through all the others — the <strong>whole-picture view</strong> that turns the usual time-versus-cost-versus-performance trade-off into the occasional moment where all three improve together.</p>
-          <p>Today I work as an independent design engineer and product development consultant to founders and startups. Many have a strong product vision but limited access to experienced engineering. What I've found matters most is <strong>structure and rhythm</strong> — walking first-timers through the real development process, then running a steady plan with fast, honest prototyping that keeps momentum without losing the essence of the idea to endless late changes. And whoever I'm working with, the thing I lean on hardest is being able to <strong>explain the engineering clearly</strong> — the decisions, the trade-offs, the occasional physically impossible spec — in plain terms.</p>
-          <p>Alongside commercial work, I dedicate part of my time to <strong>pro-bono engineering</strong> for initiatives with social or environmental impact. I believe good engineering should contribute beyond commercial success — so by working with me, you help support that too.</p>
+          <p>I spent over four years designing high-end consumer products at Ooni, working on projects from first concept and taking them through to volume manufacture. I've produced production parts, sub-assemblies and assemblies, and developed both the UI and functional production firmware. That experience gave me a practical understanding of what it actually takes to <strong>ship real products</strong>. Performance, cost, safety and manufacturability must all be balanced while working within tight timelines and development budgets.</p>
+          <p>Today I work as an independent design engineer and product-development consultant to founders and start-ups. Many have a strong product vision but limited access to experienced engineering. One key aspect of my work is providing <strong>structure and rhythm</strong> to the design process, challenging initial assumptions to future-proof design work, and holding a steady plan that balances the costs of development with reducing risk in investment. When a problem is hard, I stay with it: some of the work I'm proudest of took months of pushing, internally and with suppliers, to get right.</p>
+          <p>Throughout my work, I try to explain the engineering clearly, <strong>without gatekeeping the technical aspects</strong>, so you know exactly why the decisions and trade-offs are made.</p>
+          <p>Alongside commercial work, I give part of my time to <strong>pro-bono engineering</strong> for projects with social or environmental impact. I think engineering should be used in a meaningful way and be a force for good. This philosophy affects all of my work.</p>
         </div>
         <div class="values" aria-label="Values">
           <div class="val"><div class="vh"><span class="n">01</span> Integrity</div><div class="vd">Decisions made transparent and backed by evidence, so teams can move with confidence.</div></div>
-          <div class="val"><div class="vh"><span class="n">02</span> Thoughtful Innovation</div><div class="vd">Creative solutions grounded in practical engineering — never complexity for its own sake.</div></div>
+          <div class="val"><div class="vh"><span class="n">02</span> Thoughtful Innovation</div><div class="vd">Creative solutions grounded in practical engineering, never complexity for its own sake.</div></div>
           <div class="val"><div class="vh"><span class="n">03</span> Long-Term Solutions</div><div class="vd">Designed for lifecycle, sustainability and real-world use from the very start.</div></div>
           <div class="val"><div class="vh"><span class="n">04</span> Positive Impact</div><div class="vd">Engineering that contributes beyond the balance sheet, in client work and pro-bono alike.</div></div>
         </div>
       </div>
     </section>
 
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <div class="sec-head">
+        <div>
+          <span class="idx">04 · In Their Words</span>
+          <h2 class="sec-title" style="margin-top:12px">What the Ooni team said</h2>
+        </div>
+      </div>
+      <p class="sec-intro">A few words from colleagues I worked with at Ooni.</p>
+      <div class="tcar" data-testimonials>
+        <div class="tcar-track">
+          <figure class="tq is-active"><div class="qm" aria-hidden="true">&ldquo;</div><blockquote>He is a genius!</blockquote><figcaption>- Colleague, Ooni</figcaption></figure>
+          <figure class="tq"><div class="qm" aria-hidden="true">&ldquo;</div><blockquote>Tom was the mastermind and driving force behind the Volt 2's operating system, virtually building it single-handedly from the ground up.</blockquote><figcaption>- Colleague, Ooni</figcaption></figure>
+          <figure class="tq"><div class="qm" aria-hidden="true">&ldquo;</div><blockquote>His contributions to Volt 2 have ensured it is not only a massive step forward but a clear leap ahead of the competition.</blockquote><figcaption>- Colleague, Ooni</figcaption></figure>
+          <figure class="tq"><div class="qm" aria-hidden="true">&ldquo;</div><blockquote>His work consistently demonstrates a rare blend of deep technical insight, creative problem-solving, and practical innovation.</blockquote><figcaption>- Colleague, Ooni</figcaption></figure>
+          <figure class="tq"><div class="qm" aria-hidden="true">&ldquo;</div><blockquote>The way he deconstructs complex problems, whether mapping application layers or analysing how a pizza cooks through energy flow and thermodynamics, reflects an exceptional mind at work.</blockquote><figcaption>- Colleague, Ooni</figcaption></figure>
+          <figure class="tq"><div class="qm" aria-hidden="true">&ldquo;</div><blockquote>He demonstrated exceptional dedication, battling for months both internally and externally to make that complex vision a reality, and he succeeded.</blockquote><figcaption>- Colleague, Ooni</figcaption></figure>
+          <figure class="tq"><div class="qm" aria-hidden="true">&ldquo;</div><blockquote>His product knowledge is excellent, and he possesses an unwavering clarity on the standards that define truly good design.</blockquote><figcaption>- Colleague, Ooni</figcaption></figure>
+          <figure class="tq"><div class="qm" aria-hidden="true">&ldquo;</div><blockquote>He can seamlessly deliver technical details at the exact right level for any audience, a critical skill in this game.</blockquote><figcaption>- Colleague, Ooni</figcaption></figure>
+          <figure class="tq"><div class="qm" aria-hidden="true">&ldquo;</div><blockquote>A major contributor to some of Ooni's most successful and technically complex products.</blockquote><figcaption>- Colleague, Ooni</figcaption></figure>
+          <figure class="tq"><div class="qm" aria-hidden="true">&ldquo;</div><blockquote>The room genuinely listens when you speak.</blockquote><figcaption>- Colleague, Ooni</figcaption></figure>
+          <figure class="tq"><div class="qm" aria-hidden="true">&ldquo;</div><blockquote>His definition of the application-layer architecture stands as the gold standard for how such systems should be mapped.</blockquote><figcaption>- Colleague, Ooni</figcaption></figure>
+          <figure class="tq"><div class="qm" aria-hidden="true">&ldquo;</div><blockquote>His idea to [redacted], on the [redacted] system, was a master stroke, blending scientific thinking with real-world improvement.</blockquote><figcaption>- Colleague, Ooni</figcaption></figure>
+          <figure class="tq"><div class="qm" aria-hidden="true">&ldquo;</div><blockquote>Tom's impact is profound; he will be greatly missed.</blockquote><figcaption>- Colleague, Ooni</figcaption></figure>
+        </div>
+        <div class="tcar-nav">
+          <div class="tcar-dots" aria-label="Testimonials"></div>
+          <button class="tcar-btn" type="button" data-prev aria-label="Previous testimonial">&larr;</button>
+          <button class="tcar-btn" type="button" data-next aria-label="Next testimonial">&rarr;</button>
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT -->
     <!--
-      SETUP — two free accounts, ~5 minutes each, then paste two values below:
+      SETUP, two free accounts, ~5 minutes each, then paste two values below:
       1) FORM  → web3forms.com : enter your email, copy the Access Key, and replace
                  REPLACE_WITH_WEB3FORMS_ACCESS_KEY (in the hidden input) with it.
                  Submissions then arrive straight to your inbox. Nothing else to host.
@@ -252,12 +313,11 @@ const jsonld = [
       <div class="contact">
         <div class="inner" style="max-width:none">
           <span class="eyebrow">Let's talk</span>
-          <h2 style="margin-top:16px">Have a product that needs to become real?</h2>
-          <p>Tell me where you're stuck — a first concept, or a design that needs to survive manufacturing — and I'll tell you honestly how I can help. Send a message, or grab a time in my calendar directly.</p>
+          <h2 style="margin-top:16px">Have an idea you want to turn into a real product?</h2>
+          <p>Take your first step now! Get in touch with a message or book a call and tell me about your idea, whether it's a first concept or a full design that needs to be made manufacturable. I'll tell you whether I can help and where.</p>
           <div class="contact-cols">
             <div class="cbox">
               <h3>Send a message</h3>
-              <p class="hint">I reply personally, usually within a day.</p>
               <form id="contact-form">
                 <input type="hidden" name="access_key" value="c81a57ca-ff61-48ee-ae8f-d27d37ef6979" />
                 <input type="hidden" name="subject" value="New enquiry from tmdesignengineering.com" />
@@ -273,10 +333,10 @@ const jsonld = [
             </div>
             <div class="cbox book-card">
               <h3>Book a free intro call</h3>
-              <p class="hint">30 minutes · video or phone · no obligation.</p>
+              <p class="hint">No obligation · video or phone · up to 45 minutes</p>
               <ul>
                 <li>Talk through where you are and what a sensible first step looks like</li>
-                <li>An honest view on whether — and how — I can help</li>
+                <li>Get an honest view on whether and where I can help</li>
                 <li>Pick a slot that suits you and you'll get a calendar invite</li>
               </ul>
               <button class="btn btn-primary btn-lg" data-cal-link="thomasmckeedesignengineering/intro-call" data-cal-namespace="intro" data-cal-config='{"layout":"month_view"}'>Book a slot <span class="arw">→</span></button>
@@ -301,6 +361,21 @@ const jsonld = [
   .mp:hover{border-color:var(--ink-3)}
   .mp h4{font-family:var(--font-display);font-weight:700;font-size:1.06rem;margin:0 0 6px;letter-spacing:-0.01em}
   .mp p{color:var(--ink-2);font-size:0.94rem;line-height:1.5;margin:0}
+  .tcar{margin-top:22px}
+  .tcar-track{position:relative}
+  .tq{display:none;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:clamp(28px,4vw,44px);margin:0;min-height:150px;flex-direction:column;justify-content:center}
+  .tq.is-active{display:flex;animation:tqfade .5s ease}
+  @keyframes tqfade{from{opacity:0}to{opacity:1}}
+  @media(prefers-reduced-motion:reduce){.tq.is-active{animation:none}}
+  .tq .qm{font-family:var(--font-display);font-size:2.2rem;line-height:.3;color:var(--line-2)}
+  .tq blockquote{font-family:var(--font-body);font-size:clamp(1.1rem,2.1vw,1.45rem);color:var(--ink);margin:14px 0 0;line-height:1.5;font-weight:500}
+  .tq figcaption{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-top:18px}
+  .tcar-nav{display:flex;align-items:center;gap:12px;margin-top:18px}
+  .tcar-dots{display:flex;gap:8px;margin-right:auto;flex-wrap:wrap}
+  .tcar-dot{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:var(--line-2);cursor:pointer;transition:.15s}
+  .tcar-dot.is-on{background:var(--ember);transform:scale(1.2)}
+  .tcar-btn{width:38px;height:38px;border:1px solid var(--line-2);background:var(--surface);border-radius:50%;color:var(--ink-2);cursor:pointer;font-size:15px;line-height:1;transition:.15s}
+  .tcar-btn:hover{border-color:var(--ink-3);color:var(--ink)}
   .contact-cols{display:grid;grid-template-columns:1.25fr 1fr;gap:26px;margin-top:32px}
   @media(max-width:760px){.contact-cols{grid-template-columns:1fr}}
   .cbox{background:var(--surface);border:1px solid var(--line);border-radius:2px;padding:26px}
@@ -341,7 +416,7 @@ const jsonld = [
     }).then(function (r) { return r.json(); }).then(function (j) {
       if (j.success) {
         form.reset();
-        status.textContent = "Thanks — your message is on its way. I'll reply personally, usually within a day.";
+        status.textContent = "Thanks, your message is on its way. I'll get back to you as soon as I can.";
         status.className = 'form-status ok';
       } else {
         status.textContent = 'Something went wrong: ' + (j.message || 'please try again, or email me directly.');
@@ -349,11 +424,44 @@ const jsonld = [
       }
       btn.disabled = false;
     }).catch(function () {
-      status.textContent = "Couldn't send just now — please email me directly at thomas.h.s.mckee@outlook.com.";
+      status.textContent = "Couldn't send just now. Please email me directly at thomas.h.s.mckee@outlook.com.";
       status.className = 'form-status err';
       btn.disabled = false;
     });
   });
+</script>
+
+<script is:inline>
+  (function () {
+    var car = document.querySelector('[data-testimonials]');
+    if (!car) return;
+    var slides = car.querySelectorAll('.tq');
+    var dotsWrap = car.querySelector('.tcar-dots');
+    var n = slides.length, i = 0, timer = null;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var dots = [];
+    for (var k = 0; k < n; k++) {
+      (function (k) {
+        var d = document.createElement('button');
+        d.className = 'tcar-dot';
+        d.type = 'button';
+        d.setAttribute('aria-label', 'Testimonial ' + (k + 1));
+        d.addEventListener('click', function () { go(k); reset(); });
+        dotsWrap.appendChild(d);
+        dots.push(d);
+      })(k);
+    }
+    function show(x) {
+      for (var s = 0; s < n; s++) { slides[s].classList.toggle('is-active', s === x); dots[s].classList.toggle('is-on', s === x); }
+    }
+    function go(x) { i = (x + n) % n; show(i); }
+    function reset() { if (timer) clearInterval(timer); if (!reduce) timer = setInterval(function () { go(i + 1); }, 5500); }
+    car.querySelector('[data-next]').addEventListener('click', function () { go(i + 1); reset(); });
+    car.querySelector('[data-prev]').addEventListener('click', function () { go(i - 1); reset(); });
+    car.addEventListener('mouseenter', function () { if (timer) clearInterval(timer); });
+    car.addEventListener('mouseleave', reset);
+    show(0); reset();
+  })();
 </script>
 
 <script is:inline>

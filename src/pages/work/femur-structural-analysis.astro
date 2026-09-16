@@ -9,8 +9,8 @@ const jsonld = [
     "@context": "https://schema.org",
     "@type": "Article",
     "@id": `${url}#article`,
-    headline: "Femur Structural Analysis — a patient-specific FEA of fracture risk",
-    description: "Case study: treating a human femur as an engineering structure to predict fracture likelihood from a clinical CT scan alone — automated segmentation, element-by-element material mapping, and a novel boundary condition that frees knee axial rotation, benchmarked against cadaver experiments.",
+    headline: "Femur Structural Analysis, a patient-specific FEA of fracture risk",
+    description: "Case study: treating a human femur as an engineering structure to predict fracture likelihood from a clinical CT scan alone, automated segmentation, element-by-element material mapping, and a novel boundary condition that frees knee axial rotation, benchmarked against cadaver experiments.",
     url,
     author: { "@id": `${SITE}/#thomas-mckee` },
     publisher: { "@id": `${SITE}/#business` },
@@ -29,8 +29,8 @@ const jsonld = [
 ];
 ---
 <Base
-  title="Femur Structural Analysis Case Study — Patient-Specific FEA | Thomas McKee"
-  description="Case study: predicting bone fracture risk from a clinical CT scan by treating the femur as an engineering structure — automated segmentation, element-by-element material mapping in ANSYS, and a novel boundary condition benchmarked against cadaver experiments."
+  title="Femur Structural Analysis Case Study, Patient-Specific FEA | Thomas McKee"
+  description="Case study: predicting bone fracture risk from a clinical CT scan by treating the femur as an engineering structure, automated segmentation, element-by-element material mapping in ANSYS, and a novel boundary condition benchmarked against cadaver experiments."
   type="website"
   jsonld={jsonld}>
 <main>
@@ -39,8 +39,8 @@ const jsonld = [
     <div class="wrap svc-hero-grid">
       <div>
         <span class="eyebrow">Case Study · Research</span>
-        <h1>Predicting a fracture from the bone — <em>not the patient's age.</em></h1>
-        <p class="lede">Fracture risk is usually judged from population statistics — age, weight, a bone-density score — applied to an individual. But the patient in front of the clinician either has a strong femur or doesn't, and a curve fitted to thousands of other people can't tell which. So I treated the femur as what it is: a variable-property, complex-geometry structure under a known load — an FEA problem — and got a patient-specific answer from a CT scan the patient had already had.</p>
+        <h1>Predicting a fracture from the bone, <em>not the patient's age.</em></h1>
+        <p class="lede">Fracture risk is usually judged from population statistics, age, weight, a bone-density score, applied to an individual. But the patient in front of the clinician either has a strong femur or doesn't, and a curve fitted to thousands of other people can't tell which. So I treated the femur as what it is: a variable-property, complex-geometry structure under a known load, an FEA problem, and got a patient-specific answer from a CT scan the patient had already had.</p>
         <div class="svc-hero-cta">
           <a class="btn btn-primary" href="/#contact">Start your project <span class="arw">→</span></a>
           <a class="btn btn-ghost" href="/#work">More work</a>
@@ -63,7 +63,7 @@ const jsonld = [
       <div class="headline">
         <div class="hstat"><div class="hn">1317 N</div><div class="hl">average predicted minimum failure load, inside the osteoporotic range</div></div>
         <div class="hstat"><div class="hn">−4.5%</div><div class="hl">failure load from my novel boundary condition, toward the accurate benchmark</div></div>
-        <div class="hstat"><div class="hn">27</div><div class="hl">load cases — nine loading angles across three boundary conditions</div></div>
+        <div class="hstat"><div class="hn">27</div><div class="hl">load cases, nine loading angles across three boundary conditions</div></div>
         <div class="hstat"><div class="hn">0</div><div class="hl">invasive measures: no implant, no biopsy, no cadaver</div></div>
       </div>
     </div>
@@ -75,12 +75,12 @@ const jsonld = [
       <span class="sec-idx">The problem</span>
       <h2 class="sec-title">A population statistic can't tell you about one bone</h2>
       <div class="about-body" style="max-width:72ch">
-        <p>Assessing fracture risk from age, weight and a bone-mineral-density score means applying population-level correlations to an individual — a common cause of unnecessary surgery. Applying structural analysis to a human bone exactly as I would to a performance part gives a patient-specific answer instead of a statistical one. The clinical prize is a non-invasive measure: everything in the study comes from a CT scan the patient has already had, requiring no implant, no biopsy and no cadaver.</p>
+        <p>Assessing fracture risk from age, weight and a bone-mineral-density score means applying population-level correlations to an individual, a common cause of unnecessary surgery. Applying structural analysis to a human bone exactly as I would to a performance part gives a patient-specific answer instead of a statistical one. The clinical prize is a non-invasive measure: everything in the study comes from a CT scan the patient has already had, requiring no implant, no biopsy and no cadaver.</p>
       </div>
-      <div class="callout"><b>What makes it hard —</b> geometry from noisy greyscale data · material properties that vary element to element · a sideways-fall load case with no agreed boundary condition · a failure criterion that must be a clinical number, not a stress plot · a computational budget that has to allow dozens of load cases.</div>
+      <div class="callout"><b>What makes it hard</b>: geometry from noisy greyscale data · material properties that vary element to element · a sideways-fall load case with no agreed boundary condition · a failure criterion that must be a clinical number, not a stress plot · a computational budget that has to allow dozens of load cases.</div>
       <div class="figs">
-        <figure class="fig"><img src="/work/femur-ct.png" alt="Automated CT segmentation of a femur across multiple planes, isolating bone from surrounding tissue" loading="lazy" /><figcaption>Fig. 1 — Automated segmentation across planes, scripted to remove the labour and the operator variance of doing it by hand.</figcaption></figure>
-        <figure class="fig"><img src="/work/femur-mesh.png" alt="Ten-node tetrahedral finite element mesh of the femur head and neck" loading="lazy" /><figcaption>Fig. 2 — The segmented surface, meshed with ten-node tetrahedra in ANSYS.</figcaption></figure>
+        <figure class="fig"><img src="/work/femur-ct.png" alt="Automated CT segmentation of a femur across multiple planes, isolating bone from surrounding tissue" loading="lazy" /><figcaption>Fig. 1, Automated segmentation across planes, scripted to remove the labour and the operator variance of doing it by hand.</figcaption></figure>
+        <figure class="fig"><img src="/work/femur-mesh.png" alt="Ten-node tetrahedral finite element mesh of the femur head and neck" loading="lazy" /><figcaption>Fig. 2, The segmented surface, meshed with ten-node tetrahedra in ANSYS.</figcaption></figure>
       </div>
     </div>
   </section>
@@ -91,12 +91,12 @@ const jsonld = [
       <span class="sec-idx">Method · model build</span>
       <h2 class="sec-title">Segmentation, mesh convergence, and a stiffness for every element</h2>
       <div class="about-body" style="max-width:72ch">
-        <p>Each frame of the CT scan distinguishes bone from non-bone by greyscale, so I coded a script to automate the slice-by-slice segmentation, run it across multiple scans and planes and average the result — removing both the labour and the operator variance of doing it by hand. To keep dozens of load cases affordable, I ran a convergence study across five element sizes tracking peak principal strain; results were stable from four to three millimetres, so a 2&nbsp;mm ten-node tetrahedral mesh was carried forward, since linear tetrahedra badly under-predict strain in bending.</p>
-        <p>Treating bone as a single uniform material isn't good enough. I mapped the properties <b>element by element</b> from the calibrated greyscale — density as a linear function of Hounsfield value against a reference phantom scanned alongside the patient, and Young's modulus from a published density–modulus relationship. Every one of thousands of elements therefore carries its own realistic stiffness, and the phantom is what makes it quantitative rather than relative: it ties greyscale to real density for this scan, on this machine.</p>
+        <p>Each frame of the CT scan distinguishes bone from non-bone by greyscale, so I coded a script to automate the slice-by-slice segmentation, run it across multiple scans and planes and average the result, removing both the labour and the operator variance of doing it by hand. To keep dozens of load cases affordable, I ran a convergence study across five element sizes tracking peak principal strain; results were stable from four to three millimetres, so a 2&nbsp;mm ten-node tetrahedral mesh was carried forward, since linear tetrahedra badly under-predict strain in bending.</p>
+        <p>Treating bone as a single uniform material isn't good enough. I mapped the properties <b>element by element</b> from the calibrated greyscale, density as a linear function of Hounsfield value against a reference phantom scanned alongside the patient, and Young's modulus from a published density–modulus relationship. Every one of thousands of elements therefore carries its own realistic stiffness, and the phantom is what makes it quantitative rather than relative: it ties greyscale to real density for this scan, on this machine.</p>
       </div>
       <div class="figs">
-        <figure class="fig"><img src="/work/femur-convergence.png" alt="Mesh convergence study graph of peak principal strain against element size, showing the converged band" loading="lazy" /><figcaption>Fig. 3 — Convergence study: peak principal strain against element size, with a coarse mesh under-predicting strain.</figcaption></figure>
-        <figure class="fig"><img src="/work/femur-strain.png" alt="ANSYS strain field comparison of a healthy femur against an osteoporotic femur" loading="lazy" /><figcaption>Fig. 4 — Strain field, healthy femur against osteoporotic — the difference is the entire clinical proposition.</figcaption></figure>
+        <figure class="fig"><img src="/work/femur-convergence.png" alt="Mesh convergence study graph of peak principal strain against element size, showing the converged band" loading="lazy" /><figcaption>Fig. 3, Convergence study: peak principal strain against element size, with a coarse mesh under-predicting strain.</figcaption></figure>
+        <figure class="fig"><img src="/work/femur-strain.png" alt="ANSYS strain field comparison of a healthy femur against an osteoporotic femur" loading="lazy" /><figcaption>Fig. 4, Strain field, healthy femur against osteoporotic, the difference is the entire clinical proposition.</figcaption></figure>
       </div>
     </div>
   </section>
@@ -107,11 +107,11 @@ const jsonld = [
       <span class="sec-idx">Method · a boundary condition nobody had published</span>
       <h2 class="sec-title">Freeing a degree of freedom the literature had locked</h2>
       <div class="about-body" style="max-width:72ch">
-        <p>Standard sideways-fall boundary conditions in the literature — even the detailed ones — constrain the knee against axial rotation, which may overestimate how much load the bone carries before failing. The reasoning is straightforward once stated: a real knee is not a torsional restraint, so locking that degree of freedom adds a reaction moment that doesn't exist in the fall, and any spurious restraint makes a structure appear stronger than it truly is.</p>
-        <p>So alongside the two standard conditions — a frictionless slider and a multi-point constraint at the knee joint centre — I designed and ran a third that <b>frees axial rotation at the knee through ±30°</b>, at the cost of the detailed literature model but with behaviour approaching the accurate (and computationally expensive) surface-to-surface contact benchmark. I then swept nine loading angles across every condition, giving twenty-seven cases in total — which is precisely why the convergence work that kept each solve cheap mattered.</p>
+        <p>Standard sideways-fall boundary conditions in the literature, even the detailed ones, constrain the knee against axial rotation, which may overestimate how much load the bone carries before failing. The reasoning is straightforward once stated: a real knee is not a torsional restraint, so locking that degree of freedom adds a reaction moment that doesn't exist in the fall, and any spurious restraint makes a structure appear stronger than it truly is.</p>
+        <p>So alongside the two standard conditions, a frictionless slider and a multi-point constraint at the knee joint centre, I designed and ran a third that <b>frees axial rotation at the knee through ±30°</b>, at the cost of the detailed literature model but with behaviour approaching the accurate (and computationally expensive) surface-to-surface contact benchmark. I then swept nine loading angles across every condition, giving twenty-seven cases in total, which is precisely why the convergence work that kept each solve cheap mattered.</p>
       </div>
       <div class="figs">
-        <figure class="fig"><img src="/work/femur-bc.png" alt="The boundary condition models used in the literature, from frictionless slider to surface contact" loading="lazy" /><figcaption>Fig. 5 — The literature boundary conditions, from cheapest and least representative to the accurate contact benchmark.</figcaption></figure>
+        <figure class="fig"><img src="/work/femur-bc.png" alt="The boundary condition models used in the literature, from frictionless slider to surface contact" loading="lazy" /><figcaption>Fig. 5, The literature boundary conditions, from cheapest and least representative to the accurate contact benchmark.</figcaption></figure>
       </div>
     </div>
   </section>
@@ -122,8 +122,8 @@ const jsonld = [
       <span class="sec-idx">Results</span>
       <h2 class="sec-title">Turning a simulation into a clinical metric</h2>
       <div class="about-body" style="max-width:72ch">
-        <p>I converted strain into a predicted minimum failure load using a maximum-principal-strain failure criterion, then benchmarked it against published cadaver experiments and against the patient's own bone-density score. The average predicted failure load of 1317&nbsp;N sits inside the osteoporotic range and at the low end of experimental cadaver failure loads of one to two-and-a-half kilonewtons — a number that can then be turned into a clinical prediction of fracture or refracture likelihood, with compressive strain the most likely failure mode, especially in falls.</p>
-        <p>My novel boundary condition predicted failure loads up to 4.5% lower, moving the prediction toward the far more accurate but expensive contact-based method without carrying its computational cost. The simulation results were empirically validated against cadaver testing, and — owing to the initial success of the study — the research is being continued.</p>
+        <p>I converted strain into a predicted minimum failure load using a maximum-principal-strain failure criterion, then benchmarked it against published cadaver experiments and against the patient's own bone-density score. The average predicted failure load of 1317&nbsp;N sits inside the osteoporotic range and at the low end of experimental cadaver failure loads of one to two-and-a-half kilonewtons, a number that can then be turned into a clinical prediction of fracture or refracture likelihood, with compressive strain the most likely failure mode, especially in falls.</p>
+        <p>My novel boundary condition predicted failure loads up to 4.5% lower, moving the prediction toward the far more accurate but expensive contact-based method without carrying its computational cost. The simulation results were empirically validated against cadaver testing, and, owing to the initial success of the study, the research is being continued.</p>
       </div>
     </div>
   </section>
@@ -133,7 +133,7 @@ const jsonld = [
     <div class="wrap">
       <span class="sec-idx">How I could help you</span>
       <h2 class="sec-title">Rigorous FEA, wherever it's needed</h2>
-      <p class="sec-intro">Structural analysis done properly — mesh convergence, real material behaviour, honest boundary conditions, and a result validated against measurement — is the backbone of <a href="/services/engineering-verification" style="color:var(--ember)">Engineering Verification</a>. Whether it's a consumer product, an industrial part or something stranger, if it carries load and has to not break, that's home territory.</p>
+      <p class="sec-intro">Structural analysis done properly, mesh convergence, real material behaviour, honest boundary conditions, and a result validated against measurement, is the backbone of <a href="/services/design-verification" style="color:var(--ember)">Design Verification</a>. Whether it's a consumer product, an industrial part or something stranger, if it carries load and has to not break, that's home territory.</p>
     </div>
   </section>
 
@@ -143,7 +143,7 @@ const jsonld = [
         <div class="inner">
           <span class="eyebrow">Let's talk</span>
           <h2 style="margin-top:14px">Need to know if it'll break?</h2>
-          <p>Book a free intro call and tell me what has to survive what. Analysis that's convergence-checked and validated — not just a colourful stress plot — is what I do.</p>
+          <p>Book a free intro call and tell me what has to survive what. Analysis that's convergence-checked and validated, not just a colourful stress plot, is what I do.</p>
           <div class="row">
             <a class="btn btn-primary btn-lg" href="/#contact">Book a free intro call <span class="arw">→</span></a>
             <a class="btn btn-ghost btn-lg" href="/#work">See more work</a>

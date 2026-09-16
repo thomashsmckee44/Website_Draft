@@ -1,0 +1,201 @@
+---
+import Base from "../../layouts/Base.astro";
+import "../../styles/service.css";
+
+const SITE = "https://www.tmdesignengineering.com";
+const url = `${SITE}/services/design-verification`;
+const faqs = [
+  ["What's the difference between verification and validation?", "Verification asks \"did we build the design right?\", does it meet its spec, is it safe, will it survive real use. Validation asks \"did we build the right thing?\" for the user. This service is about verification: proving, with analysis and testing, that a design does what it needs to before you spend money on tooling."],
+  ["Do I need a finished design first?", "Ideally you have a design or a detailed concept, CAD, drawings or a working prototype. The more defined it is, the more precisely I can analyse and test it. If it's still taking shape, Concept & MVP Development or a Feasibility Study is usually the better starting point."],
+  ["Can you actually run the tests, or just plan them?", "Both. I define what needs proving and how, run the engineering analysis and simulation myself, and coordinate specialist or accredited testing (EMC, safety, environmental, lifecycle) with trusted labs where that's needed, then pull it all together into one report."],
+  ["Will this help me pass certification?", "It's designed to. Catching the issues that fail safety and compliance testing before you commit to tooling is far cheaper than discovering them at certification. I can't issue certificates myself, but I get a design into the shape where it's ready to pass."],
+  ["How much does it cost?", "It depends on the product and how much needs proving, so I scope and price it after a free intro call, you'll always know the cost before any work begins. A focused Design Review (from £200) is often the right first step."],
+];
+const jsonld = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    serviceType: "Design verification and engineering testing",
+    name: "Design Verification",
+    description: "Design verification, also called engineering verification: prove a product design works, is safe and is compliant before committing to tooling, with engineering analysis, simulation and structured testing, delivered as a design verification report.",
+    provider: { "@id": `${SITE}/#business` },
+    areaServed: ["United Kingdom", "Worldwide"],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "Design Verification", item: url },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(([q, a]) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a },
+    })),
+  },
+];
+---
+<Base
+  title="Design Verification & Engineering Testing | Thomas McKee"
+  description="Design verification, also called engineering verification: prove your product design works, is safe and is compliant before you commit to tooling, with analysis, simulation and structured testing, delivered as a report you can act on."
+  type="website"
+  jsonld={jsonld}>
+<main>
+  <!-- HERO -->
+  <section class="svc-hero">
+    <div class="wrap svc-hero-grid">
+      <div>
+        <span class="eyebrow">Service · Design Verification</span>
+        <h1>Know your design works, <em>before you commit to tooling.</em></h1>
+        <p class="lede">Design verification, sometimes called engineering verification, is how you make sure the design is right before tooling makes it expensive to change. Engineering analysis, simulation and structured testing that prove it performs, survives real use and meets its safety and compliance targets, while fixes are still cheap.</p>
+        <div class="svc-hero-cta">
+          <a class="btn btn-primary" href="/#contact">Book a free intro call <span class="arw">→</span></a>
+          <a class="btn btn-ghost" href="#included">See what you get</a>
+        </div>
+      </div>
+      <aside class="spec" aria-label="Service summary">
+        <div class="spec-head"><span>Service Spec</span><span>DV-03</span></div>
+        <div class="spec-row"><div class="spec-k">Deliver</div><div class="spec-v">Verification report</div></div>
+        <div class="spec-row"><div class="spec-k">Covers</div><div class="spec-v">Analysis · sim · test</div></div>
+        <div class="spec-row"><div class="spec-k">Timing</div><div class="spec-v">Before tooling</div></div>
+        <div class="spec-row"><div class="spec-k">Price</div><div class="spec-v">Scoped up front</div></div>
+        <div class="spec-row"><div class="spec-k">You need</div><div class="spec-v">A design or prototype</div></div>
+        <div class="spec-note">A focused Design Review (from £200) is often the right first step; larger verification programmes are scoped and fixed-quoted after a free intro call.</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- PAIN -->
+  <section class="band alt">
+    <div class="wrap">
+      <span class="sec-idx">Who it's for</span>
+      <h2 class="sec-title">If you're about to spend real money on tooling</h2>
+      <div class="pain">
+        <div class="q"><span class="mk">?</span><p>"The design looks right on screen, but will it actually hold up in the real world?"</p></div>
+        <div class="q"><span class="mk">?</span><p>"Is it safe and compliant, or am I about to fail certification and lose months?"</p></div>
+        <div class="q"><span class="mk">?</span><p>"Where are the weak points I can't see, and which one becomes a recall?"</p></div>
+      </div>
+      <p class="sec-intro">Verification answers these with evidence, before the design is committed to tooling. A problem caught in analysis costs hours; the same problem caught after tooling means cutting a new tool, and caught after launch it can mean a recall. Finding these things early, while they're still cheap to fix, is the whole point.</p>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="band" id="included">
+    <div class="wrap">
+      <span class="sec-idx">What you get</span>
+      <h2 class="sec-title">A design verification plan, and the proof behind it</h2>
+      <p class="sec-intro">The spine of the service is a design verification plan: a document that sets out exactly what needs proving and how. From there I run the analysis, simulation and testing that prove it, and pull everything together into reports you can act on and take to suppliers, partners or certification.</p>
+      <div class="deliv">
+        <div class="di"><div class="dn">01</div><h3>Design verification plan (DVP)</h3><p>The plan that defines every requirement the design has to meet and the test or analysis that proves it. It becomes the shared reference for you, me and your suppliers.</p></div>
+        <div class="di"><div class="dn">02</div><h3>Simulation &amp; analysis</h3><p>Hand calculations and simulation, structural (FEA), thermal, fluid (CFD) or tolerance, to predict how the design performs and where it's marginal, written up as simulation reports.</p></div>
+        <div class="di"><div class="dn">03</div><h3>Testing &amp; specialised testing</h3><p>The tests that prove the claims that matter, run by me or coordinated with accredited test houses for safety, EMC, environmental or lifecycle work, written up as test reports.</p></div>
+        <div class="di"><div class="dn">04</div><h3>User testing &amp; iteration suggestions</h3><p>Where it helps, structured user testing to see how the product performs in real hands, followed by a prioritised list of iteration suggestions, so you get a route forward, not just a verdict.</p></div>
+      </div>
+      <p class="sec-intro" style="margin-top:34px">Deliverables include:</p>
+      <div class="scope" style="grid-template-columns:1fr">
+        <div class="scard">
+          <ul>
+            <li><span class="tick">✓</span> Design verification plan (DVP)</li>
+            <li><span class="tick">✓</span> Simulation reports (FEA, CFD, structural and thermal)</li>
+            <li><span class="tick">✓</span> Test reports</li>
+            <li><span class="tick">✓</span> Specialised testing, coordinated with accredited test houses</li>
+            <li><span class="tick">✓</span> User testing</li>
+            <li><span class="tick">✓</span> A prioritised list of iteration suggestions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="band alt">
+    <div class="wrap">
+      <span class="sec-idx">How it works</span>
+      <h2 class="sec-title">From design to proof</h2>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div><h3>Free intro call</h3><p>You tell me the product and where it's headed. I tell you honestly what's worth verifying, and confirm scope and price before anything starts.</p><div class="meta">Free · 30 minutes</div></div></div>
+        <div class="step"><div class="sn">2</div><div><h3>Review &amp; analysis</h3><p>I work through the design against its requirements, run the calculations and simulation, and map the failure modes, building an honest picture of where it's strong and where it's marginal.</p><div class="meta">Scoped phase</div></div></div>
+        <div class="step"><div class="sn">3</div><div><h3>Test where it counts</h3><p>We prove the critical claims with the right test, my own, or coordinated with specialist labs for safety, EMC, environmental or lifecycle work.</p><div class="meta">Scoped phase</div></div></div>
+        <div class="step"><div class="sn">4</div><div><h3>Report &amp; recommendations</h3><p>Everything written up: what was found, the evidence behind it, and a prioritised set of changes, so the design that goes to tooling is one you trust.</p><div class="meta">Deliverable</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCOPE -->
+  <section class="band">
+    <div class="wrap">
+      <span class="sec-idx">Scope</span>
+      <h2 class="sec-title">Clear on both sides</h2>
+      <div class="scope">
+        <div class="scard need">
+          <h3>What you bring</h3>
+          <ul>
+            <li><span class="tick">→</span> A design or prototype, CAD, drawings or a working sample. The more defined, the sharper the analysis.</li>
+            <li><span class="tick">→</span> What it needs to do, and any standards or targets it has to meet.</li>
+            <li><span class="tick">→</span> The decision it's feeding, tooling sign-off, certification, an investor milestone.</li>
+          </ul>
+        </div>
+        <div class="scard">
+          <h3>How I work</h3>
+          <ul>
+            <li><span class="tick">✓</span> Mechanical, thermal and firmware seen as one system, problems rarely respect the boundaries between them.</li>
+            <li><span class="tick">✓</span> Analysis and testing chosen to answer real questions, not to generate paperwork.</li>
+            <li><span class="tick">✓</span> Happy to work under an NDA from the first conversation.</li>
+            <li><span class="tick">✓</span> Findings explained in plain terms, with the trade-offs made explicit.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="svc-cred">
+        <span class="ci"><b>4+ years</b> verifying consumer products at Ooni</span>
+        <span class="ci"><b>Thermal, structural &amp; firmware</b> analysis under one roof</span>
+        <span class="ci">Safety- and compliance-critical <b>high-temperature</b> work</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="band alt">
+    <div class="wrap">
+      <span class="sec-idx">Questions</span>
+      <h2 class="sec-title">Before you book</h2>
+      <div class="faq">
+        {faqs.map(([q, a]) => (
+          <div class="fitem"><div class="fq">{q}</div><div class="fa">{a}</div></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRIDGE -->
+  <section class="band">
+    <div class="wrap">
+      <span class="sec-idx">Where it fits</span>
+      <h2 class="sec-title">One phase of the bigger picture</h2>
+      <p class="sec-intro">Verification is often a stage in a longer path. If you'd rather have one person carry the product the whole way, from idea through to a design that's ready to manufacture, this is one of the phases inside <a href="/services/product-development" style="color:var(--ember)">full Product Development</a>. Either way, the verification work stands on its own and the reports are yours to keep.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="band alt" id="start">
+    <div class="wrap">
+      <div class="cta">
+        <div class="inner">
+          <span class="eyebrow">Start here</span>
+          <h2 style="margin-top:14px">Make sure it's right before you commit to tooling</h2>
+          <p>Book a free intro call and tell me what's coming up to tooling or certification. We'll work out what's worth verifying and how, and I'll scope and price it before anything begins.</p>
+          <div class="row">
+            <a class="btn btn-primary btn-lg" href="/#contact">Book a free intro call <span class="arw">→</span></a>
+            <span class="price-tag">Design Reviews from <b>£200</b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</Base>

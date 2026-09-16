@@ -6,10 +6,10 @@ const SITE = "https://www.tmdesignengineering.com";
 const url = `${SITE}/services/power-hour`;
 const faqs = [
   ["What kind of things can I ask about?", "Anything on your product or idea: whether something is technically possible, how you'd approach a problem, a sanity check on a decision, which direction to take, what a sensible first step is, or a specific engineering question. If it's on your mind and it's product-related, it's fair game."],
-  ["Is it really just £50?", "Yes. It's deliberately low — the point is to make it easy to get real, experienced input without a big commitment, and to let you see what working with me is actually like. Most people who start here come back for something bigger."],
-  ["What if my problem needs more than an hour?", "That happens, and I'll say so honestly rather than pretend an hour is enough. If it does, I'll suggest the right next step — often a Design Review or a Feasibility Study — and we go from there. No pressure."],
+  ["Is it really just £50?", "Yes. It's deliberately low, the point is to make it easy to get real, experienced input without a big commitment, and to let you see what working with me is actually like. Most people who start here come back for something bigger."],
+  ["What if my problem needs more than an hour?", "That happens, and I'll say so honestly rather than pretend an hour is enough. If it does, I'll suggest the right next step, often a Design Review or a Feasibility Study, and we go from there. No pressure."],
   ["Do you sign an NDA?", "Yes, gladly, before you share anything sensitive. Protecting your idea matters and I'm happy to work under a mutual NDA."],
-  ["What if you can't answer my question?", "Then I'll tell you straight, and point you toward who or what can — you won't get waffle to fill the hour. But between mechanical, firmware, thermal and manufacture, there's usually a lot of ground I can help with."],
+  ["What if you can't answer my question?", "Then I'll tell you straight, and point you toward who or what can, you won't get waffle to fill the hour. But between mechanical, firmware, thermal and manufacture, there's usually a lot of ground I can help with."],
 ];
 const jsonld = [
   {
@@ -18,7 +18,7 @@ const jsonld = [
     "@id": `${url}#service`,
     serviceType: "Product engineering consultation",
     name: "Power Hour",
-    description: "A focused one-hour consultation with an experienced product design engineer, live or online, for £50 — bring a specific problem, decision or question and get honest, actionable input.",
+    description: "A focused one-hour consultation with an experienced product design engineer, live or online, for £50, bring a specific problem, decision or question and get honest, actionable input.",
     provider: { "@id": `${SITE}/#business` },
     areaServed: ["United Kingdom", "Worldwide"],
     offers: { "@type": "Offer", price: "50", priceCurrency: "GBP", url },
@@ -39,7 +39,7 @@ const jsonld = [
 ];
 ---
 <Base
-  title="Power Hour — Expert Product Engineering Advice (£50) | Thomas McKee"
+  title="Power Hour, Expert Product Engineering Advice (£50) | Thomas McKee"
   description="One focused hour with an experienced product design engineer, live or online, for £50. Bring a specific problem, a decision or a question and get honest, actionable input."
   type="website"
   jsonld={jsonld}>
@@ -48,15 +48,15 @@ const jsonld = [
     <div class="wrap svc-hero-grid">
       <div>
         <span class="eyebrow">Entry offer · Power Hour</span>
-        <h1>Get an expert engineer's take — <em>in one focused hour.</em></h1>
-        <p class="lede">Sixty minutes, live or online, for £50. Bring a specific problem, a decision you're weighing, or a straight "can this even be done?" — and get honest, experienced input you can act on the same day. It's the simplest way to find out what working with me is like.</p>
+        <h1>Get an expert engineer's take, <em>in one focused hour.</em></h1>
+        <p class="lede">Sixty minutes, live or online, for £50. Bring a specific problem, a decision you're weighing, or a straight "can this even be done?", and get honest, experienced input you can act on the same day. It's the simplest way to find out what working with me is like.</p>
         <div class="svc-hero-cta">
           <a class="btn btn-primary" href="/#contact">Book a Power Hour <span class="arw">→</span></a>
           <a class="btn btn-ghost" href="#included">What you get</a>
         </div>
       </div>
       <aside class="spec" aria-label="Service summary">
-        <div class="spec-head"><span>Service Spec</span><span>PH—E1</span></div>
+        <div class="spec-head"><span>Service Spec</span><span>PH-E1</span></div>
         <div class="spec-price"><span class="from">From</span><span class="amt">£50</span></div>
         <div class="spec-row"><div class="spec-k">Format</div><div class="spec-v">60-minute call</div></div>
         <div class="spec-row"><div class="spec-k">Where</div><div class="spec-v">Video or in person</div></div>
@@ -84,9 +84,9 @@ const jsonld = [
       <span class="sec-idx">What you get</span>
       <h2 class="sec-title">An hour that earns its keep</h2>
       <div class="deliv">
-        <div class="di"><div class="dn">01</div><h3>My undivided hour</h3><p>A focused conversation about your problem — no sales pitch, no filler, just experienced engineering attention on what you actually asked.</p></div>
-        <div class="di"><div class="dn">02</div><h3>Honest, expert answers</h3><p>Straight input drawing on mechanical, firmware, thermal and manufacturing experience — including the honest "here's the catch" you won't always get elsewhere.</p></div>
-        <div class="di"><div class="dn">03</div><h3>Concrete next steps</h3><p>Clear pointers on what to do next, whoever you work with — not a cliffhanger designed to sell you the sequel.</p></div>
+        <div class="di"><div class="dn">01</div><h3>My undivided hour</h3><p>A focused conversation about your problem, no sales pitch, no filler, just experienced engineering attention on what you actually asked.</p></div>
+        <div class="di"><div class="dn">02</div><h3>Honest, expert answers</h3><p>Straight input drawing on mechanical, firmware, thermal and manufacturing experience, including the honest "here's the catch" you won't always get elsewhere.</p></div>
+        <div class="di"><div class="dn">03</div><h3>Concrete next steps</h3><p>Clear pointers on what to do next, whoever you work with, not a cliffhanger designed to sell you the sequel.</p></div>
         <div class="di"><div class="dn">04</div><h3>A short written note</h3><p>A brief summary of the key points and suggestions afterwards, so nothing useful is lost the moment the call ends.</p></div>
       </div>
     </div>
@@ -97,9 +97,9 @@ const jsonld = [
       <span class="sec-idx">How it works</span>
       <h2 class="sec-title">Booked and done in a week</h2>
       <div class="steps">
-        <div class="step"><div class="sn">1</div><div><h3>Book &amp; pay</h3><p>Grab a slot that suits you. It's £50, paid up front — that's the whole commitment.</p><div class="meta">£50</div></div></div>
+        <div class="step"><div class="sn">1</div><div><h3>Book &amp; pay</h3><p>Grab a slot that suits you. It's £50, paid up front, that's the whole commitment.</p><div class="meta">£50</div></div></div>
         <div class="step"><div class="sn">2</div><div><h3>Send a little context</h3><p>Optionally drop me a line or two, a sketch or a photo beforehand so we hit the ground running.</p><div class="meta">Optional</div></div></div>
-        <div class="step"><div class="sn">3</div><div><h3>The hour</h3><p>We get into it — your question, my honest take, and the back-and-forth that gets you somewhere.</p><div class="meta">60 minutes</div></div></div>
+        <div class="step"><div class="sn">3</div><div><h3>The hour</h3><p>We get into it, your question, my honest take, and the back-and-forth that gets you somewhere.</p><div class="meta">60 minutes</div></div></div>
         <div class="step"><div class="sn">4</div><div><h3>Follow-up note</h3><p>A short written summary of the key points and next steps lands in your inbox.</p><div class="meta">Included</div></div></div>
       </div>
     </div>
@@ -123,7 +123,7 @@ const jsonld = [
         <div class="inner">
           <span class="eyebrow">Start here</span>
           <h2 style="margin-top:14px">One hour. £50. Genuinely useful.</h2>
-          <p>Book a Power Hour and bring whatever's on your mind. Worst case, you get an honest expert answer for £50 — best case, it's the start of something bigger.</p>
+          <p>Book a Power Hour and bring whatever's on your mind. Worst case, you get an honest expert answer for £50, best case, it's the start of something bigger.</p>
           <div class="row">
             <a class="btn btn-primary btn-lg" href="/#contact">Book a Power Hour <span class="arw">→</span></a>
             <span class="price-tag">Just <b>£50</b></span>

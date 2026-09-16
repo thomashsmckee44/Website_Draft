@@ -5,12 +5,12 @@ import "../../styles/service.css";
 const SITE = "https://www.tmdesignengineering.com";
 const url = `${SITE}/services/concept-mvp-development`;
 const faqs = [
-  ["How much does it cost?", "It depends on how far you want to go and how complex the product is, so I don't quote a single number blind. We start with a small, fixed-price discovery (from £650), and I scope and price the concept and MVP phases from there — you approve each phase before it starts."],
-  ["My idea is really rough — is it too early?", "No — early is ideal. The whole point of starting with discovery is to shape a rough idea into something concrete and buildable before any real money is spent."],
-  ["What if it turns out not to be feasible?", "Then you'll know quickly and cheaply, at the discovery stage, with the reasons and any alternative directions — long before you've sunk money into building the wrong thing."],
-  ["Do you do the industrial design / styling too?", "I'm a design engineer, so I lead on making the product work and be manufacturable, and I handle functional and early-stage industrial design. When a product needs heavy aesthetic styling I bring in a trusted ID partner, so you still get one joined-up process."],
-  ["Will you sign an NDA?", "Yes, gladly — before you share anything sensitive. Protecting your idea is part of the job, and it's a topic I can genuinely advise on."],
-  ["What happens after the MVP?", "If you want to take it to market, we move into full product development — detailed design, verification and manufacturing preparation — carrying everything the MVP taught us straight into a production-ready product."],
+  ["How much does it cost?", "It depends on how far you want to go and how complex the product is, so the project is scoped and quoted uniquely. Usually I start with a small, fixed-price discovery phase (from £650) so we can work out if we're a good fit for working together, and I scope and price the concept and MVP phases from there. You approve each phase before it starts."],
+  ["My idea is really rough, is it too early?", "No. Early is ideal. The development process works better when the solution isn't fully defined before exploring all the options. Once a direction is decided upon, concrete and buildable products can be defined and developed."],
+  ["What if it turns out my idea isn't feasible?", "The best-case scenario here is that you find out quickly and cheaply, at the discovery stage, with the reasons explained and any alternative directions. That way, you can pivot direction or pause to consider long before you've sunk money into building the wrong thing. I'll always be honest about what could work and what likely won't."],
+  ["Do you do the industrial design / styling too?", "I'm a design engineer, so I work with both, but my expertise is in making the product work and be manufacturable. I handle functional and early-stage industrial design, but if a product needs heavy aesthetic styling I bring in a trusted ID partner, so you still get one joined-up process."],
+  ["Will you sign an NDA?", "Yes, gladly, and before you share anything sensitive. Protecting your idea is part of the job."],
+  ["What happens after the MVP?", "If you want to take it to market, we move into full product development. This includes detailed design, design verification and manufacturing preparation, taking everything the MVP taught us and developing it into a production-ready product."],
 ];
 const jsonld = [
   {
@@ -19,7 +19,7 @@ const jsonld = [
     "@id": `${url}#service`,
     serviceType: "Concept and MVP development",
     name: "Concept & MVP Development",
-    description: "Turn a product idea into an evaluated, buildable concept and a working MVP you can put in front of users, investors or a crowdfunding audience — delivered in scoped, gated phases.",
+    description: "Turn your idea into an evaluated, buildable concept and a working MVP you can show users, test and raise investment on, delivered through a structured, scoped, gated design process.",
     provider: { "@id": `${SITE}/#business` },
     areaServed: ["United Kingdom", "Worldwide"],
   },
@@ -34,17 +34,13 @@ const jsonld = [
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map(([q, a]) => ({
-      "@type": "Question",
-      name: q,
-      acceptedAnswer: { "@type": "Answer", text: a },
-    })),
+    mainEntity: faqs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
   },
 ];
 ---
 <Base
   title="Concept & MVP Development for Hardware Startups | Thomas McKee"
-  description="Turn your idea into an evaluated, buildable concept and a working MVP you can put in front of users, investors or a crowd — with the structure and momentum of someone who's shipped award-winning products."
+  description="Turn your idea into an evaluated, buildable concept and a working MVP you can show users, test and raise investment on, run with the same structured process behind award-winning products."
   type="website"
   jsonld={jsonld}>
 <main>
@@ -53,21 +49,21 @@ const jsonld = [
     <div class="wrap svc-hero-grid">
       <div>
         <span class="eyebrow">Service · Concept &amp; MVP Development</span>
-        <h1>Turn your idea into something real you can <em>show, test and raise on.</em></h1>
-        <p class="lede">I take an idea from a sketch or a description to an evaluated, buildable concept and a working MVP — a prototype that proves the core function and is good enough to put in front of users, investors or a crowdfunding audience. With the structure, rhythm and honesty of someone who's taken award-winning products to the shelf.</p>
+        <h1>Turn your idea into something you can <em>show users, test and raise investment on.</em></h1>
+        <p class="lede">The meat of product development lies here. I take your idea from a sketch or description to an evaluated, buildable concept and a working MVP: a concept that proves the core function and is good enough to put in front of users, investors or a crowdfunding audience. I apply the same professional, rigorous and structured development process that resulted in award-winning products being created.</p>
         <div class="svc-hero-cta">
           <a class="btn btn-primary" href="/#contact">Book a free intro call <span class="arw">→</span></a>
           <a class="btn btn-ghost" href="#mvp">What's an MVP?</a>
         </div>
       </div>
       <aside class="spec" aria-label="Service summary">
-        <div class="spec-head"><span>Service Spec</span><span>CM—02</span></div>
-        <div class="spec-row"><div class="spec-k">Deliver</div><div class="spec-v">Concept + working MVP</div></div>
-        <div class="spec-row"><div class="spec-k">Starts with</div><div class="spec-v">A short paid discovery</div></div>
+        <div class="spec-head"><span>Service Spec</span><span>CM-02</span></div>
+        <div class="spec-row"><div class="spec-k">Deliver</div><div class="spec-v">Working MVP</div></div>
+        <div class="spec-row"><div class="spec-k">Starts with</div><div class="spec-v">Discovery workshop</div></div>
         <div class="spec-row"><div class="spec-k">Shape</div><div class="spec-v">Scoped phases</div></div>
         <div class="spec-row"><div class="spec-k">Price</div><div class="spec-v">Scoped up front</div></div>
-        <div class="spec-row"><div class="spec-k">You need</div><div class="spec-v">An idea to start</div></div>
-        <div class="spec-note">Every engagement opens with a short, paid discovery (often a Feasibility Study) that de-risks the idea and prices the rest — so you commit in steps, never all at once.</div>
+        <div class="spec-row"><div class="spec-k">You need</div><div class="spec-v">An idea</div></div>
+        <div class="spec-note">Every engagement starts with a paid discovery workshop to nail down your product for a technical specification. The engagement is broken into phases with clear deliverables and decision points.</div>
       </aside>
     </div>
   </section>
@@ -76,32 +72,36 @@ const jsonld = [
   <section class="band alt" id="mvp">
     <div class="wrap">
       <span class="sec-idx">First, the honest bit</span>
-      <h2 class="sec-title">What an "MVP" actually means for a physical product</h2>
-      <p class="sec-intro">"MVP" comes from software, and in hardware it gets used to mean everything from a rough proof-of-concept to a first production run. Left vague, that's exactly how projects blow their budget. So we pin it down before we start.</p>
-      <div class="proof">
-        <div class="pl">Working definition</div>
-        <p><strong>For a physical product, an MVP is a working prototype that proves the core function and is good enough to put in front of real people</strong> — users to learn from, investors to convince, or a crowdfunding audience to win. It is not the finished, manufacturable product; it's the smallest real thing that earns you the right (and the evidence) to build that.</p>
-      </div>
-      <p class="sec-intro" style="margin-top:22px">We agree exactly which level of "working" you need up front, so there are no surprises about what you're getting:</p>
+      <h2 class="sec-title">What an MVP means for a physical product</h2>
+      <p class="sec-intro">Every product needs something different. For some, all they need is a proof of concept; others need a fully functional, looks-like/works-like prototype. Either way, we iterate up through the fidelity of prototypes until you have what you need to make the next decision. The whole process is designed to reduce uncertainty by investing slowly until risks are reduced and projects are proven.</p>
+      <p class="sec-intro" style="margin-top:22px">What your MVP might look like:</p>
       <div class="ladder">
-        <span class="rung"><span class="n">01</span> <b>Proof-of-principle</b> · does the core idea work?</span>
-        <span class="rung"><span class="n">02</span> <b>Looks-like</b> · form &amp; feel</span>
-        <span class="rung"><span class="n">03</span> <b>Works-like</b> · real function</span>
-        <span class="rung"><span class="n">04</span> <b>Investor / crowd-ready</b> · convincing on both</span>
+        <span class="rung"><span class="n">01</span> <b>Proof of principle</b> · does the core idea or technology work?</span>
+        <span class="rung"><span class="n">02</span> <b>Looks-like</b> · form and feel, for ergonomics and UX</span>
+        <span class="rung"><span class="n">03</span> <b>Works-like</b> · functions as a tooled prototype should</span>
+        <span class="rung"><span class="n">04</span> <b>Investor / crowd-ready</b> · a golden hand-prototyped (or soft-tooled) sample</span>
       </div>
     </div>
   </section>
 
-  <!-- WHAT YOU GET -->
+  <!-- DELIVERABLES -->
   <section class="band">
     <div class="wrap">
       <span class="sec-idx">What you get</span>
-      <h2 class="sec-title">From idea to a thing in your hands</h2>
-      <div class="deliv">
-        <div class="di"><div class="dn">01</div><h3>An evaluated concept</h3><p>Your idea developed into a concept that actually works — pressure-tested for feasibility, cost and manufacture, not just how it looks.</p></div>
-        <div class="di"><div class="dn">02</div><h3>A clear brief &amp; spec</h3><p>The requirements written down properly, so every later decision has something objective to be measured against.</p></div>
-        <div class="di"><div class="dn">03</div><h3>A working MVP</h3><p>A prototype at the fidelity we agreed — the real, demonstrable thing you can test, show and raise on.</p></div>
-        <div class="di"><div class="dn">04</div><h3>A plan to production</h3><p>A clear route from the MVP to a manufacturable product, with the future baked into the early design so nothing has to be torn up later.</p></div>
+      <h2 class="sec-title">Deliverables include</h2>
+      <div class="scope" style="grid-template-columns:1fr">
+        <div class="scard">
+          <ul>
+            <li><span class="tick">✓</span> Concept exploration workshops</li>
+            <li><span class="tick">✓</span> Technical specification and PRD</li>
+            <li><span class="tick">✓</span> Design verification plan</li>
+            <li><span class="tick">✓</span> Design reports and test reports</li>
+            <li><span class="tick">✓</span> Iterative prototypes (with relevant documentation)</li>
+            <li><span class="tick">✓</span> Final prototype (with full CAD files and relevant documentation)</li>
+            <li><span class="tick">✓</span> Designer's report for investors</li>
+            <li><span class="tick">✓</span> A plan to production</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -110,30 +110,30 @@ const jsonld = [
   <section class="band alt">
     <div class="wrap">
       <span class="sec-idx">How it works</span>
-      <h2 class="sec-title">Structure and rhythm, not chaos</h2>
-      <p class="sec-intro">Most of my clients are doing this for the first time. What helps most isn't just the engineering — it's a steady, honest process that keeps momentum without letting the excitement run ahead of the evidence.</p>
+      <h2 class="sec-title">An industry gold-standard design process</h2>
+      <p class="sec-intro">Many of my clients are developing products for the first time. Following a structured design process not only helps with clarity and transparency, it helps keep momentum, reduces risk and provides comprehensive documentation for investor confidence.</p>
       <div class="steps">
-        <div class="step"><div class="sn">1</div><div><h3>Discovery &amp; de-risk</h3><p>We start small and paid — usually a Feasibility Study — to prove the idea holds up and to scope and price everything that follows. No big commitment on day one.</p><div class="meta">Fixed scope · from £650</div></div></div>
-        <div class="step"><div class="sn">2</div><div><h3>Concept development &amp; evaluation</h3><p>I develop the idea into real, buildable options and we weigh them honestly — feasibility, cost and experience — so we choose a direction for the right reasons, not the loudest opinion in the room.</p><div class="meta">Scoped phase</div></div></div>
-        <div class="step"><div class="sn">3</div><div><h3>Fail-fast prototyping</h3><p>We prototype quickly and cheaply to answer the real questions, learning fast and keeping momentum — with future manufacture considered from the start, so progress never has to be undone.</p><div class="meta">Scoped phase</div></div></div>
-        <div class="step"><div class="sn">4</div><div><h3>A working MVP + a plan</h3><p>You end with the demonstrable MVP we agreed and a clear route to production — ready to test, pitch, or move into full product development.</p><div class="meta">Deliverable</div></div></div>
+        <div class="step"><div class="sn">1</div><div><h3>Evaluation and concept development</h3><p>Beginning with a discovery phase to brainstorm concepts, design, technology, manufacture and more to reach your desired goals. Together, we evaluate the options and decide on a product direction.</p><div class="meta">Discovery</div></div></div>
+        <div class="step"><div class="sn">2</div><div><h3>Clear specification and brief</h3><p>A fully documented design process, beginning with a product requirements document covering everything from function to compliance.</p><div class="meta">PRD</div></div></div>
+        <div class="step"><div class="sn">3</div><div><h3>Product development, prototyping and testing</h3><p>Iteration through prototypes to reach the required level of fidelity, starting with cheap, rapid prototypes to answer questions early. Phased with decision and pivot points so we're always evaluating and not missing opportunities.</p><div class="meta">Scoped phases</div></div></div>
+        <div class="step"><div class="sn">4</div><div><h3>Final prototype and a plan to production</h3><p>Ending with a final prototype ready to put in front of users, show investors or test for yourself, as well as a clear route from the MVP to a manufacturable product. Although I will be designing for prototype, manufacturability is baked into the process so that major design changes aren't needed at later stages.</p><div class="meta">Deliverable</div></div></div>
       </div>
     </div>
   </section>
 
-  <!-- PROOF -->
+  <!-- WHY ME -->
   <section class="band">
     <div class="wrap">
       <span class="sec-idx">Why me</span>
-      <h2 class="sec-title">A deceptively simple idea, done properly</h2>
+      <h2 class="sec-title">Built on a track record of shipping</h2>
       <div class="proof">
-        <div class="pl">From the work</div>
-        <p>My first design-engineering product for Ooni looked like a simple plastic tray. Underneath sat a knot of competing constraints — fridge sizes across regions, nesting, injection-moulding limits, tolerance stack-up. Rather than iterate blindly, I <strong>modelled the trade-offs and made the calls before cutting steel</strong>. It's sold for over three years — and the geometry is the single most-praised thing in the reviews. That's the whole game: get the hard thinking right early, and the product feels effortless to everyone else.</p>
+        <div class="pl">Track record</div>
+        <p>The concepts I develop are built on a track record of shipping <strong>award-winning products</strong>. Over four years at Ooni I took products from concept to market, and the work produced multiple patented or patent-pending inventions and multiple international design awards. When working with your idea, my input is grounded in having actual real-world experience through prototyping, tooling, compliance and volume manufacture. I apply the same gold-standard design process to your ideas as I did when designing award-winning products.</p>
       </div>
       <div class="svc-cred">
-        <span class="ci">Behind <b>Red Dot</b> &amp; <b>iF Design Award</b>–winning products</span>
-        <span class="ci"><b>Mechanical, firmware &amp; manufacture</b> seen as one system</span>
-        <span class="ci">Plain-English about the <b>hard trade-offs</b></span>
+        <span class="ci">Named on <b>3 patented or patent-pending</b> inventions</span>
+        <span class="ci"><b>Award-winning</b> products shipped worldwide</span>
+        <span class="ci"><b>Concept to volume manufacture</b>, held end to end</span>
       </div>
     </div>
   </section>
@@ -145,20 +145,19 @@ const jsonld = [
       <h2 class="sec-title">Clear on both sides</h2>
       <div class="scope">
         <div class="scard need">
-          <h3>What you bring</h3>
+          <h3>What you need</h3>
           <ul>
-            <li><span class="tick">→</span> An idea or rough concept — however early. If it's barely more than a thought, we start with discovery.</li>
-            <li><span class="tick">→</span> A sense of who it's for and what "success" looks like for your MVP.</li>
-            <li><span class="tick">→</span> Openness to honest feedback — including if the idea needs to change.</li>
+            <li><span class="tick">→</span> An idea or concept. It doesn't matter if it's barely more than a thought, we work through it together.</li>
+            <li><span class="tick">→</span> A sense of where you want to end up, and who needs to see the finished result.</li>
           </ul>
         </div>
         <div class="scard">
           <h3>How I work</h3>
           <ul>
-            <li><span class="tick">✓</span> Engineering-led: I take a concept and make it real. For heavy aesthetic styling I bring in a specialist industrial-design partner.</li>
-            <li><span class="tick">✓</span> Scoped, gated phases — you see and approve the cost before each one.</li>
-            <li><span class="tick">✓</span> Happy to work under an NDA from the very first conversation.</li>
-            <li><span class="tick">✓</span> Everything explained in plain terms — no hiding behind jargon.</li>
+            <li><span class="tick">✓</span> A structured, industry-standard design process.</li>
+            <li><span class="tick">✓</span> Scoped, gated phases, so we agree on any work that is carried out.</li>
+            <li><span class="tick">✓</span> Happy to work under an NDA from the first conversation.</li>
+            <li><span class="tick">✓</span> Explaining and taking you through the process so you understand everything.</li>
           </ul>
         </div>
       </div>
@@ -171,27 +170,23 @@ const jsonld = [
       <span class="sec-idx">Questions</span>
       <h2 class="sec-title">Common questions</h2>
       <div class="faq">
-        <div class="fitem"><div class="fq">How much does it cost?</div><div class="fa">It depends on how far you want to go and how complex the product is, so I don't quote a single number blind. We start with a small, fixed-price discovery (from £650), and I scope and price the concept and MVP phases from there — you approve each phase before it starts.</div></div>
-        <div class="fitem"><div class="fq">My idea is really rough — is it too early?</div><div class="fa">No — early is ideal. The whole point of starting with discovery is to shape a rough idea into something concrete and buildable before any real money is spent.</div></div>
-        <div class="fitem"><div class="fq">What if it turns out not to be feasible?</div><div class="fa">Then you'll know quickly and cheaply, at the discovery stage, with the reasons and any alternative directions — long before you've sunk money into building the wrong thing.</div></div>
-        <div class="fitem"><div class="fq">Do you do the industrial design / styling too?</div><div class="fa">I'm a design engineer, so I lead on making the product work and be manufacturable, and I handle functional and early-stage industrial design. When a product needs heavy aesthetic styling I bring in a trusted ID partner, so you still get one joined-up process.</div></div>
-        <div class="fitem"><div class="fq">Will you sign an NDA?</div><div class="fa">Yes, gladly — before you share anything sensitive. Protecting your idea is part of the job, and it's a topic I can genuinely advise on.</div></div>
-        <div class="fitem"><div class="fq">What happens after the MVP?</div><div class="fa">If you want to take it to market, we move into full product development — detailed design, validation and manufacturing preparation — carrying everything the MVP taught us straight into a production-ready product.</div></div>
+        {faqs.map(([q, a]) => (
+          <div class="fitem"><div class="fq">{q}</div><div class="fa">{a}</div></div>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="band" id="start">
+  <section class="band alt" id="start">
     <div class="wrap">
       <div class="cta">
         <div class="inner">
           <span class="eyebrow">Let's build it</span>
-          <h2 style="margin-top:14px">Ready to make your idea real?</h2>
-          <p>Book a free introductory call and tell me about it. We'll talk through where you are, what a sensible first step looks like, and how to get you to a working MVP without wasting a penny on the wrong thing.</p>
+          <h2 style="margin-top:14px">Ready to start turning your idea into a real product?</h2>
+          <p>Book a free introductory call and tell me about it. We'll talk through where you are, what a sensible first step looks like, and how to get you to a working MVP.</p>
           <div class="row">
             <a class="btn btn-primary btn-lg" href="/#contact">Book a free intro call <span class="arw">→</span></a>
-            <span class="price-tag">Starts with discovery from <b>£650</b></span>
           </div>
         </div>
       </div>
