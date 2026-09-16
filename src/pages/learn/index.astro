@@ -1,0 +1,82 @@
+---
+import Base from "../../layouts/Base.astro";
+import "../../styles/service.css";
+import { getCollection } from "astro:content";
+
+const SITE = "https://www.tmdesignengineering.com";
+const url = `${SITE}/learn`;
+
+const guides = (await getCollection("guides", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" });
+
+const jsonld = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${url}#page`,
+    url,
+    name: "Learning Hub",
+    isPartOf: { "@id": `${SITE}/#website` },
+    description:
+      "Guides and explainers on hardware product development for founders and startups.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "Learn", item: url },
+    ],
+  },
+];
+---
+<Base
+  title="Learning Hub, Hardware Product Development Guides | Thomas McKee"
+  description="Practical guides and explainers on developing physical products: costs, feasibility, design for manufacture and the route from idea to production. Written for founders."
+  type="website"
+  jsonld={jsonld}>
+<main>
+  <section class="svc-hero">
+    <div class="wrap">
+      <span class="eyebrow">Learning Hub</span>
+      <h1>Guides for building a <em>physical product</em></h1>
+      <p class="lede">Plain-English guidance on taking a hardware product from idea to production: what it costs, how to de-risk it, and the engineering decisions that matter. Written for founders, not engineers.</p>
+    </div>
+  </section>
+  <section class="band">
+    <div class="wrap">
+      <div class="hub-grid">
+        {guides.map((g) => (
+          <a class="hub-card" href={`/learn/${g.slug}`}>
+            <div class="hub-meta"><span class="hub-cat">{g.data.category}</span><span>{fmt(g.data.date)}</span></div>
+            <h2>{g.data.title}</h2>
+            <p>{g.data.description}</p>
+            <div class="hub-foot">
+              <span class="hub-tags">{g.data.tags.slice(0, 3).map((t) => <span class="tag">{t}</span>)}</span>
+              {g.data.readingTime && <span class="hub-rt">{g.data.readingTime}</span>}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</main>
+<style>
+  .hub-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  @media(max-width:760px){.hub-grid{grid-template-columns:1fr}}
+  .hub-card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:26px 28px;text-decoration:none;transition:.15s}
+  .hub-card:hover{border-color:var(--ink-3);transform:translateY(-2px)}
+  .hub-meta{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .hub-cat{color:var(--ember)}
+  .hub-card h2{font-size:1.3rem;letter-spacing:-0.02em;margin:14px 0 0;color:var(--ink)}
+  .hub-card p{color:var(--ink-2);font-size:0.98rem;margin:10px 0 0;line-height:1.5}
+  .hub-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:18px;gap:12px}
+  .hub-tags{display:flex;flex-wrap:wrap;gap:6px}
+  .hub-tags .tag{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);border:1px solid var(--line-2);border-radius:5px;padding:4px 8px}
+  .hub-rt{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);flex:none}
+</style>
+</Base>
