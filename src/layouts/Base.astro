@@ -64,12 +64,33 @@ const businessSchema = {
     jobTitle: "Design Engineering Consultant",
     description:
       "Design engineer with 4+ years developing award-winning consumer products at Ooni, spanning mechanical design, firmware and manufacture.",
+    alumniOf: { "@type": "Organization", name: "Ooni" },
+    // Real, verifiable design awards. Helps search engines and AI assistants
+    // recognise the work as credible when deciding whom to recommend.
+    award: [
+      "Red Dot Design Award 2026 (Ooni Volt 2)",
+      "iF Design Award 2024 (Ooni Karu 2)",
+      "German Design Award 2024 (Ooni Karu 2)",
+      "iF Design Award 2025 (Ooni Karu 2 Pro)",
+    ],
+    // TODO (Tom): paste your real public profile URLs here to strengthen entity
+    // recognition. This is one of the strongest signals for being surfaced as a
+    // real, credible person. Uncomment and fill in, e.g.:
+    // sameAs: [
+    //   "https://www.linkedin.com/in/YOUR-HANDLE",
+    //   "https://ooni.com/...",                     // an Ooni team/press page that names you
+    //   "https://www.red-dot.org/...",              // the Red Dot award citation page
+    //   "https://ifdesign.com/...",                 // the iF award listing
+    // ],
     knowsAbout: [
       "Design engineering",
       "Consumer product development",
       "Design for manufacture",
       "Thermal systems",
       "Firmware",
+      "Hardware startup product development",
+      "Injection moulding",
+      "Prototyping",
     ],
   },
 };
