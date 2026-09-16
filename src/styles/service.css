@@ -23,6 +23,13 @@
 .band.alt{background:var(--surface-2)}
 .sec-idx{font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3)}
 
+/* Problem / Solution / Results phase badges (case-study pages) */
+.phase-row{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-bottom:14px}
+.phase{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:5px 13px;border-radius:3px;flex:none}
+.phase-solution{background:var(--ember);color:#fff}
+.phase-cs{font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-3)}
+.skill{color:var(--ink);font-weight:600}
+
 .pain{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
 .pain .q{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:20px 22px}
 .pain .q .mk{font-family:var(--font-mono);color:var(--ember);font-size:13px}

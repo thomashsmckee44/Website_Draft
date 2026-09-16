@@ -72,10 +72,10 @@ const jsonld = [
   <!-- PROBLEM -->
   <section class="band">
     <div class="wrap">
-      <span class="sec-idx">The problem</span>
+      <div class="phase-row"><span class="phase">Problem</span><span class="phase-cs">Patient-specific femur FEA</span></div>
       <h2 class="sec-title">A population statistic can't tell you about one bone</h2>
       <div class="about-body" style="max-width:72ch">
-        <p>Assessing fracture risk from age, weight and a bone-mineral-density score means applying population-level correlations to an individual, a common cause of unnecessary surgery. Applying structural analysis to a human bone exactly as I would to a performance part gives a patient-specific answer instead of a statistical one. The clinical prize is a non-invasive measure: everything in the study comes from a CT scan the patient has already had, requiring no implant, no biopsy and no cadaver.</p>
+        <p>Assessing fracture risk from age, weight and a bone-mineral-density score means applying population-level correlations to an individual, a common cause of unnecessary surgery. Applying <strong>structural analysis</strong> to a human bone exactly as I would to a performance part gives a patient-specific answer instead of a statistical one. The clinical prize is a non-invasive measure: everything in the study comes from a CT scan the patient has already had, requiring no implant, no biopsy and no cadaver.</p>
       </div>
       <div class="callout"><b>What makes it hard</b>: geometry from noisy greyscale data · material properties that vary element to element · a sideways-fall load case with no agreed boundary condition · a failure criterion that must be a clinical number, not a stress plot · a computational budget that has to allow dozens of load cases.</div>
       <div class="figs">
@@ -88,11 +88,11 @@ const jsonld = [
   <!-- METHOD i -->
   <section class="band alt">
     <div class="wrap">
-      <span class="sec-idx">Method · model build</span>
+      <div class="phase-row"><span class="phase phase-solution">Solution</span><span class="phase-cs">Model build</span></div>
       <h2 class="sec-title">Segmentation, mesh convergence, and a stiffness for every element</h2>
       <div class="about-body" style="max-width:72ch">
-        <p>Each frame of the CT scan distinguishes bone from non-bone by greyscale, so I coded a script to automate the slice-by-slice segmentation, run it across multiple scans and planes and average the result, removing both the labour and the operator variance of doing it by hand. To keep dozens of load cases affordable, I ran a convergence study across five element sizes tracking peak principal strain; results were stable from four to three millimetres, so a 2&nbsp;mm ten-node tetrahedral mesh was carried forward, since linear tetrahedra badly under-predict strain in bending.</p>
-        <p>Treating bone as a single uniform material isn't good enough. I mapped the properties <b>element by element</b> from the calibrated greyscale, density as a linear function of Hounsfield value against a reference phantom scanned alongside the patient, and Young's modulus from a published density–modulus relationship. Every one of thousands of elements therefore carries its own realistic stiffness, and the phantom is what makes it quantitative rather than relative: it ties greyscale to real density for this scan, on this machine.</p>
+        <p>Each frame of the CT scan distinguishes bone from non-bone by greyscale, so I coded a <strong>Python</strong> script to automate the slice-by-slice <strong>CT segmentation</strong>, run it across multiple scans and planes and average the result, removing both the labour and the operator variance of doing it by hand. To keep dozens of load cases affordable, I ran a <strong>mesh convergence study</strong> across five element sizes tracking peak principal strain; results were stable from four to three millimetres, so a 2&nbsp;mm ten-node <strong>tetrahedral mesh</strong> was carried forward, since linear tetrahedra badly under-predict strain in bending.</p>
+        <p>Treating bone as a single uniform material isn't good enough. Through <strong>element-by-element material mapping</strong> I set the properties from the calibrated greyscale, density as a linear function of Hounsfield value against a reference phantom scanned alongside the patient, and Young's modulus from a published density–modulus relationship. Every one of thousands of elements therefore carries its own realistic stiffness, and the phantom is what makes it quantitative rather than relative: it ties greyscale to real density for this scan, on this machine.</p>
       </div>
       <div class="figs">
         <figure class="fig"><img src="/work/femur-convergence.png" alt="Mesh convergence study graph of peak principal strain against element size, showing the converged band" loading="lazy" /><figcaption>Fig. 3, Convergence study: peak principal strain against element size, with a coarse mesh under-predicting strain.</figcaption></figure>
@@ -104,10 +104,10 @@ const jsonld = [
   <!-- METHOD ii -->
   <section class="band">
     <div class="wrap">
-      <span class="sec-idx">Method · a boundary condition nobody had published</span>
+      <div class="phase-row"><span class="phase phase-solution">Solution</span><span class="phase-cs">A novel boundary condition</span></div>
       <h2 class="sec-title">Freeing a degree of freedom the literature had locked</h2>
       <div class="about-body" style="max-width:72ch">
-        <p>Standard sideways-fall boundary conditions in the literature, even the detailed ones, constrain the knee against axial rotation, which may overestimate how much load the bone carries before failing. The reasoning is straightforward once stated: a real knee is not a torsional restraint, so locking that degree of freedom adds a reaction moment that doesn't exist in the fall, and any spurious restraint makes a structure appear stronger than it truly is.</p>
+        <p>Standard sideways-fall <strong>boundary conditions</strong> in the literature, even the detailed ones, constrain the knee against axial rotation, which may overestimate how much load the bone carries before failing. The reasoning is straightforward once stated: a real knee is not a torsional restraint, so locking that degree of freedom adds a reaction moment that doesn't exist in the fall, and any spurious restraint makes a structure appear stronger than it truly is.</p>
         <p>So alongside the two standard conditions, a frictionless slider and a multi-point constraint at the knee joint centre, I designed and ran a third that <b>frees axial rotation at the knee through ±30°</b>, at the cost of the detailed literature model but with behaviour approaching the accurate (and computationally expensive) surface-to-surface contact benchmark. I then swept nine loading angles across every condition, giving twenty-seven cases in total, which is precisely why the convergence work that kept each solve cheap mattered.</p>
       </div>
       <div class="figs">
@@ -119,11 +119,11 @@ const jsonld = [
   <!-- RESULTS -->
   <section class="band alt">
     <div class="wrap">
-      <span class="sec-idx">Results</span>
+      <div class="phase-row"><span class="phase">Results</span><span class="phase-cs">Patient-specific femur FEA</span></div>
       <h2 class="sec-title">Turning a simulation into a clinical metric</h2>
       <div class="about-body" style="max-width:72ch">
-        <p>I converted strain into a predicted minimum failure load using a maximum-principal-strain failure criterion, then benchmarked it against published cadaver experiments and against the patient's own bone-density score. The average predicted failure load of 1317&nbsp;N sits inside the osteoporotic range and at the low end of experimental cadaver failure loads of one to two-and-a-half kilonewtons, a number that can then be turned into a clinical prediction of fracture or refracture likelihood, with compressive strain the most likely failure mode, especially in falls.</p>
-        <p>My novel boundary condition predicted failure loads up to 4.5% lower, moving the prediction toward the far more accurate but expensive contact-based method without carrying its computational cost. The simulation results were empirically validated against cadaver testing, and, owing to the initial success of the study, the research is being continued.</p>
+        <p>I converted strain into a predicted minimum failure load using a maximum-principal-strain <strong>failure criterion</strong>, then benchmarked it against published cadaver experiments and against the patient's own bone-density score. The average predicted failure load of 1317&nbsp;N sits inside the osteoporotic range and at the low end of experimental cadaver failure loads of one to two-and-a-half kilonewtons, a number that can then be turned into a clinical prediction of fracture or refracture likelihood, with compressive strain the most likely failure mode, especially in falls.</p>
+        <p>My novel <strong>boundary condition</strong> predicted failure loads up to 4.5% lower, moving the prediction toward the far more accurate but expensive contact-based method without carrying its computational cost. The simulation results were <strong>empirically validated</strong> against cadaver testing, and, owing to the initial success of the study, the research is being continued.</p>
       </div>
     </div>
   </section>

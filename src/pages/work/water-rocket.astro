@@ -72,10 +72,10 @@ const jsonld = [
   <!-- PROBLEM -->
   <section class="band">
     <div class="wrap">
-      <span class="sec-idx">The problem</span>
+      <div class="phase-row"><span class="phase">Problem</span><span class="phase-cs">Water rocket flight model</span></div>
       <h2 class="sec-title">Test thousands of parameters, without thousands of launches</h2>
       <div class="about-body" style="max-width:72ch">
-        <p>Building and flying hundreds of design variants would have been slow, far less repeatable, and continually confounded by wind. So I simulated the trajectories in MATLAB from a mathematical model instead, but a model is only worth having if its assumptions are declared openly. I set them all out first, together with the theory each one rests on, before any equation appeared: Bernoulli through the nozzle, a polytropic gas expansion fitted from published experimental data rather than assumed isothermal, a constant drag coefficient taken from wind-tunnel results, and, the largest single divergence from reality, no wind, which is the first thing physical testing had to quantify.</p>
+        <p>Building and flying hundreds of design variants would have been slow, far less repeatable, and continually confounded by wind. So I simulated the trajectories in <strong>MATLAB</strong> from a <strong>mathematical model</strong> instead, but a model is only worth having if its assumptions are declared openly. I set them all out first, together with the theory each one rests on, before any equation appeared: Bernoulli through the nozzle, a polytropic gas expansion fitted from published experimental data rather than assumed isothermal, a constant <strong>drag coefficient</strong> taken from wind-tunnel results, and, the largest single divergence from reality, no wind, which is the first thing physical testing had to quantify.</p>
       </div>
       <div class="figs">
         <figure class="fig"><img src="/work/rocket-model.png" alt="First-principles thermofluid model: variable-mass motion, polytropic pressure ODE, compressible nozzle flow and exit Mach number equations" loading="lazy" /><figcaption>Fig. 1, The governing physics: variable-mass motion, a polytropic pressure ODE, and choked/unchoked nozzle flow.</figcaption></figure>
@@ -87,12 +87,12 @@ const jsonld = [
   <!-- METHOD -->
   <section class="band alt">
     <div class="wrap">
-      <span class="sec-idx">Method · three derivations</span>
+      <div class="phase-row"><span class="phase phase-solution">Solution</span><span class="phase-cs">First-principles model, three derivations</span></div>
       <h2 class="sec-title">Where my model diverges from the published ones</h2>
       <div class="about-body" style="max-width:72ch">
         <p><b>Water thrust.</b> Newton's second law on a variable-mass vehicle, resolved into path coordinates, with the drag group collapsed to a single constant. Thrust comes from the momentum flux of the jet, with the exhaust velocity from Bernoulli. Here the model parts company with the literature: I treated the air expansion as <b>polytropic rather than isothermal</b>, which, via the chain rule and the polytropic relation, leaves a single ODE in pressure alone, cheap to integrate alongside the equations of motion.</p>
         <p><b>Air thrust.</b> After blow-out the vessel is a fixed-volume reservoir of compressed air, and I <b>split the air phase into choked and unchoked regimes</b>, the throat sits at Mach one until ambient rises above the critical pressure, then the exit Mach number is set by the pressure ratio. Treating the whole air phase as unchoked, as most published models do, discards the pressure-thrust term exactly where thrust is at its highest. I also <b>carried the mass of the air still inside the vessel</b> in the vehicle mass, which the standard treatments neglect.</p>
-        <p><b>Coupled optimisation and structure.</b> The vessel is a thin-walled cylinder, so hoop stress governs the allowable pressure, and specifying wall thickness as a fraction of radius collapses that to <span class="mono">P_all = 2βσ_y / SF</span>, independent of radius. That means radius is free to be optimised for volume and drag while the safety factor still caps the fill pressure. I wrote the parameters as coupled functions so an illegal combination can't be evaluated by accident, fitted the optimum firing angle as a function of pressure (rather than sweeping it inside every loop), and found the wall-thickness design point where the vessel first survives the cartridge pressure.</p>
+        <p><b>Coupled optimisation and structure.</b> The vessel is a thin-walled cylinder, so a <strong>structural analysis</strong> of hoop stress governs the allowable pressure, and specifying wall thickness as a fraction of radius collapses that to <span class="mono">P_all = 2βσ_y / SF</span>, independent of radius. That means radius is free to be optimised for volume and drag while the <strong>safety factor</strong> still caps the fill pressure. In a <strong>coupled optimisation</strong> I wrote the parameters as linked functions so an illegal combination can't be evaluated by accident, fitted the optimum firing angle as a function of pressure (rather than sweeping it inside every loop), and found the wall-thickness design point where the vessel first survives the cartridge pressure.</p>
         <p>Validated against both my own experimental results and the published data, the model predicted more closely than the reference model, holding accuracy to within roughly 5% across fill, pressure and firing angle alike.</p>
       </div>
       <div class="figs">
@@ -105,7 +105,7 @@ const jsonld = [
   <!-- RESULTS -->
   <section class="band">
     <div class="wrap">
-      <span class="sec-idx">Results</span>
+      <div class="phase-row"><span class="phase">Results</span><span class="phase-cs">Water rocket flight model</span></div>
       <h2 class="sec-title">Over 300 metres, and standards-compliant before it was ever pressurised</h2>
       <div class="about-body" style="max-width:72ch">
         <p>The optimised launcher was made safe and delivered its heaviest deliverable payload over 300&nbsp;metres, while the structural analysis set the allowable pressure with a safety factor, so the design was already compliant with the relevant standards before it was ever pressurised. The number matters less than the method, though: an empirically validated model let me test thousands of parameter combinations, where the alternative would have been to build hundreds of prototypes and test them one at a time. It's the same method I used on the Volt 2 heating elements and firmware five years later, and against a production deadline, establish the physics, validate against measurement, then let the model do the searching.</p>

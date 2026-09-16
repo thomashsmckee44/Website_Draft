@@ -72,11 +72,11 @@ const jsonld = [
   <!-- PROBLEM -->
   <section class="band">
     <div class="wrap">
-      <span class="sec-idx">The problem</span>
+      <div class="phase-row"><span class="phase">Problem</span><span class="phase-cs">Dough proofing trays</span></div>
       <h2 class="sec-title">A brief that quietly contradicted itself</h2>
       <div class="about-body" style="max-width:72ch">
         <p>Five driving needs, each reasonable on its own, could not all be true at once. It had to <b>fit in a fridge</b> (a fixed maximum outer envelope) and <b>hold six 250&nbsp;g dough balls</b> (a fixed minimum inner envelope). The trays had to <b>nest</b> to save shipping and storage space, which needs draft, but draft plus the fixed inner dimensions eats into the fixed outer envelope. They had to <b>not wedge</b> when nested, which means bottoming out on a feature, but the brief also demanded <b>no internal features</b>, and a clean inner face means a clean outer face too.</p>
-        <p>Nesting needs draft; bottoming out needs a feature the brief forbids on the inside; a clean face rules out one there anyway. The brief was self-contradicting, so the first engineering task was to prove that in numbers, rather than argue it in a meeting.</p>
+        <p>Nesting needs draft; bottoming out needs a feature the brief forbids on the inside; a clean face rules out one there anyway. The brief was self-contradicting, so the first engineering task was to establish the <strong>requirements</strong> and prove the conflict in numbers, rather than argue it in a meeting.</p>
       </div>
       <div class="figs">
         <figure class="fig"><img src="/work/dough-nesting-graph.png" alt="Graph of required draft angle against nesting depth for three wall thicknesses, with the design depth marked" loading="lazy" /><figcaption>Fig. 1, Required draft against nesting depth, mapped for three wall thicknesses, against the fixed design depth.</figcaption></figure>
@@ -88,10 +88,10 @@ const jsonld = [
   <!-- METHOD i -->
   <section class="band alt">
     <div class="wrap">
-      <span class="sec-idx">Method · geometry</span>
+      <div class="phase-row"><span class="phase phase-solution">Solution</span><span class="phase-cs">Geometry, hide the solution in plain sight</span></div>
       <h2 class="sec-title">Quantify the conflict, then hide the solution in plain sight</h2>
       <div class="about-body" style="max-width:72ch">
-        <p>For one tray to enter another, the inner cavity at the entry plane must clear the outer wall of the tray above. Over a nesting depth <em>h</em>, at draft angle <em>α</em> and wall thickness <em>t</em>, that condition is <span class="mono">2h·tan α ≥ 2t + c</span>, where <em>c</em> is the running clearance. The outer envelope and inner dimensions were both fixed, so <em>h</em> and <em>t</em> were fixed too, leaving <em>α</em> as the only free variable. I mapped required draft against nesting depth and wall thickness and put that in front of the stakeholders.</p>
+        <p>For one tray to enter another, the inner cavity at the entry plane must clear the outer wall of the tray above. Through <strong>hand calculation</strong>, over a nesting depth <em>h</em>, at draft angle <em>α</em> and wall thickness <em>t</em>, that condition is <span class="mono">2h·tan α ≥ 2t + c</span>, where <em>c</em> is the running clearance. The outer envelope and inner dimensions were both fixed, so <em>h</em> and <em>t</em> were fixed too, leaving <em>α</em> as the only free variable. I mapped required draft against nesting depth and wall thickness and put that in front of the stakeholders.</p>
         <p>Draft alone means two trays wedge, they jam on the taper instead of bottoming out. The trays needed a bottoming-out feature, but the brief banned internal ones. So I made the bottom-out something the user actually wants: external ribs on the tray wall, designed as handles, with the nesting tray bottoming out on the ribs rather than on the tapered wall. The feature stops the wedge, it stiffens a large thin-walled moulding against warp, and it makes a gap to pick the tray up. One feature, three problems solved, and nothing on the inside.</p>
       </div>
       <div class="figs">
@@ -104,11 +104,11 @@ const jsonld = [
   <!-- METHOD ii -->
   <section class="band">
     <div class="wrap">
-      <span class="sec-idx">Method · tolerance &amp; DFM</span>
+      <div class="phase-row"><span class="phase phase-solution">Solution</span><span class="phase-cs">Tolerance stack &amp; DFM</span></div>
       <h2 class="sec-title">Tolerancing a product that fits four different ways</h2>
       <div class="about-body" style="max-width:72ch">
-        <p>The parts fit together four ways, lid on tray, lid in tray, tray nested in tray, and tray stacked on lid, and each is a different loop of the same features, so each got its own stack. The contributors were the cavity dimensions, mould-shrinkage variation across a large PP part, warp from differential cooling, the flatness of a thin base, and the position tolerance of the rib seats.</p>
-        <p>Treating each contributor as normal and independent, the assembly gap is normal with <span class="mono">σ_gap = √(Σσ²)</span>, and <span class="mono">Z = (g_min − μ_gap) / σ_gap</span>. The predicted fraction of assemblies that wedge or rattle is then Φ(Z), a scrappage rate in parts per hundred, rather than a pass/fail. That number is what let me spend tolerance where it mattered, tightening the rib-seat tolerance where it was worth paying for, and open everything else up. On the manufacturing side, a 250:1 flow-length ratio for the selected PP grade against a 310&nbsp;mm longest flow path set the wall thickness needed to fill, and a draft analysis was run on the production part.</p>
+        <p>The parts fit together four ways, lid on tray, lid in tray, tray nested in tray, and tray stacked on lid, and each is a different loop of the same features, so each got its own <strong>tolerance stack</strong>. The contributors were the cavity dimensions, <strong>mould-shrinkage</strong> variation across a large PP part, warp from differential cooling, the flatness of a thin base, and the position tolerance of the rib seats.</p>
+        <p>Treating each contributor as normal and independent, the assembly gap is normal with <span class="mono">σ_gap = √(Σσ²)</span>, and <span class="mono">Z = (g_min − μ_gap) / σ_gap</span>. The predicted fraction of assemblies that wedge or rattle is then Φ(Z), a scrappage rate in parts per hundred, rather than a pass/fail. That number is what let me spend tolerance where it mattered, tightening the rib-seat tolerance where it was worth paying for, and open everything else up. On the <strong>DFM</strong> side, a 250:1 flow-length ratio for the selected <strong>injection-moulding</strong> PP grade against a 310&nbsp;mm longest flow path set the wall thickness needed to fill, and a <strong>draft analysis</strong> was run on the production part.</p>
       </div>
       <div class="figs">
         <figure class="fig"><img src="/work/dough-bellcurve.png" alt="Gap distribution plotted against the wedge and rattle limits, with the tail area marked as predicted scrappage" loading="lazy" /><figcaption>Fig. 5, The assembly-gap distribution against the wedge and rattle limits; the tail is the predicted scrappage.</figcaption></figure>
@@ -120,11 +120,11 @@ const jsonld = [
   <!-- RESULTS -->
   <section class="band alt">
     <div class="wrap">
-      <span class="sec-idx">Results</span>
+      <div class="phase-row"><span class="phase">Results</span><span class="phase-cs">Dough proofing trays</span></div>
       <h2 class="sec-title">Four requirements met in full, the fifth on purpose</h2>
       <div class="about-body" style="max-width:72ch">
         <p>The trays nest, they don't wedge, they bottom out on a defined feature, their internal faces are clean, and they fit a domestic fridge, four of the five conflicting requirements met in full, and the fifth met by a compromise that was quantified rather than stumbled into. They hold six dough balls and are tall enough to bulk-prove them, with tapered walls tuned for clean, damage-free dough release, and a Pizza Prep Lid accessory that extends the ecosystem.</p>
-        <p>The predicted scrappage from the stack was borne out in production, low scrappage, low failure, with CMM inspection of first articles confirming the rib seats and base flatness sat where the analysis said they would. The product ships at 4.8 stars across 460+ reviews.</p>
+        <p>The predicted scrappage from the <strong>tolerance stack</strong> was borne out in production, low scrappage, low failure, with <strong>CMM inspection</strong> of first articles confirming the rib seats and base flatness sat where the analysis said they would. The product ships at 4.8 stars across 460+ reviews.</p>
       </div>
     </div>
   </section>
