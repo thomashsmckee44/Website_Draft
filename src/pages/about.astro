@@ -104,8 +104,72 @@ const jsonld = [
     </div>
   </section>
 
-  <!-- TRACK RECORD -->
+  <!-- CAPABILITY -->
   <section class="band alt">
+    <div class="wrap">
+      <span class="sec-idx">Capability</span>
+      <h2 class="sec-title">Skills, software and processes</h2>
+      <p class="sec-intro">The full toolkit I bring to a project. The case studies show most of it in action, and this is the rest of what I can take on.</p>
+      <div class="caps">
+        <div class="capcol">
+          <div class="cap-h">Core skills</div>
+          <div class="cap-tags">
+            <span class="tag">Mechanical design</span>
+            <span class="tag">FEA</span>
+            <span class="tag">Structural analysis</span>
+            <span class="tag">Hand calculation</span>
+            <span class="tag">Mathematical modelling</span>
+            <span class="tag">Tolerance stack analysis</span>
+            <span class="tag">GD&amp;T</span>
+            <span class="tag">CFD</span>
+            <span class="tag">Thermal engineering</span>
+            <span class="tag">DFM &amp; DFA</span>
+            <span class="tag">Tooling development</span>
+            <span class="tag">Requirements &amp; verification</span>
+            <span class="tag">Materials selection</span>
+            <span class="tag">Supplier liaison</span>
+            <span class="tag">Industrial design intent</span>
+            <span class="tag">Application firmware</span>
+            <span class="tag">Control systems &amp; state machines</span>
+            <span class="tag">Combustion &amp; airflow</span>
+            <span class="tag">Test rig design &amp; instrumentation</span>
+            <span class="tag">Standards compliance &amp; certification</span>
+          </div>
+        </div>
+        <div class="capcol">
+          <div class="cap-h">Software &amp; tools</div>
+          <div class="cap-tags">
+            <span class="tag">SolidWorks &amp; PDM</span>
+            <span class="tag">SolidWorks Simulation</span>
+            <span class="tag">SolidWorks Flow Simulation</span>
+            <span class="tag">ANSYS Mechanical</span>
+            <span class="tag">MATLAB</span>
+            <span class="tag">Python</span>
+            <span class="tag">KeyShot</span>
+            <span class="tag">Multi-channel data logging</span>
+          </div>
+        </div>
+        <div class="capcol">
+          <div class="cap-h">Manufacturing processes</div>
+          <div class="cap-tags">
+            <span class="tag">Injection moulding</span>
+            <span class="tag">Pressure die casting</span>
+            <span class="tag">Sheet metal stamping &amp; pressing</span>
+            <span class="tag">Deep drawing</span>
+            <span class="tag">CNC machining</span>
+            <span class="tag">Laser cutting</span>
+            <span class="tag">Welding</span>
+            <span class="tag">Powder coating</span>
+            <span class="tag">Soft tooling &amp; rapid prototyping</span>
+            <span class="tag">High-volume assembly</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACK RECORD -->
+  <section class="band">
     <div class="wrap">
       <span class="sec-idx">Track record</span>
       <h2 class="sec-title">Shipped, recognised, and sold worldwide</h2>
@@ -123,7 +187,7 @@ const jsonld = [
   </section>
 
   <!-- VALUES -->
-  <section class="band">
+  <section class="band alt">
     <div class="wrap">
       <span class="sec-idx">What I stand for</span>
       <h2 class="sec-title">How I choose to work</h2>
@@ -137,7 +201,7 @@ const jsonld = [
   </section>
 
   <!-- PRO BONO -->
-  <section class="band alt">
+  <section class="band">
     <div class="wrap">
       <span class="sec-idx">Beyond the commercial</span>
       <h2 class="sec-title">Engineering that gives something back</h2>
@@ -148,7 +212,7 @@ const jsonld = [
   </section>
 
   <!-- CTA -->
-  <section class="band" id="start">
+  <section class="band alt" id="start">
     <div class="wrap">
       <div class="cta">
         <div class="inner">
@@ -164,4 +228,12 @@ const jsonld = [
     </div>
   </section>
 </main>
+
+<style>
+  .caps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,40px);margin-top:30px}
+  .capcol .cap-h{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ember);padding-bottom:11px;border-bottom:1px solid var(--line);margin-bottom:16px}
+  .cap-tags{display:flex;flex-wrap:wrap;gap:8px}
+  .cap-tags .tag{font-family:var(--font-mono);font-size:12px;color:var(--ink-2);background:var(--surface);border:1px solid var(--line-2);border-radius:6px;padding:6px 11px;line-height:1.2}
+  @media (max-width:820px){.caps{grid-template-columns:1fr;gap:26px}}
+</style>
 </Base>

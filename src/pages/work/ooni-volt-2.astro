@@ -74,15 +74,16 @@ const jsonld = [
   <section class="band">
     <div class="wrap">
       <div class="phase-row"><span class="phase">Problem</span><span class="phase-cs">Case study 1.1 · Heating elements</span></div>
-      <h2 class="sec-title">Off-the-shelf elements were fighting the physics</h2>
+      <h2 class="sec-title">Designing the Volt 2 heating elements for improved performance under high constraints</h2>
       <div class="about-body" style="max-width:70ch">
-        <p>The original Volt used off-the-shelf circular heating elements, and they caused a set of coupled problems. The stone heated unevenly, scorching the base of the pizza in the shape of the element beneath it, while the radiation only reached the top of the pizza and not its side, leaving a pale, undercooked crust edge.</p>
-        <p>Fixing it was constrained on every side. Element power was capped by a 110&nbsp;V US domestic supply. Cavity height was fixed by other functional requirements. The element had to be manufacturable as a single, continuous bent tube. It needed a large enough circumference for its radiation to reach the side of the pizza, yet be short enough to keep a low energy density and a rapid, controllable response.</p>
+        <p>The original Volt used off-the-shelf circular elements, and they caused a set of coupled problems: poor temperature distribution across the stone scorched bases in the shape of the element beneath them, while radiation reached only the top of the pizza and not the side, leaving a pale, undercooked crust.</p>
+        <p>Designing the heating elements along with the firmware allowed a control loop in development, dovetailing so that no one aspect had to solve the problem in isolation. Getting the elements right was fundamental to the oven performance.</p>
+        <p>The constraints were tight on every side. Element power was capped by a 110&nbsp;V (US) domestic supply. Cavity height was fixed by other functional requirements. The element had to be manufacturable as a single, continuous bent tube. It had to have a large enough circumference for the radiation to reach the side of the pizza, yet be short enough to have a low energy density and a rapid response.</p>
       </div>
-      <div class="callout"><b>Defined failure modes</b>: uneven stone temperature · pale crust edge · cold spot at the element terminations · stone thermal shock.</div>
+      <div class="callout"><b>Defined failure modes</b>: uneven stone temperature · pale crust edge · cold spot at the terminations · stone thermal shock.</div>
       <div class="figs">
-        <figure class="fig"><img src="/work/volt-element-sim.png" alt="SolidWorks thermal simulation of the stone temperature under an off-the-shelf circular element, showing hot and cold banding" loading="lazy" /><figcaption>Fig. 1, Simulated stone temperature under the off-the-shelf element. Black and white show the unusable extremes.</figcaption></figure>
-        <figure class="fig"><img src="/work/volt-rig.png" alt="Instrumented test rig with a heating element glowing red inside the oven cavity, thermocouples wired out" loading="lazy" /><figcaption>Fig. 2, Instrumented rig: thermocouples bonded across the stone on a grid, logged on multiple channels.</figcaption></figure>
+        <figure class="fig"><img src="/work/volt-element-sim.png" alt="SolidWorks thermal simulation of the stone temperature under an off-the-shelf circular element, showing hot and cold banding" loading="lazy" /><figcaption>Fig. 2, Off-the-shelf circular element, simulated stone temperature. The black and white on the scale show the unusable parts of the stone.</figcaption></figure>
+        <figure class="fig"><img src="/work/volt-rig.png" alt="Scorched pizza base showing the ring pattern left by the circular element" loading="lazy" /><figcaption>Fig. 3, Scorched base and pale crust edge, the failure modes on the plate. [image to swap]</figcaption></figure>
       </div>
     </div>
   </section>
@@ -91,16 +92,15 @@ const jsonld = [
   <section class="band alt">
     <div class="wrap">
       <div class="phase-row"><span class="phase phase-solution">Solution</span><span class="phase-cs">Case study 1.1 · Heating elements</span></div>
-      <h2 class="sec-title">Hand calculation, then a rig, then a validated simulation</h2>
+      <h2 class="sec-title">Defining the constraints, then a validated model to test profiles without expensive prototyping</h2>
       <div class="about-body" style="max-width:70ch">
-        <p>Before drawing any geometry I calculated what was physically available. Through <strong>hand calculation</strong>, the element's surface loading, <span class="mono">q″&nbsp;=&nbsp;P&nbsp;/&nbsp;πdL</span>, fixes the sheath temperature and therefore the sag and the local scorch risk, so increasing the element length <em>L</em> at constant power <em>P</em> lowers <span class="mono">q″</span> and spreads the radiant field. That first-order sizing, plus geometric view-factor assessment, gave me the initial <strong>heating element designs</strong>.</p>
-        <p>I then built <strong>test rigs</strong>. Thermocouples were bonded across the stone on a grid and logged on <strong>multiple channels</strong> simultaneously, with the same conditions replicated in <strong>SolidWorks Flow Simulation</strong>, the element as a heat-generating solid, the stone as a conducting solid, and conduction, convection and radiation all active. Once the measured and simulated stone fields agreed in both distribution <em>and</em> magnitude, I had a validated <strong>thermal simulation</strong> I could trust to test element profiles without building each one.</p>
-        <p>With that, I optimised across serpentine pitch, perimeter offset, corner radius, and the split of duty between the top and bottom elements. Crucially, the top element was optimised separately, for cooking, rather than being asked to heat the stone as well, using two elements for their different strengths was the change that unlocked the performance the previous single-element generation couldn't reach.</p>
-        <p>The elements themselves are a bent tubular part, so <strong>manufacturability</strong> was built into every profile, and the final geometry was carried into production as a single continuous element.</p>
+        <p>Before drawing any geometry I calculated what was physically available: the element's surface loading, the radiant view factor to the stone and to the pizza edge, and the conduction path into the stone. Using <strong>hand calculation</strong> and geometric assessment I drafted the initial <strong>heating element designs</strong>. The first-order sizing is simple: element surface loading <span class="mono">q″&nbsp;=&nbsp;P&nbsp;/&nbsp;πdL</span> fixes the sheath temperature, and therefore the sag and the local scorch risk, so increasing the length <em>L</em> at constant power <em>P</em> lowers <span class="mono">q″</span> and spreads the radiant field.</p>
+        <p>I then built <strong>test rigs</strong>. Thermocouples were bonded across the stone on a grid and logged on <strong>multiple channels</strong> simultaneously, with the conditions replicated in <strong>SolidWorks Flow Simulation</strong>, the element as a heat-generating solid, the stone as a conducting solid, and conduction, convection and radiation all active. With the right boundary conditions the results were accurate in both distribution and magnitude, so once the measured and simulated stone fields agreed I could test more element profiles without building each one.</p>
+        <p>With a validated <strong>thermal simulation</strong> I optimised across serpentine pitch, perimeter offset, corner radius, and the split of duty between the top and bottom elements, meeting the heat-up time and element reactivity requirements as I went. The top element was optimised separately, for cooking. Using two elements for their different strengths was the change that unlocked what the previous single-element generation, trying to heat the stone and cook with one shape, could never reach.</p>
       </div>
       <div class="figs">
-        <figure class="fig"><img src="/work/volt-cxy.png" alt="Experimental stone temperature results beside the simulated results, two 3D surface plots that closely match" loading="lazy" /><figcaption>Fig. 3, Experimental vs simulated stone field. Agreement in shape and magnitude validated the model.</figcaption></figure>
-        <figure class="fig"><img src="/work/volt-pizza.png" alt="A leopard-spotted, evenly cooked pizza being lifted from the Volt 2 oven" loading="lazy" /><figcaption>Fig. 4, The result on the plate: even base, leopard-spotted crust.</figcaption></figure>
+        <figure class="fig"><img src="/work/volt-rig.png" alt="Instrumented test rig with a heating element glowing red inside the oven cavity, thermocouples wired out" loading="lazy" /><figcaption>Fig. 7, Testing an off-the-shelf element on the instrumented rig, thermocouples logged on multiple channels. [image to swap]</figcaption></figure>
+        <figure class="fig"><img src="/work/volt-cxy.png" alt="Experimental stone temperature results beside the simulated results, two 3D surface plots that closely match" loading="lazy" /><figcaption>Fig. 9, Simulation results against the measured stone field; agreement in shape and magnitude validated the model.</figcaption></figure>
       </div>
     </div>
   </section>
@@ -109,10 +109,14 @@ const jsonld = [
   <section class="band">
     <div class="wrap">
       <div class="phase-row"><span class="phase">Results</span><span class="phase-cs">Case study 1.1 · Heating elements</span></div>
-      <h2 class="sec-title">70% better stone distribution, and zero wasted prototypes</h2>
+      <h2 class="sec-title">70% better stone temperature distribution and markedly improved cooking performance</h2>
       <div class="about-body" style="max-width:70ch">
-        <p>The results were positive both objectively and subjectively: a far more even stone temperature across the cooking plane, and <strong>user testing</strong> that returned 100% agreement on improved cooking performance, all while meeting the constraining requirements. Because the <strong>thermal simulation</strong> was validated first, the final design was reached with zero expensive prototypes.</p>
+        <p>The results were positive both objectively and subjectively: a far more even stone temperature distribution across the cooking plane, and <strong>user testing</strong> that returned 100% agreement on improved cooking performance, all while meeting the constraining requirements. Because the <strong>thermal simulation</strong> was validated first, the final design was reached with zero expensive prototypes.</p>
         <p>Bases cook evenly, the pale ring around the edge is gone, and radiant intensity at the top is high enough for leopard spotting on a Neapolitan, while the same oven can still bake an even Detroit, or a Victoria sponge.</p>
+      </div>
+      <div class="figs">
+        <figure class="fig"><img src="/work/volt-pizza.png" alt="A leopard-spotted, evenly cooked Neapolitan pizza from the Volt 2 oven" loading="lazy" /><figcaption>Fig. 15, The result on the plate: an even base and a leopard-spotted Neapolitan crust.</figcaption></figure>
+        <figure class="fig"><img src="/work/volt-element-sim.png" alt="Final thermal simulation of the optimised two-element stone temperature field" loading="lazy" /><figcaption>Fig. 13, Final simulation of the optimised two-element stone field. [image to swap]</figcaption></figure>
       </div>
     </div>
   </section>
@@ -121,10 +125,11 @@ const jsonld = [
   <section class="band alt">
     <div class="wrap">
       <div class="phase-row"><span class="phase">Problem</span><span class="phase-cs">Case study 1.2 · Thermal model &amp; control firmware</span></div>
-      <h2 class="sec-title">A bigger window and a smaller body, the firmware had to recoup it</h2>
+      <h2 class="sec-title">Optimising heat-up and cooking performance despite a bigger window and a bigger cavity</h2>
       <div class="about-body" style="max-width:70ch">
-        <p>The Volt 2 gained a 64% larger viewing window in a 30% smaller footprint. Glass is a poor insulator and lets radiation straight through, and the smaller envelope left less room for insulation, so thermally the oven started in a worse position than the model it replaced, while the brief demanded <em>faster</em> heat-up.</p>
-        <p>The bottom element is efficient for heating the stone because its radiation is trapped, but it's the wrong element for cooking because it scorches the base; the top element is less efficient but crucial for the cook. Balancing their duty to satisfy the requirements and recoup the energy loss is what later became the basis for <b>Pizza Intelligence™</b>. First, though, I wrote the product and firmware performance document that defined all of it through <strong>requirements and verification</strong>, heat-up time, thermocouple accuracy tolerance, holding a low 20&nbsp;°C for dough proofing, and subjective targets like New York-style cooking, before writing a line of control logic.</p>
+        <p>The Volt 2 has a 64% larger viewing window in a 30% smaller footprint. Glass is a poor insulator and lets radiation pass through, and the reduced envelope left less room for insulation, so the oven started in a worse thermal position than the previous generation. The brief, however, specified faster heat-up times.</p>
+        <p>The bottom element is more efficient for heating the stone because its radiation is trapped, but it is the wrong element for cooking since it can scorch the base. The top element is less efficient but crucial to the perfect cook, so the top-bottom duty algorithms had to be optimised to satisfy the requirements and recoup the energy loss. This later became the basis for <b>Pizza Intelligence™</b>.</p>
+        <p>The specification had to cover heat-up time, thermocouple accuracy tolerance, holding a low 20&nbsp;°C for dough proofing, and subjective targets such as New York style cooking. Through <strong>requirements and verification</strong> I wrote the product and firmware performance document that defined all of it before writing any control logic.</p>
       </div>
     </div>
   </section>
@@ -132,14 +137,15 @@ const jsonld = [
   <section class="band">
     <div class="wrap">
       <div class="phase-row"><span class="phase phase-solution">Solution</span><span class="phase-cs">Case study 1.2 · Thermal model &amp; control firmware</span></div>
-      <h2 class="sec-title">Writing my own oven model to develop firmware without the hardware</h2>
+      <h2 class="sec-title">Writing a mathematical model to simulate oven behaviour, and using it to develop production firmware</h2>
       <div class="about-body" style="max-width:70ch">
-        <p>With no simulation software that would let me test control logic, I built my own. Through <strong>mathematical modelling</strong> I modelled the oven from first principles as two lumped thermal masses, the stone as one slow node, and the element, shell and cavity air as a second, faster node, with radiation linearised about the operating point. A lumped-capacitance energy balance on the two nodes reduces to a single second-order ODE in the stone temperature, whose step response is over-damped with one fast time constant and one slow one.</p>
-        <p>I fitted two coefficients per state against logged data, for three states, top element on, bottom element on, and idle, which reproduced the real oven closely enough to develop and debug the <strong>control firmware</strong> logic as a loop, without waiting on a physical heat-up. That <strong>thermal model</strong> is what let the adaptive <strong>control system</strong>, detecting a cook, and a fuel-style recharge, from the stone-temperature signature alone, be built and tuned safely.</p>
+        <p>With no simulation software available that would let me test control logic, I wrote my own. Through <strong>mathematical modelling</strong> I built the oven from first principles as two lumped thermal masses, the stone as one slow node, and the element, shell and cavity air as a second, faster node, with radiation linearised about the operating point. A lumped-capacitance energy balance on the two nodes reduces to a single second-order ODE in the stone temperature, whose step response is over-damped with one fast time constant and one slow one. I fitted the coefficients per state from logged data, for three states, top element on, bottom element on and idle, which reproduced the real oven closely enough to develop and debug the <strong>control firmware</strong> as a loop, without waiting on a physical heat-up.</p>
+        <p>Each firmware revision carried both a logic flow and a parameter table, revision-controlled together: I debugged the logic with standard parameters before optimising performance. The model is also what let the adaptive <strong>control system</strong> be built and tuned safely, detecting a cook and a fuel-style recharge from the stone-temperature signature alone.</p>
+        <p>Late in development the stone thermistor, designed so the stone slides in and out without breaking, failed food safety, and its replacement performed far worse: one reading corresponded to several different stone temperatures at different times, so no polynomial regression could map it. Rather than change tooling, I fixed it in firmware with a state-aware transform rather than a fragile polynomial correction. The <strong>thermal model</strong> was crucial to that fix, and it became a building block of Pizza Intelligence™.</p>
       </div>
       <div class="figs">
-        <figure class="fig"><img src="/work/volt-pi-code.png" alt="Python code for the corrected-oven-temperature control logic used in the oven model" loading="lazy" /><figcaption>Fig. 5, The corrected-oven-temperature control logic, run as a loop against the firmware.</figcaption></figure>
-        <figure class="fig"><img src="/work/volt-cooking.png" alt="Graph of stone temperature and cooking stage over time, with cook and recharge events detected from the temperature signature" loading="lazy" /><figcaption>Fig. 6, Cooking and recharge detected from the stone-temperature signature, balance optimised in response.</figcaption></figure>
+        <figure class="fig"><img src="/work/volt-pi-code.png" alt="Python code for the corrected-oven-temperature control logic run as a loop against the firmware" loading="lazy" /><figcaption>Fig. 19, The model coded up, run as a loop against the firmware.</figcaption></figure>
+        <figure class="fig"><img src="/work/volt-cooking.png" alt="Graph of the thermistor reading against the true stone surface temperature over a cook" loading="lazy" /><figcaption>Fig. 23, The thermistor against true stone temperature, one reading maps to several stone temperatures. [image to swap]</figcaption></figure>
       </div>
     </div>
   </section>

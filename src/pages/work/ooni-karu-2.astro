@@ -73,21 +73,45 @@ const jsonld = [
     </div>
   </section>
 
-  <!-- CS 2.1 COMBUSTION -->
+  <!-- CS 2.1 COMBUSTION - PROBLEM -->
   <section class="band">
     <div class="wrap">
       <div class="phase-row"><span class="phase">Problem</span><span class="phase-cs">Case study 2.1 · Combustion &amp; airflow</span></div>
-      <h2 class="sec-title">Burning wood and gas well, through a big pane of glass</h2>
+      <h2 class="sec-title">Optimising combustion and cooking performance across multiple fuels</h2>
       <div class="about-body" style="max-width:70ch">
-        <p>A multi-fuel oven has to burn wood <em>and</em> gas well on the same <strong>combustion and airflow</strong> setup, and the two have almost opposite requirements: solid fuel wants a deep bed, primary air underneath and a long residence time, whereas gas needs controlled entrainment for a stable flame front. On top of that, the Karu 2 was gaining a large glass window where the previous generation had insulated steel, and glass radiates and conducts heat straight out of the cavity, so the combustion system had to recoup that loss before it could improve anything at all.</p>
+        <p>A multi-fuel oven has to burn wood <em>and</em> gas well on the same <strong>combustion and airflow</strong> setup, and the two have almost opposite requirements: solid fuel wants a deep bed, primary air underneath and a long residence time, whereas gas needs controlled entrainment for a stable flame front.</p>
+        <p>On top of that, the Karu 2 was gaining a large glass viewing window where the previous generation had insulated steel. Glass radiates and conducts heat straight out of the cavity, so the combustion system had to recoup that loss before it could make any improvement at all.</p>
       </div>
-      <div class="callout"><b>Targets</b>: 500&nbsp;°C stone with a 60-second cook · even flame across the chamber · lower solid-fuel use than the previous generation · stable in wind and rain · touch-temperature and emissions compliance.</div>
-      <div class="phase-row" style="margin-top:30px"><span class="phase phase-solution">Solution</span><span class="phase-cs">Case study 2.1 · Combustion &amp; airflow</span></div>
-      <div class="about-body" style="max-width:70ch;margin-top:14px">
-        <p>I used <strong>CFD</strong> to study the area and position of the primary inlet, <strong>test-rig</strong> work with blanking plates over the inlet and chimney to tune the airflow for both fast heat-up and low-temperature holding, while accounting for wind and rain. The baffle handle, a rod running from a 500&nbsp;°C chamber to a surface the user has to grip, I sized first as a fin by <strong>hand calculation</strong>: steady one-dimensional conduction with convective loss along the length sets how fast tip temperature falls, so a thin stainless shaft with a deliberate thermal break puts the grip comfortably inside the standard's <strong>touch-temperature compliance</strong> limits. <strong>FEA</strong> and instrumented testing confirmed it.</p>
+      <div class="callout"><b>Targets</b>: 500&nbsp;°C stone with a 60-second cook · even flame across the chamber · lower solid-fuel consumption than the previous generation · stable performance in wind and rain · touch-temperature and emissions compliance.</div>
+    </div>
+  </section>
+
+  <!-- CS 2.1 COMBUSTION - SOLUTION -->
+  <section class="band alt">
+    <div class="wrap">
+      <div class="phase-row"><span class="phase phase-solution">Solution</span><span class="phase-cs">Case study 2.1 · Combustion &amp; airflow</span></div>
+      <h2 class="sec-title">A thermodynamic model and CFD for the air path, and a handle sized by hand before FEA</h2>
+      <div class="about-body" style="max-width:70ch">
+        <p><strong>CFD</strong> was used to study the area and position of the primary inlet. I tested with blanking plates over the inlet and chimney to optimise the airflow for both fast heat-up and low-temperature holding, while accounting for conditions such as wind and rain ingress.</p>
+        <p>The baffle handle is a rod running from a 500&nbsp;°C chamber to a surface the user must grip. Before simulating anything I sized it as a fin by <strong>hand calculation</strong>: steady one-dimensional conduction with convective loss along the length and at the tip sets how fast the tip temperature falls, and that depends only on the handle's diameter, section and material. This informed the length, thickness and standoff of the shaft, so a thin stainless shaft with a deliberate thermal break puts the grip inside the standard's <strong>touch-temperature compliance</strong> limits. <strong>FEA</strong> and instrumented testing confirmed it.</p>
       </div>
-      <div class="phase-row" style="margin-top:30px"><span class="phase">Results</span><span class="phase-cs">Case study 2.1 · Combustion &amp; airflow</span></div>
-      <div class="headline" style="margin-top:14px;grid-template-columns:repeat(3,1fr)">
+      <div class="figs">
+        <figure class="fig"><img src="/work/karu-thermal.png" alt="Instrumented touch-temperature testing of the baffle handle with thermocouples" loading="lazy" /><figcaption>Fig. 43, Instrumented touch-temperature testing of the baffle handle. [image to swap]</figcaption></figure>
+        <figure class="fig"><img src="/work/karu-clearview-fire.png" alt="Combustion simulation of the flame and airflow across the chamber" loading="lazy" /><figcaption>Fig. 44, Combustion simulation of the flame and air path across the chamber. [image to swap]</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CS 2.1 COMBUSTION - RESULTS -->
+  <section class="band">
+    <div class="wrap">
+      <div class="phase-row"><span class="phase">Results</span><span class="phase-cs">Case study 2.1 · Combustion &amp; airflow</span></div>
+      <h2 class="sec-title">A more efficient oven even with a glass door</h2>
+      <div class="about-body" style="max-width:70ch">
+        <p>Combustion efficiency improvements cut solid fuel consumption to 27% less than the previous generation, while a 45% larger fuel tray gave a broader, more even flame and better coverage of the stone. The oven still reaches 500&nbsp;°C with a 60-second cook despite the radiant and conductive loss through a large window.</p>
+        <p>The new baffle handle passes touch temperature with margin, unlike the hot handle of the previous model. I owned the pre-compliance and DVP testing end to end, documentation included, and the final baffle design was re-used on the larger Karu 2 Pro.</p>
+      </div>
+      <div class="headline" style="margin-top:26px;grid-template-columns:repeat(3,1fr)">
         <div class="hstat"><div class="hn">−27%</div><div class="hl">solid fuel consumption against the previous generation</div></div>
         <div class="hstat"><div class="hn">+45%</div><div class="hl">solid-fuel tray area, for a broader, more even flame</div></div>
         <div class="hstat"><div class="hn">500 °C</div><div class="hl">60-second cook, achieved even with the large glass window</div></div>
@@ -99,7 +123,7 @@ const jsonld = [
   <section class="band alt">
     <div class="wrap">
       <div class="phase-row"><span class="phase">Problem</span><span class="phase-cs">Case study 2.2 · ClearView™ door</span></div>
-      <h2 class="sec-title">A window to watch the cook, that doesn't black out with soot</h2>
+      <h2 class="sec-title">Designing and integrating a glass door to view cooking food</h2>
       <div class="about-body" style="max-width:70ch">
         <p>The original plan was a small peephole, so a user could glimpse the pizza without a large window sooting up. There wasn't budget for the airwash technology used on the flagship Karu 16, and that technology was unreliable and would have covered most of the viewing space on this model anyway. Soot deposits on glass because incompletely burned carbon particles reach a surface cool enough for them to stick, so the design had to keep particle-laden gas off the glass without a complex structure in front of it.</p>
         <p>The previous generation's anti-soot architecture was expensive in every sense: it blocked 30% of the glass, ran to 30+ parts and 40+ fixings in the door, took over 24&nbsp;hours of assembly and cure time, and soot was <em>still</em> an issue.</p>
@@ -111,13 +135,13 @@ const jsonld = [
   <section class="band">
     <div class="wrap">
       <div class="phase-row"><span class="phase phase-solution">Solution</span><span class="phase-cs">Case study 2.2 · ClearView™ door</span></div>
-      <h2 class="sec-title">Trip the boundary layer, and let the fire clean its own window</h2>
+      <h2 class="sec-title">Recessing the glass and allowing passive cool air to create a turbulent boundary layer</h2>
       <div class="about-body" style="max-width:70ch">
         <p>Soot arrives at the glass by thermophoresis and diffusion across the boundary layer: a thick, quiescent layer lets particles drift in and settle. Deliberately tripping the flow along the inside face of the glass thins that layer and sweeps particles back into the bulk gas, where they burn. The mechanism is pure <strong>geometric design</strong>, recess the glass and route passive cool air across it, so it adds nothing to cost or assembly.</p>
         <p>I hand-prototyped it: <strong>sheet-metal</strong> and borosilicate doors tested on old ovens, each iteration run to a full wood cook and judged on the glass. Early prototypes were still sooty, the air path was in the right place, but the aim and the gap were wrong. Successive iterations moved the entry, changed the angle of attack along the glass and closed the gap until the flow stayed attached across the whole window rather than just its lower half.</p>
       </div>
       <div class="figs">
-        <figure class="fig wide"><img src="/work/karu-clearview-fire.png" alt="Flames clearly visible through the clear glass door of the Karu 2 during a wood cook" loading="lazy" /><figcaption>Fig. 1, The final geometry: flames stay clearly visible through the glass across a full wood cook.</figcaption></figure>
+        <figure class="fig wide"><img src="/work/karu-clearview-fire.png" alt="Flames clearly visible through the clear glass door of the Karu 2 during a wood cook" loading="lazy" /><figcaption>Fig. 52, The final anti-sooting geometry: flames stay clearly visible through the glass across a full wood cook.</figcaption></figure>
       </div>
     </div>
   </section>
@@ -125,14 +149,14 @@ const jsonld = [
   <section class="band alt">
     <div class="wrap">
       <div class="phase-row"><span class="phase">Results</span><span class="phase-cs">Case study 2.2 · ClearView™ door</span></div>
-      <h2 class="sec-title">Clear glass, a bigger window, and a free invention</h2>
+      <h2 class="sec-title">Clear glass, a larger window, cheaper BOM and running costs</h2>
       <div class="about-body" style="max-width:70ch">
         <p>The geometry solved the problem outright: soot deposits visibly on the surrounding metal while the glass stays clear through a full wood cook. Because both the anti-sooting and the airflow are geometry, the invention is effectively free, nothing added to the bill of materials, nothing added to the line, and the window ended up <em>larger</em> than the original brief allowed. The peephole was never needed. There's a second-order win too: on gas the flame stays visible through the glass, so the door stays shut, where the previous door had to be removed to see the flame and lost a chunk of the oven's efficiency every time.</p>
         <p>ClearView™ is patented, and the architecture scaled: it was carried onto the larger Karu 2 Pro (iF Design Award 2025), where the bigger window and better performance came with the BOM and assembly savings intact.</p>
       </div>
       <div class="figs">
-        <figure class="fig"><img src="/work/karu-clearview-life.png" alt="Two people looking through the clear glass door of a Karu 2 oven outdoors" loading="lazy" /><figcaption>Fig. 2, ClearView™ borosilicate glass door in use.</figcaption></figure>
-        <figure class="fig"><img src="/work/karu-thermal.png" alt="Thermal camera image of the door surface reading around 57 degrees Celsius" loading="lazy" /><figcaption>Fig. 3, Instrumented touch-temperature verification of the door surfaces.</figcaption></figure>
+        <figure class="fig"><img src="/work/karu-clearview-life.png" alt="Two people looking through the clear glass door of a Karu 2 oven outdoors" loading="lazy" /><figcaption>Fig. 54, Tooled prototype: soot deposits on the surrounding metal while the glass stays clear.</figcaption></figure>
+        <figure class="fig"><img src="/work/karu-thermal.png" alt="Thermal camera image of the door surface reading around 57 degrees Celsius" loading="lazy" /><figcaption>Fig. 55, Karu 2 Pro, inheriting the architecture: only seven parts and two fixings.</figcaption></figure>
       </div>
     </div>
   </section>
@@ -141,7 +165,7 @@ const jsonld = [
   <section class="band">
     <div class="wrap">
       <div class="phase-row"><span class="phase">Problem</span><span class="phase-cs">Case study 2.3 · Door DFMA &amp; magnetic latch</span></div>
-      <h2 class="sec-title">A day of assembly, taken down to under two minutes</h2>
+      <h2 class="sec-title">The door performing in high-performance conditions, including magnets at 500 °C</h2>
       <div class="about-body" style="max-width:70ch">
         <p>The previous door took over 24&nbsp;hours of assembly time per unit, largely curing a gasket, and ran to more than 70 parts and fasteners. The replacement had to be cheaper, faster, and hold the <strong>industrial-design intent</strong> on every visible surface.</p>
       </div>
@@ -151,9 +175,9 @@ const jsonld = [
         <p>The door is held shut by magnets that must hold at temperature and release by hand. Magnet grade falls as it heats, so I placed the magnets where the door runs coolest and reduced the conduction path into them, then sized the hold from a moment balance about the hinge line by <strong>hand calculation</strong>, including a wind-gust term and the <em>derated</em> pull at the magnet's working temperature, not its room-temperature rating. Pull-off was then measured empirically, hot. The latch is also serviceable: magnets can be replaced without destroying the door, which matters on a product with a five-year field life outdoors. <strong>Materials selection</strong> for extreme heat, UV and rain was verified in simulation with heat shields, and the door was drop-tested; a fully removable door was designed, <strong>user-tested</strong> and patented.</p>
       </div>
       <div class="figs">
-        <figure class="fig"><img src="/work/karu-door-sketch.png" alt="Hand sketch of the Karu 2 door design with annotations on draft, fixings and manufacturability" loading="lazy" /><figcaption>Fig. 4, Early door design, working through draft, fixings and manufacturability.</figcaption></figure>
-        <figure class="fig"><img src="/work/karu-mould.png" alt="Injection mould tooling for the door parts on a factory floor" loading="lazy" /><figcaption>Fig. 5, Production tooling for the door parts.</figcaption></figure>
-        <figure class="fig"><img src="/work/karu-caliper.png" alt="Digital calipers measuring an incoming door part during inspection" loading="lazy" /><figcaption>Fig. 6, Incoming-part inspection during supplier and tooling support.</figcaption></figure>
+        <figure class="fig"><img src="/work/karu-door-sketch.png" alt="Hand sketch of the Karu 2 door design with annotations on draft, fixings and manufacturability" loading="lazy" /><figcaption>Fig. 56, Magnet placement and the moment-balance calculation about the hinge line.</figcaption></figure>
+        <figure class="fig"><img src="/work/karu-mould.png" alt="Injection mould tooling for the door parts on a factory floor" loading="lazy" /><figcaption>Fig. 57, Shipped door detail. [image to swap]</figcaption></figure>
+        <figure class="fig"><img src="/work/karu-caliper.png" alt="Digital calipers measuring an incoming door part during inspection" loading="lazy" /><figcaption>Fig. 58, Incoming-part inspection during supplier and tooling support.</figcaption></figure>
       </div>
       <div class="phase-row" style="margin-top:30px"><span class="phase">Results</span><span class="phase-cs">Case study 2.3 · Door DFMA &amp; magnetic latch</span></div>
       <div class="headline" style="margin-top:14px;grid-template-columns:repeat(3,1fr)">
