@@ -1,0 +1,138 @@
+---
+import Base from "../layouts/Base.astro";
+import "../styles/service.css";
+
+const SITE = "https://www.tmdesignengineering.com";
+const url = `${SITE}/for-startups`;
+const jsonld = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${url}#page`,
+    url,
+    name: "For Startups, senior design engineering without the full-time hire",
+    isPartOf: { "@id": `${SITE}/#website` },
+    about: { "@id": `${SITE}/#business` },
+    description:
+      "Senior design engineering for hardware startups: momentum on the roadmap, verification and manufacturing preparation, and a product carried toward production.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "For Startups", item: url },
+    ],
+  },
+];
+---
+<Base
+  title="For Startups, Senior Design Engineering On Demand | Thomas McKee"
+  description="Engineering muscle for hardware startups without a full-time hire. Keep the roadmap moving, verify a design before tooling, and prepare it for volume manufacture, from an engineer who has shipped to mass production."
+  type="website"
+  jsonld={jsonld}>
+<main>
+  <!-- HERO -->
+  <section class="svc-hero">
+    <div class="wrap">
+      <span class="eyebrow">For startups</span>
+      <h1>Engineering muscle, <em>without the full-time hire</em></h1>
+      <p class="lede">You're moving fast and the product has to keep moving with you, but a senior hardware engineer is a big, early commitment. I give startups that experience on demand: momentum on the roadmap, the hard problems solved, and a product carried toward production, from someone who has actually shipped consumer hardware to mass manufacture.</p>
+      <div class="svc-hero-cta">
+        <a class="btn btn-primary" href="/#contact">Book a free intro call <span class="arw">→</span></a>
+        <a class="btn btn-ghost" href="/services/product-development">See how it works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN -->
+  <section class="band alt">
+    <div class="wrap">
+      <span class="sec-idx">If this sounds like you</span>
+      <h2 class="sec-title">Where startups get stuck</h2>
+      <div class="pain">
+        <div class="q"><span class="mk">?</span><p>"We need senior engineering, but can't justify a full-time hire yet."</p></div>
+        <div class="q"><span class="mk">?</span><p>"We have a design, but is it actually ready to verify and manufacture?"</p></div>
+        <div class="q"><span class="mk">?</span><p>"How do we keep momentum without making an expensive mistake?"</p></div>
+      </div>
+      <p class="sec-intro">The value here is speed with a safety net: experienced engineering that keeps the roadmap moving and heads off the costly mistakes before they're baked into tooling. You get the reach of a senior hire, scoped to exactly what you need right now.</p>
+    </div>
+  </section>
+
+  <!-- HOW I HELP -->
+  <section class="band">
+    <div class="wrap">
+      <span class="sec-idx">How I plug in</span>
+      <h2 class="sec-title">A technical partner, scoped to the moment</h2>
+      <p class="sec-intro">Bring me in for the whole journey, or for the specific stage you're at right now. Most startups already have a design in motion, so verification and manufacturing prep are common entry points.</p>
+      <div class="aud-grid">
+        <a class="aud" href="/services/product-development">
+          <div class="aud-top"><h3>Product Development</h3><span class="aud-tag">Partnership</span></div>
+          <p>The full managed journey in scoped, gated phases, with a network of specialists brought in as the product needs them. One relationship, a whole development team's reach.</p>
+          <span class="aud-go">Product Development <span class="arw">→</span></span>
+        </a>
+        <a class="aud" href="/services/design-verification">
+          <div class="aud-top"><h3>Design Verification</h3></div>
+          <p>Prove the design performs, is safe and is compliant before you commit to tooling, with analysis, simulation and structured testing. Catch the recall-shaped problems while they're cheap.</p>
+          <span class="aud-go">Design Verification <span class="arw">→</span></span>
+        </a>
+        <a class="aud" href="/services/manufacturing-preparation">
+          <div class="aud-top"><h3>Manufacturing Preparation</h3></div>
+          <p>Get a proven design ready for efficient volume manufacture: DFMA, production CAD, a drawing pack with GD&amp;T, and liaison with your chosen factory in the UK or overseas.</p>
+          <span class="aud-go">Manufacturing Preparation <span class="arw">→</span></span>
+        </a>
+        <a class="aud" href="/services/contract-engineering">
+          <div class="aud-top"><h3>Contract Engineering</h3></div>
+          <p>Retained or day-rate capacity when you just need a safe pair of senior hands on a defined brief, remote or on-site, slotting into how your team already works.</p>
+          <span class="aud-go">Contract Engineering <span class="arw">→</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ME -->
+  <section class="band alt">
+    <div class="wrap">
+      <span class="sec-idx">Why startups work with me</span>
+      <h2 class="sec-title">Shipped, at volume, before</h2>
+      <div class="proof">
+        <div class="pl">The difference</div>
+        <p>The gap most startups hit is the one between a design that works and a product that ships economically at scale. I've been on the other side of it: taking consumer products from concept through to volume manufacture, on the factory floor when they were built. That means the decisions I make early are made by someone who has seen how they play out at the factory, so momentum now doesn't cost you a redesign later.</p>
+      </div>
+      <div class="svc-cred">
+        <span class="ci"><b>Mechanical, firmware, thermal &amp; manufacture</b> as one system</span>
+        <span class="ci"><b>Shipped to medium and high volume</b>, UK &amp; overseas</span>
+        <span class="ci"><b>Red Dot &amp; iF award-winning</b> products, patent-protected work</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="band" id="start">
+    <div class="wrap">
+      <div class="cta">
+        <div class="inner">
+          <span class="eyebrow">Let's talk</span>
+          <h2 style="margin-top:14px">Need to keep your product moving?</h2>
+          <p>Book a free intro call and tell me where the product is and where it's stuck. I'll tell you honestly how I can help and what the right engagement looks like.</p>
+          <div class="row">
+            <a class="btn btn-primary btn-lg" href="/#contact">Book a free intro call <span class="arw">→</span></a>
+            <span class="price-tag">Day rate · retainer · phased</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<style>
+  .aud-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+  @media(max-width:760px){.aud-grid{grid-template-columns:1fr}}
+  .aud{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:24px 26px;text-decoration:none;transition:.15s}
+  .aud:hover{border-color:var(--ink-3);transform:translateY(-2px)}
+  .aud-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .aud h3{font-size:1.18rem;letter-spacing:-0.015em;color:var(--ink)}
+  .aud p{color:var(--ink-2);font-size:0.98rem;margin-top:10px;line-height:1.5;flex:1}
+  .aud-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ember);border:1px solid var(--ember);border-radius:20px;padding:2px 9px;flex:none}
+  .aud-go{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-family:var(--font-mono);font-size:12.5px;color:var(--ember)}
+</style>
+</Base>

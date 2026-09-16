@@ -1,0 +1,131 @@
+---
+import Base from "../layouts/Base.astro";
+import "../styles/service.css";
+
+const SITE = "https://www.tmdesignengineering.com";
+const url = `${SITE}/for-founders`;
+const jsonld = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${url}#page`,
+    url,
+    name: "For Founders, a design engineer to build your product",
+    isPartOf: { "@id": `${SITE}/#website` },
+    about: { "@id": `${SITE}/#business` },
+    description:
+      "A design engineer for first-time founders: turn your idea into a real, manufacturable product with a steady process and honest guidance.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "For Founders", item: url },
+    ],
+  },
+];
+---
+<Base
+  title="For Founders, Turn Your Idea Into a Real Product | Thomas McKee"
+  description="A design engineer for first-time founders. Turn your idea into a working, manufacturable product with a steady process, honest guidance and plain-English engineering. Start from £650."
+  type="website"
+  jsonld={jsonld}>
+<main>
+  <!-- HERO -->
+  <section class="svc-hero">
+    <div class="wrap">
+      <span class="eyebrow">For founders &amp; entrepreneurs</span>
+      <h1>You have the idea. <em>I make it real.</em></h1>
+      <p class="lede">Turning a product idea into something you can hold, test and sell is a long road with a lot of unknowns, and most first-time founders are walking it without an experienced engineer beside them. That is what I do: take your idea and carry it, step by step, toward a real, manufacturable product, with a steady process and honest guidance the whole way.</p>
+      <div class="svc-hero-cta">
+        <a class="btn btn-primary" href="/#contact">Book a free intro call <span class="arw">→</span></a>
+        <a class="btn btn-ghost" href="/services/feasibility-study">Start from £650</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN -->
+  <section class="band alt">
+    <div class="wrap">
+      <span class="sec-idx">If this sounds like you</span>
+      <h2 class="sec-title">The worries I hear most</h2>
+      <div class="pain">
+        <div class="q"><span class="mk">?</span><p>"I have an idea, but no idea what it will cost or how long it will take."</p></div>
+        <div class="q"><span class="mk">?</span><p>"I'm not an engineer. Will I actually understand what's going on and why?"</p></div>
+        <div class="q"><span class="mk">?</span><p>"How do I know if this is even possible before I spend real money?"</p></div>
+      </div>
+      <p class="sec-intro">All three are the right questions, and all three are answerable early, before you commit anything you can't get back. The whole way I work is built around removing that uncertainty first, cheaply, and being straight with you about what I find.</p>
+    </div>
+  </section>
+
+  <!-- HOW I HELP -->
+  <section class="band">
+    <div class="wrap">
+      <span class="sec-idx">Where to start</span>
+      <h2 class="sec-title">A real process, not a cold quote</h2>
+      <p class="sec-intro">Most founders begin with one of these two. A study to find out if the idea holds up, or, once it does, the development that turns it into a working MVP.</p>
+      <div class="aud-grid">
+        <a class="aud" href="/services/feasibility-study">
+          <div class="aud-top"><h3>Feasibility Study</h3><span class="aud-price">from £650</span></div>
+          <p>The low-risk on-ramp. Is it possible, what will it roughly cost, how would it be made, and should you go, stop or change direction. A straight answer in writing, in about a week.</p>
+          <span class="aud-go">Feasibility Study <span class="arw">→</span></span>
+        </a>
+        <a class="aud" href="/services/concept-mvp-development">
+          <div class="aud-top"><h3>Concept &amp; MVP Development</h3><span class="aud-tag">Founder favourite</span></div>
+          <p>Turn the idea into an evaluated, buildable concept and a working MVP you can put in front of users, test, and raise investment on.</p>
+          <span class="aud-go">Concept &amp; MVP <span class="arw">→</span></span>
+        </a>
+      </div>
+      <p class="sec-intro" style="margin-top:22px">When you want it taken the whole way, that is <a href="/services/product-development" style="color:var(--ember)">full Product Development</a>, one engineer owning the path from idea to a product that's ready to manufacture, in scoped phases you approve one at a time.</p>
+    </div>
+  </section>
+
+  <!-- WHY ME -->
+  <section class="band alt">
+    <div class="wrap">
+      <span class="sec-idx">Why founders work with me</span>
+      <h2 class="sec-title">Built for someone doing this for the first time</h2>
+      <div class="deliv">
+        <div class="di"><div class="dn">01</div><h3>Plain-English engineering</h3><p>The decisions, the trade-offs and the occasional impossible spec, explained clearly, without gatekeeping the technical side. You always understand where your product is and why.</p></div>
+        <div class="di"><div class="dn">02</div><h3>Structure &amp; rhythm</h3><p>A steady, honest process that walks you through the real development journey, then keeps momentum with a clear plan, so you're never lost or stalled.</p></div>
+        <div class="di"><div class="dn">03</div><h3>Honesty over a hard sell</h3><p>If your idea won't work in its current form, I'll tell you early, with the reasons and any alternatives. Finding out cheaply is a good outcome, not a bad one.</p></div>
+      </div>
+      <div class="svc-cred">
+        <span class="ci">Behind <b>award-winning</b> consumer products, including the Red Dot Ooni Volt 2</span>
+        <span class="ci"><b>Concept to volume manufacture</b>, held end to end</span>
+        <span class="ci">Start from a <b>£50 Power Hour</b> or a <b>£650 study</b></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="band" id="start">
+    <div class="wrap">
+      <div class="cta">
+        <div class="inner">
+          <span class="eyebrow">Let's talk</span>
+          <h2 style="margin-top:14px">Have an idea you want to make real?</h2>
+          <p>Book a free intro call and tell me about it. I'll be honest about whether I can help and what a sensible, low-risk first step looks like for you.</p>
+          <div class="row">
+            <a class="btn btn-primary btn-lg" href="/#contact">Book a free intro call <span class="arw">→</span></a>
+            <span class="price-tag">Or start with a <b>£50 Power Hour</b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<style>
+  .aud-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+  @media(max-width:760px){.aud-grid{grid-template-columns:1fr}}
+  .aud{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:24px 26px;text-decoration:none;transition:.15s}
+  .aud:hover{border-color:var(--ink-3);transform:translateY(-2px)}
+  .aud-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .aud h3{font-size:1.18rem;letter-spacing:-0.015em;color:var(--ink)}
+  .aud p{color:var(--ink-2);font-size:0.98rem;margin-top:10px;line-height:1.5;flex:1}
+  .aud-price{font-family:var(--font-mono);font-size:12px;color:var(--ember);flex:none}
+  .aud-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ember);border:1px solid var(--ember);border-radius:20px;padding:2px 9px;flex:none}
+  .aud-go{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-family:var(--font-mono);font-size:12.5px;color:var(--ember)}
+</style>
+</Base>

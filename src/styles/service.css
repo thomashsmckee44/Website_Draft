@@ -21,6 +21,9 @@
 
 .band{border-top:1px solid var(--line);padding-block:clamp(44px,6vw,72px)}
 .band.alt{background:var(--surface-2)}
+/* On service/guide pages the intro follows the title directly; give it room
+   (the global .sec-intro has a negative margin tuned for the homepage). */
+.sec-title + .sec-intro{margin-top:14px}
 .sec-idx{font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3)}
 
 /* Problem / Solution / Results phase badges (case-study pages) */

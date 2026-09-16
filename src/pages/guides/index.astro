@@ -1,0 +1,94 @@
+---
+import Base from "../../layouts/Base.astro";
+import "../../styles/service.css";
+import { getCollection } from "astro:content";
+
+const SITE = "https://www.tmdesignengineering.com";
+const url = `${SITE}/guides`;
+
+const all = await getCollection("guides", ({ data }) => !data.draft);
+const pillars = all
+  .filter((g) => g.data.kind === "pillar")
+  .sort((a, b) => a.data.order - b.data.order);
+const clustersFor = (slug: string) =>
+  all
+    .filter((g) => g.data.kind === "cluster" && g.data.pillar === slug)
+    .sort((a, b) => a.data.order - b.data.order || b.data.date.valueOf() - a.data.date.valueOf());
+
+const jsonld = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${url}#page`,
+    url,
+    name: "Guides",
+    isPartOf: { "@id": `${SITE}/#website` },
+    description:
+      "Guides on hardware product development for founders and startups: how to develop a product, get it manufactured, and de-risk the journey.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "Guides", item: url },
+    ],
+  },
+];
+---
+<Base
+  title="Guides, Hardware Product Development for Founders | Thomas McKee"
+  description="Practical guides on developing a physical product: how to take an idea to market, get it manufactured, and de-risk the journey. Written for founders, from real experience."
+  type="website"
+  jsonld={jsonld}>
+<main>
+  <section class="svc-hero">
+    <div class="wrap">
+      <span class="eyebrow">Guides</span>
+      <h1>Building a <em>physical product</em></h1>
+      <p class="lede">Plain-English guidance on taking a hardware product from idea to production: what it costs, how to de-risk it, and the engineering decisions that matter. Written for founders, from experience shipping award-winning consumer products, not generic filler.</p>
+    </div>
+  </section>
+
+  {pillars.map((p) => {
+    const clusters = clustersFor(p.slug);
+    return (
+      <section class="band gdiv">
+        <div class="wrap">
+          <a class="pillar-head" href={`/guides/${p.slug}`}>
+            <span class="pillar-idx">{p.data.category}</span>
+            <h2>{p.data.title}</h2>
+            <p>{p.data.description}</p>
+            <span class="pillar-read">Read the full guide <span class="arw">→</span></span>
+          </a>
+          {clusters.length > 0 && (
+            <div class="cl-list">
+              {clusters.map((c) => (
+                <a class="cl-row" href={`/guides/${c.slug}`}>
+                  <span class="cl-t">{c.data.title}</span>
+                  <span class="cl-meta">{c.data.readingTime}<span class="arw">→</span></span>
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    );
+  })}
+</main>
+<style>
+  .gdiv:first-of-type{border-top:1px solid var(--line)}
+  .pillar-head{display:block;text-decoration:none;border:1px solid var(--ember);border-radius:16px;background:var(--surface);padding:clamp(24px,3vw,34px);position:relative;overflow:hidden}
+  .pillar-head::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 160% at 100% 0%,var(--ember-tint),transparent 55%);pointer-events:none}
+  .pillar-idx{font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ember)}
+  .pillar-head h2{font-size:clamp(1.4rem,2.8vw,2rem);letter-spacing:-0.02em;margin-top:12px;color:var(--ink)}
+  .pillar-head p{color:var(--ink-2);font-size:1.02rem;margin-top:12px;max-width:70ch;line-height:1.55}
+  .pillar-read{display:inline-flex;gap:8px;margin-top:16px;font-family:var(--font-mono);font-size:13px;color:var(--ember)}
+  .cl-list{margin-top:8px;border:1px solid var(--line);border-top:0;border-radius:0 0 14px 14px;background:var(--surface-2);margin-inline:clamp(0px,2vw,20px)}
+  .cl-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px clamp(18px,3vw,28px);border-top:1px solid var(--line);text-decoration:none;transition:.12s}
+  .cl-row:first-child{border-top:0}
+  .cl-row:hover{background:var(--surface)}
+  .cl-t{color:var(--ink);font-weight:500;font-size:1rem}
+  .cl-meta{display:inline-flex;align-items:center;gap:12px;font-family:var(--font-mono);font-size:11px;color:var(--ink-3);flex:none}
+</style>
+</Base>

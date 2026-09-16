@@ -2,6 +2,9 @@
 title: "What is a feasibility study, and when does your product idea need one?"
 description: "What a product feasibility study is, what a good one delivers, and the signs your idea needs one before you spend real money on development."
 date: 2026-09-08
+kind: "cluster"
+pillar: "how-to-develop-a-physical-product"
+order: 2
 category: "Guide"
 tags: ["Feasibility", "Product development", "De-risking"]
 readingTime: "6 min read"

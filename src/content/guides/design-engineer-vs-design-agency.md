@@ -2,6 +2,9 @@
 title: "Design engineer or design agency: who should build your product?"
 description: "The difference between a design engineer and a design agency, why it matters for a physical product, and how to tell which one your project actually needs."
 date: 2026-09-12
+kind: "cluster"
+pillar: "how-to-develop-a-physical-product"
+order: 3
 category: "Explainer"
 tags: ["Design engineering", "Industrial design", "Choosing help"]
 readingTime: "5 min read"

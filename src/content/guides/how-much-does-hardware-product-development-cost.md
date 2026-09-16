@@ -2,6 +2,9 @@
 title: "How much does it cost to develop a hardware product?"
 description: "An honest look at what hardware product development actually costs a founder, where the money goes, and how to spend it in the right order so you de-risk before you commit."
 date: 2026-09-16
+kind: "cluster"
+pillar: "how-to-develop-a-physical-product"
+order: 1
 category: "Guide"
 tags: ["Costs", "Product development", "Founders"]
 readingTime: "7 min read"
