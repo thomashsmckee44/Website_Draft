@@ -5,12 +5,11 @@ import "../../styles/service.css";
 const SITE = "https://www.tmdesignengineering.com";
 const url = `${SITE}/services/contract-engineering`;
 const faqs = [
-  ["How do you charge for contract work?", "Whatever fits the engagement: a day rate for ongoing capacity, a retainer for regular availability, or a fixed price for a defined deliverable. We agree it up front so there are no surprises, and for a clearly scoped piece of work, fixed price is often cleanest for both sides."],
-  ["Remote or on-site?", "Both. I'm based in Edinburgh and work remotely with teams anywhere, and I can be on-site for kick-offs, design reviews, factory visits or crunch periods where being in the room matters."],
-  ["What kind of scope do you take on?", "Defined engineering work where you already know roughly what's needed: mechanical design, firmware-and-mechanical crossover, thermal analysis, design for manufacture, or a specific hard problem your team hasn't cracked. If the scope isn't clear yet, that's product development, not contract work, and I'll say so."],
-  ["How quickly can you start?", "Usually quickly, contract work is meant to flex around your timeline. Tell me the deadline on an intro call and I'll be straight about what's realistic."],
+  ["How do you charge for contract work?", "I charge a day rate for ongoing capacity, a retainer for regular availability, or a fixed price for a defined deliverable, so depending on your needs I can offer you the most value."],
+  ["Remote or on-site?", "Both. I'm based in Edinburgh and work remotely with teams anywhere. I like to be on-site for kick-offs, factory visits or prototype demonstrations, and I'm happy to travel for important meetings."],
+  ["How quickly can you start?", "I'm set up to start immediately after agreeing a contract, though my availability varies as consultancy work is my main source."],
   ["How do you handle IP and NDAs?", "Your IP is yours; I work under your NDA and contracts as standard, and I'm used to the IP and confidentiality expectations of consumer hardware companies."],
-  ["Do you take long or short engagements?", "Both, from a few days on a specific problem to ongoing support across a project. Whatever the shape, you get senior engineering that slots into how your team already works."],
+  ["Do you take long or short engagements?", "Both, anything from a month to ongoing support across a project, retainer style. Whatever the shape, you get senior engineering that slots into how your team already works."],
 ];
 const jsonld = [
   {
@@ -19,7 +18,7 @@ const jsonld = [
     "@id": `${url}#service`,
     serviceType: "Contract design engineering",
     name: "Contract Engineering",
-    description: "Specialist or extra design engineering capacity for product teams that already know the scope, mechanical, firmware-mechanical crossover, thermal and design for manufacture, remote or on-site, on a day rate, retainer or fixed-price basis.",
+    description: "Specialist or extra design engineering capacity for product teams, mechanical, firmware-mechanical crossover, thermal and design for manufacture, remote or on-site, on a day rate, retainer or fixed-price basis.",
     provider: { "@id": `${SITE}/#business` },
     areaServed: ["United Kingdom", "Worldwide"],
   },
@@ -40,7 +39,7 @@ const jsonld = [
 ---
 <Base
   title="Contract Design Engineering, Extra Capacity for Product Teams | Thomas McKee"
-  description="Specialist or extra design engineering capacity for product teams that already know the scope, mechanical, firmware-mechanical crossover, thermal and DFM, remote or on-site, on a day rate, retainer or fixed-price basis."
+  description="Experienced design engineering on demand for product teams: mechanical, firmware-mechanical crossover, thermal and DFM, remote or on-site, on a day rate, retainer or fixed-price basis."
   type="website"
   jsonld={jsonld}>
 <main>
@@ -48,8 +47,8 @@ const jsonld = [
     <div class="wrap svc-hero-grid">
       <div>
         <span class="eyebrow">Service · Contract Engineering</span>
-        <h1>Experienced design engineering, <em>on your team.</em></h1>
-        <p class="lede">Specialist or extra engineering capacity for teams that already know the scope. An experienced design engineer who can drop into a project and deliver, across mechanical design, firmware-and-mechanical crossover, thermal analysis and design for manufacture, remotely or on-site, for as long as you need.</p>
+        <h1>Experienced design engineering, <em>on demand.</em></h1>
+        <p class="lede">Specialist or extra engineering capacity for teams that have a specific project or problem, or that need quick extra resource. An experienced design engineer who can drop into a project and deliver quickly, across mechanical design, firmware-and-mechanical crossover, thermal analysis and design for manufacture, remotely or on-site, for as long as you need.</p>
         <div class="svc-hero-cta">
           <a class="btn btn-primary" href="/#contact">Discuss a contract <span class="arw">→</span></a>
           <a class="btn btn-ghost" href="#fit">How I fit in</a>
@@ -59,10 +58,8 @@ const jsonld = [
         <div class="spec-head"><span>Service Spec</span><span>CE-06</span></div>
         <div class="spec-row"><div class="spec-k">Engage</div><div class="spec-v">Day rate · retainer · fixed</div></div>
         <div class="spec-row"><div class="spec-k">Mode</div><div class="spec-v">Remote or on-site</div></div>
-        <div class="spec-row"><div class="spec-k">Scope</div><div class="spec-v">You define it</div></div>
-        <div class="spec-row"><div class="spec-k">Areas</div><div class="spec-v">Mech · firmware · thermal · DFM</div></div>
-        <div class="spec-row"><div class="spec-k">Start</div><div class="spec-v">Usually quick</div></div>
-        <div class="spec-note">For defined engineering work where you already know what's needed. If the scope isn't clear yet, that's product development, and I'll tell you.</div>
+        <div class="spec-row"><div class="spec-k">Areas</div><div class="spec-v">Mech · application firmware · thermal · DFM</div></div>
+        <div class="spec-note">For defined engineering work where you already know what's needed, or for fast extra resource able to drop into a team.</div>
       </aside>
     </div>
   </section>
@@ -71,10 +68,11 @@ const jsonld = [
     <div class="wrap">
       <span class="sec-idx">Who it's for</span>
       <h2 class="sec-title">For product teams that need a safe pair of hands</h2>
-      <div class="pain">
-        <div class="q"><span class="mk">?</span><p>"We're a specialist short and a deadline closing, we need experienced capacity, fast."</p></div>
-        <div class="q"><span class="mk">?</span><p>"We've hit a hard problem, thermal, firmware-mechanical, DFM, that we can't crack in-house."</p></div>
-        <div class="q"><span class="mk">?</span><p>"We want someone who has actually shipped consumer hardware at volume, not just a CV."</p></div>
+      <div class="pain" style="grid-template-columns:repeat(2,1fr)">
+        <div class="q"><span class="mk">?</span><p>"We need a specialist in a certain area, or experienced capacity, fast."</p></div>
+        <div class="q"><span class="mk">?</span><p>"We're a design consultancy and need engineering expertise on a certain project or across a range."</p></div>
+        <div class="q"><span class="mk">?</span><p>"We've hit a hard problem, thermal, firmware-mechanical, DFM, that we don't have the resource in house to solve."</p></div>
+        <div class="q"><span class="mk">?</span><p>"We want someone who has actually shipped consumer hardware at volume."</p></div>
       </div>
     </div>
   </section>
@@ -82,12 +80,12 @@ const jsonld = [
   <section class="band" id="fit">
     <div class="wrap">
       <span class="sec-idx">How I fit in</span>
-      <h2 class="sec-title">Senior engineering that slots into your team</h2>
+      <h2 class="sec-title">Senior engineering, working with your team</h2>
       <div class="deliv">
-        <div class="di"><div class="dn">01</div><h3>Defined deliverables</h3><p>You set the scope; I deliver against it. Clear outputs, clear timelines, and honest flags the moment something threatens either.</p></div>
-        <div class="di"><div class="dn">02</div><h3>Specialist depth</h3><p>Mechanical design, firmware-and-mechanical crossover, thermal analysis and design for manufacture, the crossover areas where projects most often stall.</p></div>
-        <div class="di"><div class="dn">03</div><h3>Works how you work</h3><p>I fit your tools, cadence and processes rather than imposing mine, remotely or on-site, so I'm useful from the first week.</p></div>
-        <div class="di"><div class="dn">04</div><h3>Factory-floor grounding</h3><p>Design decisions made by someone who has taken products through tooling and volume manufacture, and been on the floor when they were built.</p></div>
+        <div class="di"><div class="dn">01</div><h3>Project lead capacity</h3><p>I'm happy bridging the gap between mechanical, firmware and electronic development, and can manage the separate workstreams and the integration between them.</p></div>
+        <div class="di"><div class="dn">02</div><h3>Specialist depth</h3><p>With expertise in mechanical design, firmware-and-mechanical crossover, thermal analysis and design for manufacture, if you need a specialist on a certain project I can jump in immediately.</p></div>
+        <div class="di"><div class="dn">03</div><h3>Working with you</h3><p>I'm flexible, working in your tools, cadences and processes, remotely or on-site, so I can have an impact on projects from the first day.</p></div>
+        <div class="di"><div class="dn">04</div><h3>Production experience</h3><p>Having worked with different manufacturers in the UK and China, remotely and in person, I have managed the relationships, worked with a range of capabilities, and taken products through tooling and volume manufacture, actually being there as they were built.</p></div>
       </div>
     </div>
   </section>
@@ -95,10 +93,10 @@ const jsonld = [
   <section class="band alt">
     <div class="wrap">
       <span class="sec-idx">Why me</span>
-      <h2 class="sec-title">Shipped, award-winning, at volume</h2>
+      <h2 class="sec-title">Shipped award-winning products at various volumes</h2>
       <div class="proof">
         <div class="pl">Track record</div>
-        <p>Over four years at Ooni I developed premium consumer products end to end: award-winning, with patented and patent-pending inventions, and sold worldwide. I was firmware lead on an electric oven despite being a mechanical engineer, because I was willing to learn what the product needed. That whole-picture, cross-discipline range is what makes contract capacity from me worth more than an extra pair of hands.</p>
+        <p>Over four years at Ooni I developed premium consumer products end to end: award-winning, with patented and patent-pending inventions, and sold worldwide. With a proactive attitude to solving problems, I can jump into new scenarios and provide instant value. That is how I took on the firmware development lead role on a Red Dot award-winning product as a mechanical engineer by trade. Being able to work across the whole picture, with cross-discipline expertise, is how I can be effective immediately across a range of problems.</p>
       </div>
       <div class="svc-cred">
         <span class="ci"><b>4+ years</b> shipping premium consumer hardware at Ooni</span>
@@ -126,7 +124,7 @@ const jsonld = [
         <div class="inner">
           <span class="eyebrow">Let's talk</span>
           <h2 style="margin-top:14px">Need experienced engineering capacity?</h2>
-          <p>Tell me the scope, the timeline and how your team works. I'll be straight about how I can help, how quickly I can start, and what it costs.</p>
+          <p>Tell me what you need, the timeline and how your team works, and we can discuss the engagement model that suits you best, how I can help, how quickly I can start, and what it costs.</p>
           <div class="row">
             <a class="btn btn-primary btn-lg" href="/#contact">Discuss a contract <span class="arw">→</span></a>
             <span class="price-tag">Day rate · retainer · fixed scope</span>

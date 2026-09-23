@@ -1,0 +1,12 @@
+---
+// Empty image placeholder for case studies. Swap the placeholder div for
+// <img src="/work/your-image.jpg" alt="..." loading="lazy" /> when the photo is ready.
+interface Props { n: string; cap: string; src?: string; alt?: string }
+const { n, cap, src, alt } = Astro.props;
+---
+<figure class="fig">
+  {src
+    ? <img src={src} alt={alt ?? cap} loading="lazy" />
+    : <div class="ph" role="img" aria-label={`Image to come: ${cap}`}><span>Image to come</span></div>}
+  <figcaption>Fig. {n}, {cap}</figcaption>
+</figure>

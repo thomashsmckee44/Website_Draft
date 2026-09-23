@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import "../styles/service.css";
+import "../styles/case.css";
 
 const SITE = "https://www.tmdesignengineering.com";
 const url = `${SITE}/about`;
@@ -21,20 +22,25 @@ const jsonld = [
     "@id": `${SITE}/#thomas-mckee`,
     name: "Thomas McKee",
     jobTitle: "Design Engineering Consultant",
-    description: "Design engineer with over four years developing award-winning consumer products at Ooni, spanning mechanical design, firmware and thermal engineering. Now an independent product development consultant in Edinburgh.",
+    description: "Design engineer with nearly five years developing award-winning, high-performance consumer products, more than four of those years at Ooni, spanning mechanical design, application firmware, thermal engineering and design for manufacture. MEng Mechanical Engineering (1st Class), University of Sheffield. Now an independent product development consultant in Edinburgh.",
     url,
     worksFor: { "@id": `${SITE}/#business` },
-    alumniOf: { "@type": "Organization", name: "Ooni" },
+    alumniOf: [
+      { "@type": "EducationalOrganization", name: "The University of Sheffield" },
+      { "@type": "Organization", name: "Ooni" },
+    ],
     homeLocation: { "@type": "Place", address: { "@type": "PostalAddress", addressLocality: "Edinburgh", addressCountry: "GB" } },
     knowsAbout: [
       "Design engineering",
       "Consumer product development",
       "Mechanical design",
-      "Firmware",
-      "Thermal analysis",
-      "Design for manufacture",
-      "Prototyping",
+      "Application firmware",
+      "Thermal engineering",
+      "FEA and CFD simulation",
+      "Design for manufacture and assembly",
+      "Tolerance analysis",
       "Injection moulding",
+      "Design verification",
     ],
   },
   {
@@ -49,7 +55,7 @@ const jsonld = [
 ---
 <Base
   title="About, Thomas McKee, Design Engineer in Edinburgh | Ex-Ooni"
-  description="Thomas McKee is a design engineering and product development consultant in Edinburgh with 4+ years shipping award-winning consumer hardware at Ooni, mechanical, firmware and thermal, from concept to volume manufacture."
+  description="Thomas McKee is a design engineer and product development consultant in Edinburgh. MEng (1st), nearly five years developing award-winning consumer products including the Red Dot-winning Ooni Volt 2, across mechanical, firmware, thermal and DFM."
   type="website"
   jsonld={jsonld}>
 <main>
@@ -59,47 +65,74 @@ const jsonld = [
       <div>
         <span class="eyebrow">About · Thomas McKee</span>
         <h1>A bit <em>about me</em></h1>
-        <p class="lede">I'm a design engineer based in Edinburgh. For over four years at Ooni I took premium consumer products from first concept to volume manufacture, and now I do the same as an independent partner to founders and startups building physical products for the first time.</p>
+        <p class="lede">I'm a design engineer based in Edinburgh, helping founders, startups and product teams turn ideas into products that work and can be manufactured. I spent over four years at Ooni taking premium consumer products from concept to volume manufacture, including the Red Dot-winning Volt 2 and the iF-winning Karu 2, and now I bring that experience to projects of every shape and size.</p>
         <div class="svc-hero-cta">
           <a class="btn btn-primary" href="/#contact">Work with me <span class="arw">→</span></a>
-          <a class="btn btn-ghost" href="/#services">See services</a>
+          <a class="btn btn-ghost" href="/services">See services</a>
         </div>
       </div>
       <aside class="spec" aria-label="Profile">
         <div class="spec-head"><span>Profile</span><span>TMDE-001</span></div>
         <div class="spec-row"><div class="spec-k">Engineer</div><div class="spec-v">Thomas McKee</div></div>
-        <div class="spec-row"><div class="spec-k">Discipline</div><div class="spec-v">Design Engineering</div></div>
         <div class="spec-row"><div class="spec-k">Based</div><div class="spec-v">Edinburgh, UK</div></div>
-        <div class="spec-row"><div class="spec-k">Prev.</div><div class="spec-v">4+ yrs · Ooni</div></div>
-        <div class="spec-row"><div class="spec-k">Scope</div><div class="spec-v">Mech · Firmware · Thermal · DFM</div></div>
+        <div class="spec-row"><div class="spec-k">Education</div><div class="spec-v">MEng Mechanical, 1st · Sheffield</div></div>
+        <div class="spec-row"><div class="spec-k">Experience</div><div class="spec-v">~5 yrs · 4+ at Ooni</div></div>
+        <div class="spec-row"><div class="spec-k">Scope</div><div class="spec-v">Mech · firmware · thermal · DFM</div></div>
         <div class="spec-row"><div class="spec-k">Status</div><div class="spec-v">Available for projects</div></div>
       </aside>
     </div>
   </section>
 
-  <!-- STORY -->
+  <!-- STATS -->
   <section class="band alt">
     <div class="wrap">
-      <span class="sec-idx">The background</span>
-      <h2 class="sec-title">From mechanical engineer to firmware lead</h2>
-      <div class="about-body" style="max-width:70ch">
-        <p>I trained and started out as a mechanical engineer, but consumer products don't respect the neat boundaries between disciplines, so I didn't either. On the Ooni Volt 2, an electric indoor pizza oven, I ended up as the firmware lead despite the mechanical background, because that's what the product needed and I was willing to learn it. I owned the performance and control system end to end: the thermal behaviour, the heating hardware, and the firmware that ties them together.</p>
-        <p>That pattern, following a product wherever the hard problem is, rather than staying in a lane, is the thing I've come to trust most about how I work. It means I see mechanical, firmware, thermal and manufacture as one system, and I can spot the rare moments where a single decision improves time, cost <em>and</em> performance together, instead of trading one against another.</p>
-        <p>Across four years at Ooni I took products from the first sketch through to volume manufacture, worked on the factory floor where they were built, and helped bring several award-winning consumer products to market. Today I bring that whole-picture experience to founders and startups as Thomas McKee Design Engineering.</p>
-        <p>It's worth being clear about what kind of help this is. I'm a design engineer, so my job is making a product actually work and actually be manufacturable. That's a different discipline from industrial design, which is about how a product looks and feels, and different again from a design studio that lists "design for manufacture" next to its styling work. When your product needs the aesthetic side, I bring in industrial designers I trust rather than stretching past what I do best. What you get from me is the engineering that decides whether a product survives tooling, volume and real use, grounded in having done exactly that on the factory floor.</p>
+      <div class="headline">
+        <div class="hstat"><div class="hn">4</div><div class="hl">design awards on products carrying my engineering</div></div>
+        <div class="hstat"><div class="hn">3</div><div class="hl">patented or patent-pending inventions</div></div>
+        <div class="hstat"><div class="hn">100 to 100k</div><div class="hl">units a year, the production volumes I've designed for</div></div>
+        <div class="hstat"><div class="hn">1st</div><div class="hl">class MEng in Mechanical Engineering</div></div>
       </div>
     </div>
   </section>
 
-  <!-- WHAT I BRING -->
+  <!-- STORY -->
   <section class="band">
     <div class="wrap">
-      <span class="sec-idx">What I bring</span>
-      <h2 class="sec-title">The things clients say matter most</h2>
+      <span class="sec-idx">The background</span>
+      <h2 class="sec-title">From mechanical engineer to firmware lead</h2>
+      <div class="about-body" style="max-width:70ch">
+        <p>I studied Mechanical Engineering at the University of Sheffield and came out with a first-class master's. What I enjoyed most was using engineering theory on real things, whether that was modelling a water rocket from first principles or running a patient-specific structural analysis of a human femur for clinical research. Both are in my <a href="/#work" style="color:var(--ember)">portfolio</a>, and the habit of quantifying the physics before committing to a design has stayed with me ever since.</p>
+        <p>From there I joined Ooni's new product development team as a design engineer. I was the sole engineer on the dough proofing trays, taking them from consumer research and the brief to the production line. On the Karu 2 I was performance lead, owning the door, the combustion and airflow system, and an anti-sooting invention that's now patent pending. On the Volt 2 I was lead engineer for oven function and performance, and I ended up leading the firmware too, despite being a mechanical engineer by trade, because that's what the product needed and I was willing to learn it. Alongside those I consulted on other projects across the business, including a gas system where the work cut the BOM by 10%, tooling cost by over 20%, and doubled the usable temperature range.</p>
+        <p>Consumer products don't respect the neat boundaries between disciplines, so I learned not to either. I've designed parts for production runs from hundreds to tens of thousands, worked with suppliers around the world, spent time on factory floors in the UK and overseas, and navigated some complex regulatory landscapes along the way.</p>
+        <p>In January 2026 I set up Thomas McKee Design Engineering. I wanted to work on lots of different kinds of projects, because it excites me how many great ideas are out there, and I'd seen how hard it is for early-stage hardware companies to get experienced engineering support. Since then I've led a small multi-disciplinary team to build a working prototype of a custom gaming controller that's now supporting its founder's fundraising, developed an overmoulded safety product for a sports brand, where rethinking the concept avoided a long and expensive compliance process and cut the range to a single SKU, and written feasibility studies and development roadmaps for early-stage founders.</p>
+        <p>It's worth being clear about the kind of help this is. I'm a design engineer, so my focus is making a product work and making it manufacturable. I handle functional and basic industrial design myself, and I care a lot about how a product feels to use, but when a product needs heavy or specialist styling I bring in industrial designers I trust. That's a different offer from a design studio that lists "design for manufacture" next to its styling work. What you get from me is the engineering that decides whether a product survives tooling, volume and real use, from someone who has done exactly that.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW I WORK -->
+  <section class="band alt">
+    <div class="wrap">
+      <span class="sec-idx">How I work</span>
+      <h2 class="sec-title">Forward thinking, with a steady rhythm</h2>
       <div class="deliv">
-        <div class="di"><div class="dn">01</div><h3>The whole picture</h3><p>Mechanical, firmware, thermal and manufacture seen as one system, so decisions are made with every consequence in view, and the occasional "unicorn moment" where everything improves at once actually gets caught.</p></div>
-        <div class="di"><div class="dn">02</div><h3>Structure &amp; rhythm</h3><p>Most of my clients are doing this for the first time. What helps most is a steady, honest process, walking through the real development journey, then a clear plan with fast, fail-fast prototyping that keeps momentum without losing the essence of the idea.</p></div>
-        <div class="di"><div class="dn">03</div><h3>Plain-English engineering</h3><p>The decisions, the trade-offs and the occasional physically impossible spec, explained clearly, whoever I'm working with. You always understand where your product is and why.</p></div>
+        <div class="di"><div class="dn">01</div><h3>Understand the problem first</h3><p>I like to challenge the initial assumptions and put real effort into understanding the problem up front. It always pays off later, when changes get more expensive.</p></div>
+        <div class="di"><div class="dn">02</div><h3>Quantify, then validate</h3><p>Loads, stresses, tolerances and failure modes are worked out and used to shape the design and how it's made, through hand calculations, FEA and CFD, and models checked against real measurement.</p></div>
+        <div class="di"><div class="dn">03</div><h3>Structure and rhythm</h3><p>A clear plan with fast, fail-fast prototyping. It reduces long-term risk while keeping the project moving, and it's a rhythm first-time founders find reassuring.</p></div>
+        <div class="di"><div class="dn">04</div><h3>The whole picture, in plain English</h3><p>Mechanical, firmware, thermal and manufacture seen as one system, and every decision and trade-off explained clearly, so you always know where your product is and why.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE -->
+  <section class="band">
+    <div class="wrap">
+      <span class="sec-idx">Range</span>
+      <h2 class="sec-title">Where I've worked, and what I've designed against</h2>
+      <p class="sec-intro">My experience covers a wide spread of industries, from precise medical analysis to low-budget pressure vessels, and a long list of ways products fail in the real world.</p>
+      <div class="skills" style="grid-template-columns:repeat(2,1fr)">
+        <div><div class="sk-h">Industries</div><div class="sk-tags"><span>High-temperature outdoor cooking</span><span>Kitchen appliances</span><span>Consumer electronics</span><span>Kitchen products</span><span>Sports products</span><span>Gaming hardware</span><span>Industrial equipment</span><span>Biomedical analysis</span></div></div>
+        <div><div class="sk-h">Failure modes designed against</div><div class="sk-tags"><span>Extreme heat</span><span>Thermal cycling</span><span>UV exposure</span><span>Rain and water ingress</span><span>Steam</span><span>Corrosion</span><span>Fatigue</span><span>Bending &amp; buckling</span><span>Impact</span><span>Vibration</span></div></div>
       </div>
     </div>
   </section>
@@ -116,24 +149,28 @@ const jsonld = [
           <div class="cap-tags">
             <span class="tag">Mechanical design</span>
             <span class="tag">FEA</span>
+            <span class="tag">CFD</span>
             <span class="tag">Structural analysis</span>
             <span class="tag">Hand calculation</span>
             <span class="tag">Mathematical modelling</span>
+            <span class="tag">Thermal engineering</span>
             <span class="tag">Tolerance stack analysis</span>
             <span class="tag">GD&amp;T</span>
-            <span class="tag">CFD</span>
-            <span class="tag">Thermal engineering</span>
             <span class="tag">DFM &amp; DFA</span>
             <span class="tag">Tooling development</span>
-            <span class="tag">Requirements &amp; verification</span>
             <span class="tag">Materials selection</span>
-            <span class="tag">Supplier liaison</span>
-            <span class="tag">Industrial design intent</span>
             <span class="tag">Application firmware</span>
+            <span class="tag">UI &amp; UX definition</span>
             <span class="tag">Control systems &amp; state machines</span>
+            <span class="tag">Electronics integration</span>
             <span class="tag">Combustion &amp; airflow</span>
             <span class="tag">Test rig design &amp; instrumentation</span>
+            <span class="tag">Requirements &amp; verification</span>
+            <span class="tag">PRD, DVTP, DFMEA &amp; UFMEA</span>
             <span class="tag">Standards compliance &amp; certification</span>
+            <span class="tag">Industrial design intent</span>
+            <span class="tag">Supplier liaison</span>
+            <span class="tag">Multi-discipline team leadership</span>
           </div>
         </div>
         <div class="capcol">
@@ -153,6 +190,7 @@ const jsonld = [
           <div class="cap-h">Manufacturing processes</div>
           <div class="cap-tags">
             <span class="tag">Injection moulding</span>
+            <span class="tag">Overmoulding</span>
             <span class="tag">Pressure die casting</span>
             <span class="tag">Sheet metal stamping &amp; pressing</span>
             <span class="tag">Deep drawing</span>
@@ -175,12 +213,12 @@ const jsonld = [
       <h2 class="sec-title">Shipped, recognised, and sold worldwide</h2>
       <div class="proof">
         <div class="pl">The work</div>
-        <p>My work has reached the shelf and been recognised for it: the Ooni Volt 2 won a <a href="https://www.red-dot.org/project/ooni-volt-2-85947" target="_blank" rel="noopener noreferrer" style="color:var(--ember)"><strong>Red Dot Design Award in 2026</strong></a>, with the citation calling out the performance functions I led; the Ooni Karu 2 won an <a href="https://ifdesign.com/en/winner-ranking/project/ooni-karu-12g-multi-fuel-pizza-oven/643103" target="_blank" rel="noopener noreferrer" style="color:var(--ember)"><strong>iF Design Award</strong></a> and a <strong>German Design Award in 2024</strong>, and its door architecture was carried onto the <a href="https://ifdesign.com/en/winner-ranking/project/ooni-karu-2-pro/709204" target="_blank" rel="noopener noreferrer" style="color:var(--ember)">iF-winning Karu 2 Pro in 2025</a>. I'm named on <strong>three patented or patent-pending inventions</strong>, and my products are sold worldwide. The through-line isn't the awards, though, it's that these were hard products that had to work, be safe, be manufacturable and be loved, all at once.</p>
+        <p>My work has reached the shelf and been recognised for it. The Ooni Volt 2 won a <a href="https://www.red-dot.org/project/ooni-volt-2-85947" target="_blank" rel="noopener noreferrer" style="color:var(--ember)"><strong>Red Dot Design Award in 2026</strong></a>. The Ooni Karu 2 won an <a href="https://ifdesign.com/en/winner-ranking/project/ooni-karu-12g-multi-fuel-pizza-oven/643103" target="_blank" rel="noopener noreferrer" style="color:var(--ember)"><strong>iF Design Award</strong></a> and a <strong>German Design Award in 2024</strong>, and its door architecture carried onto the <a href="https://ifdesign.com/en/winner-ranking/project/ooni-karu-2-pro/709204" target="_blank" rel="noopener noreferrer" style="color:var(--ember)">iF-winning Karu 2 Pro in 2025</a>. I'm named on <strong>three patented or patent-pending inventions</strong>: Pizza Intelligence™ adaptive control firmware, ClearView™ anti-sooting door geometry, and a removable oven door. What ties them together is that these were hard products that had to work, be safe, be manufacturable and be loved, all at once.</p>
       </div>
       <div class="svc-cred">
         <span class="ci"><b>Red Dot 2026</b> · Ooni Volt 2</span>
         <span class="ci"><b>iF &amp; German Design Award 2024</b> · Ooni Karu 2</span>
-        <span class="ci"><b>3 patented or patent-pending</b> · Red Dot &amp; iF Design Awards · sold worldwide</span>
+        <span class="ci"><b>iF 2025</b> · Ooni Karu 2 Pro</span>
       </div>
       <p class="sec-intro" style="margin-top:26px"><a href="/#work" style="color:var(--ember)">See the case studies →</a></p>
     </div>
@@ -200,13 +238,14 @@ const jsonld = [
     </div>
   </section>
 
-  <!-- PRO BONO -->
+  <!-- BEYOND -->
   <section class="band">
     <div class="wrap">
       <span class="sec-idx">Beyond the commercial</span>
       <h2 class="sec-title">Engineering that gives something back</h2>
       <div class="about-body" style="max-width:70ch">
-        <p>Alongside client work, I dedicate part of my time to <strong>pro-bono engineering</strong> for initiatives with social or environmental impact. I believe good engineering should contribute beyond commercial success, so by working with me, you help support that too.</p>
+        <p>Alongside client work, I give part of my time to <strong>pro-bono engineering</strong> for charities, social enterprises and projects with a social or environmental impact. I believe good engineering should contribute beyond commercial success, and sustainability is something I bring into my design work from the start, so by working with me you help support that too.</p>
+        <p>I also love teaching. Whether it's a founder learning how product development works or someone picking up a new skill, helping people understand the engineering is one of my favourite parts of the job. Outside of work, you'll find me playing all sorts of sport and playing music.</p>
       </div>
     </div>
   </section>
@@ -235,5 +274,7 @@ const jsonld = [
   .cap-tags{display:flex;flex-wrap:wrap;gap:8px}
   .cap-tags .tag{font-family:var(--font-mono);font-size:12px;color:var(--ink-2);background:var(--surface);border:1px solid var(--line-2);border-radius:6px;padding:6px 11px;line-height:1.2}
   @media (max-width:820px){.caps{grid-template-columns:1fr;gap:26px}}
+  @media (max-width:820px){.skills[style]{grid-template-columns:1fr !important}}
+  .hn{font-size:clamp(1.5rem,3vw,2rem)}
 </style>
 </Base>

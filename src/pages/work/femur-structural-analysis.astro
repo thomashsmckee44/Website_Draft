@@ -1,6 +1,8 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Fig from "../../components/Fig.astro";
 import "../../styles/service.css";
+import "../../styles/case.css";
 
 const SITE = "https://www.tmdesignengineering.com";
 const url = `${SITE}/work/femur-structural-analysis`;
@@ -9,12 +11,12 @@ const jsonld = [
     "@context": "https://schema.org",
     "@type": "Article",
     "@id": `${url}#article`,
-    headline: "Femur Structural Analysis, a patient-specific FEA of fracture risk",
-    description: "Case study: treating a human femur as an engineering structure to predict fracture likelihood from a clinical CT scan alone, automated segmentation, element-by-element material mapping, and a novel boundary condition that frees knee axial rotation, benchmarked against cadaver experiments.",
+    headline: "Femur Structural Analysis, patient-specific FEA to predict fracture risk from a clinical CT scan",
+    description: "Case study: a patient-specific finite element model of the femur built from a routine CT scan, with automated segmentation, a mesh convergence study, element-by-element material mapping and a novel boundary condition, turning strain into a predicted failure load benchmarked against cadaver tests.",
     url,
     author: { "@id": `${SITE}/#thomas-mckee` },
     publisher: { "@id": `${SITE}/#business` },
-    about: "Patient-specific femur finite element analysis",
+    about: "Patient-specific finite element analysis of the femur",
     isPartOf: { "@id": `${SITE}/#website` },
   },
   {
@@ -30,7 +32,7 @@ const jsonld = [
 ---
 <Base
   title="Femur Structural Analysis Case Study, Patient-Specific FEA | Thomas McKee"
-  description="Case study: predicting bone fracture risk from a clinical CT scan by treating the femur as an engineering structure, automated segmentation, element-by-element material mapping in ANSYS, and a novel boundary condition benchmarked against cadaver experiments."
+  description="Case study: patient-specific FEA of the femur from a routine CT scan, automated segmentation, mesh convergence, element-by-element material mapping and a novel boundary condition, predicting failure load and benchmarked against cadaver tests."
   type="website"
   jsonld={jsonld}>
 <main>
@@ -38,112 +40,151 @@ const jsonld = [
   <section class="svc-hero">
     <div class="wrap svc-hero-grid">
       <div>
-        <span class="eyebrow">Case Study · Research</span>
-        <h1>Predicting a fracture from the bone, <em>not the patient's age.</em></h1>
-        <p class="lede">Fracture risk is usually judged from population statistics, age, weight, a bone-density score, applied to an individual. But the patient in front of the clinician either has a strong femur or doesn't, and a curve fitted to thousands of other people can't tell which. So I treated the femur as what it is: a variable-property, complex-geometry structure under a known load, an FEA problem, and got a patient-specific answer from a CT scan the patient had already had.</p>
+        <span class="eyebrow">Case study · Research</span>
+        <h1>Predicting a fracture from the bone itself, <em>using a scan the patient already had.</em></h1>
+        <p class="lede">A research study bringing structural engineering to a clinical question: can a patient-specific finite element model, built from a routine CT scan, predict how likely a femur is to fracture? I carried out the structural analysis, owning the automated segmentation, meshing and convergence, material mapping, the boundary conditions including one of my own design, the load sweep, and turning strain into a clinical number.</p>
         <div class="svc-hero-cta">
           <a class="btn btn-primary" href="/#contact">Start your project <span class="arw">→</span></a>
-          <a class="btn btn-ghost" href="/#work">More work</a>
+          <a class="btn btn-ghost" href="#process">See the process</a>
         </div>
       </div>
       <aside class="spec" aria-label="Project summary">
         <div class="spec-head"><span>Project</span><span>CASE 05</span></div>
         <div class="spec-row"><div class="spec-k">Role</div><div class="spec-v">Researcher · structural analysis</div></div>
         <div class="spec-row"><div class="spec-k">Domain</div><div class="spec-v">Biomedical FEA</div></div>
-        <div class="spec-row"><div class="spec-k">Tools</div><div class="spec-v">ANSYS · Python · calibrated CT</div></div>
+        <div class="spec-row"><div class="spec-k">Tools</div><div class="spec-v">ANSYS Mechanical · scripted segmentation</div></div>
         <div class="spec-row"><div class="spec-k">Load cases</div><div class="spec-v">27 (9 angles × 3 conditions)</div></div>
         <div class="spec-row"><div class="spec-k">Input</div><div class="spec-v">One clinical CT scan</div></div>
       </aside>
     </div>
   </section>
 
-  <!-- HEADLINE -->
+  <!-- RESULTS STRIP -->
   <section class="band alt">
     <div class="wrap">
       <div class="headline">
         <div class="hstat"><div class="hn">1317 N</div><div class="hl">average predicted minimum failure load, inside the osteoporotic range</div></div>
-        <div class="hstat"><div class="hn">−4.5%</div><div class="hl">failure load from my novel boundary condition, toward the accurate benchmark</div></div>
-        <div class="hstat"><div class="hn">27</div><div class="hl">load cases, nine loading angles across three boundary conditions</div></div>
-        <div class="hstat"><div class="hn">0</div><div class="hl">invasive measures: no implant, no biopsy, no cadaver</div></div>
+        <div class="hstat"><div class="hn">−4.5%</div><div class="hl">failure load from my boundary condition, closer to the accurate benchmark</div></div>
+        <div class="hstat"><div class="hn">27</div><div class="hl">load cases: nine angles across three boundary conditions</div></div>
+        <div class="hstat"><div class="hn">0</div><div class="hl">invasive measures: no implant, biopsy or cadaver needed</div></div>
       </div>
     </div>
   </section>
 
-  <!-- PROBLEM -->
-  <section class="band">
+  <!-- PROCESS OVERVIEW -->
+  <section class="band" id="process">
     <div class="wrap">
-      <div class="phase-row"><span class="phase">Problem</span><span class="phase-cs">Patient-specific femur FEA</span></div>
+      <span class="sec-idx">The design process</span>
+      <h2 class="sec-title">How the study ran, end to end</h2>
+      <p class="sec-intro">A femur is a structure with complex geometry and properties that vary from point to point, under a known load. That makes it a finite element problem, and I approached it exactly as I would a performance part in mechanical design.</p>
+      <ol class="proc">
+        <li><div><h3>Frame the clinical question as an engineering one</h3><p>What load does this particular bone fail at in a sideways fall? That's a question FEA can answer for one patient, where statistics can only answer it for a population.</p><div class="uses">Problem definition · research</div></div></li>
+        <li><div><h3>Build the geometry from the scan</h3><p>An automated script segmented bone from non-bone slice by slice across several scans and planes, producing an STL surface for ANSYS.</p><div class="uses">Scripting · image segmentation</div></div></li>
+        <li><div><h3>Mesh it and prove the mesh</h3><p>A convergence study across five element sizes found the point where the results stopped changing, so the mesh was fine enough to trust and coarse enough to run dozens of cases.</p><div class="uses">Meshing · convergence study</div></div></li>
+        <li><div><h3>Give every element its own stiffness</h3><p>Material properties were mapped element by element from calibrated CT greyscale, so thousands of elements each carried a realistic stiffness.</p><div class="uses">Material mapping · calibration</div></div></li>
+        <li><div><h3>Question the standard boundary conditions</h3><p>The published sideways-fall conditions restrain the knee in a way a real knee doesn't, so I designed and ran a third condition alongside them.</p><div class="uses">Boundary condition design · load cases</div></div></li>
+        <li><div><h3>Turn strain into a clinical number</h3><p>A maximum principal strain criterion converted the results into a predicted failure load, benchmarked against cadaver experiments and the patient's bone density score.</p><div class="uses">Post-processing · failure criteria · validation</div></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="band alt">
+    <div class="wrap">
+      <span class="sec-idx">Skills used</span>
+      <h2 class="sec-title">What this project called on</h2>
+      <div class="skills">
+        <div><div class="sk-h">Engineering</div><div class="sk-tags"><span>FEA</span><span>Structural analysis</span><span>Mesh convergence</span><span>Material mapping</span><span>Boundary condition design</span><span>Failure criteria</span><span>Post-processing</span><span>Validation against experiment</span><span>Research</span></div></div>
+        <div><div class="sk-h">Tools</div><div class="sk-tags"><span>ANSYS Mechanical</span><span>Scripted CT segmentation</span><span>Calibrated CT greyscale</span><span>STL processing</span></div></div>
+        <div><div class="sk-h">Theory</div><div class="sk-tags"><span>Density-modulus relationships</span><span>Principal strain failure criterion</span><span>Quadratic tetrahedral elements</span><span>Multi-point constraints</span><span>Contact modelling</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CS 5.1 PROBLEM -->
+  <section class="band" id="cs-5-1">
+    <div class="wrap">
+      <span class="sec-idx">Case study 5.1 · Clinical FEA</span>
       <h2 class="sec-title">Predicting fracture likelihood from the bone's structure rather than from the patient's age</h2>
-      <div class="about-body" style="max-width:72ch">
-        <p>Assessing fracture risk from age, weight and a bone-mineral-density score means applying population-level correlations to an individual, a common cause of unnecessary surgery. Applying <strong>structural analysis</strong> to a human bone exactly as I would to a performance part gives a patient-specific answer instead of a statistical one. The clinical prize is a non-invasive measure: everything in the study comes from a CT scan the patient has already had, requiring no implant, no biopsy and no cadaver.</p>
-      </div>
-      <div class="callout"><b>What makes it hard</b>: geometry from noisy greyscale data · material properties that vary element to element · a sideways-fall load case with no agreed boundary condition · a failure criterion that must be a clinical number, not a stress plot · a computational budget that has to allow dozens of load cases.</div>
-      <div class="figs">
-        <figure class="fig"><img src="/work/femur-ct.png" alt="Automated CT segmentation of a femur across multiple planes, isolating bone from surrounding tissue" loading="lazy" /><figcaption>Fig. 80, Automated segmentation across planes, scripted to remove the labour and operator variance of doing it by hand.</figcaption></figure>
-        <figure class="fig"><img src="/work/femur-mesh.png" alt="Ten-node tetrahedral finite element mesh of the femur head and neck" loading="lazy" /><figcaption>Fig. 79, The only input required: a clinical CT scan the patient has already had. [image to swap]</figcaption></figure>
+
+      <div class="stage">
+        <div class="phase-row"><span class="phase">Problem</span></div>
+        <div class="about-body">
+          <p>Fracture risk is normally judged from statistical factors such as age, weight and a bone mineral density score. Those are population-level correlations applied to one person, and they're a common cause of unnecessary surgery. The patient in front of the clinician either has a strong femur or doesn't, and a curve fitted to thousands of other people can't say which.</p>
+          <p>The clinical prize is a non-invasive, patient-specific measure. Everything in this study comes from a CT scan the patient has already had, with no implant, no biopsy and no cadaver.</p>
+        </div>
+        <div class="callout"><b>What makes it hard</b>: geometry from noisy greyscale data · material properties that vary element to element · a sideways-fall load case with no agreed boundary condition · a failure criterion that has to be a clinical number · a computing budget that has to allow dozens of load cases.</div>
+        <div class="figs">
+          <Fig n="78" cap="The statistical approach being replaced: fracture probability against age" />
+          <Fig n="79" cap="The only input required: a clinical CT scan" />
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- METHOD i -->
+  <!-- CS 5.1 PROCESS -->
   <section class="band alt">
     <div class="wrap">
-      <div class="phase-row"><span class="phase phase-solution">Solution</span><span class="phase-cs">Model build</span></div>
-      <h2 class="sec-title">Segmentation, mesh convergence, and a stiffness for every element</h2>
-      <div class="about-body" style="max-width:72ch">
-        <p>Each frame of the CT scan distinguishes bone from non-bone by greyscale, so I coded a <strong>Python</strong> script to automate the slice-by-slice <strong>CT segmentation</strong>, run it across multiple scans and planes and average the result, removing both the labour and the operator variance of doing it by hand. To keep dozens of load cases affordable, I ran a <strong>mesh convergence study</strong> across five element sizes tracking peak principal strain; results were stable from four to three millimetres, so a 2&nbsp;mm ten-node <strong>tetrahedral mesh</strong> was carried forward, since linear tetrahedra badly under-predict strain in bending.</p>
-        <p>Treating bone as a single uniform material isn't good enough. Through <strong>element-by-element material mapping</strong> I set the properties from the calibrated greyscale, density as a linear function of Hounsfield value against a reference phantom scanned alongside the patient, and Young's modulus from a published density–modulus relationship. Every one of thousands of elements therefore carries its own realistic stiffness, and the phantom is what makes it quantitative rather than relative: it ties greyscale to real density for this scan, on this machine.</p>
-      </div>
-      <div class="figs">
-        <figure class="fig"><img src="/work/femur-convergence.png" alt="Mesh convergence study graph of peak principal strain against element size, showing the converged band" loading="lazy" /><figcaption>Fig. 82, Convergence study: peak principal strain against element size, with a coarse mesh under-predicting strain.</figcaption></figure>
-        <figure class="fig"><img src="/work/femur-strain.png" alt="ANSYS strain field comparison of a healthy femur against an osteoporotic femur" loading="lazy" /><figcaption>Fig. 85, Each element carries its own Young's modulus, mapped from the calibrated greyscale. [image to swap]</figcaption></figure>
+      <div class="stage">
+        <div class="phase-row"><span class="phase phase-solution">Process</span></div>
+        <h3>Segmentation, mesh convergence, a stiffness for every element, and a new boundary condition</h3>
+        <ol class="steps-inline">
+          <li><span class="sn">01</span><span><b>Automate the segmentation.</b> Each CT frame separates bone from non-bone by greyscale. I wrote a <strong>script</strong> to segment slice by slice, ran it across multiple scans and planes and averaged the result automatically, which removed both the labour and the operator variation of doing it by hand. The output was an STL surface loaded into <strong>ANSYS Mechanical</strong>.</span></li>
+          <li><span class="sn">02</span><span><b>Prove the mesh.</b> To run many load cases the simulation had to be as efficient as possible, so I ran a <strong>convergence study</strong> across five element sizes using ten-node tetrahedra, tracking peak principal strain. Results were stable from four to three millimetres, moving around 2%, so a 2&nbsp;mm mesh went forward with margin for the coarser regions. Quadratic elements were a must here: the geometry can't be swept or mapped, and linear tetrahedra badly under-predict strain in bending.</span></li>
+          <li><span class="sn">03</span><span><b>Map the material element by element.</b> Treating bone as one uniform material isn't accurate enough, so I set each element's properties from the calibrated greyscale. Density comes from a linear function of Hounsfield value, <span class="mono">ρ = a + b·HU</span>, calibrated against a reference phantom scanned alongside the patient, and stiffness from a published relationship, <span class="mono">E = cρ<sup>n</sup></span>. The phantom is what makes it quantitative, tying greyscale to real density for this scan on this machine.</span></li>
+          <li><span class="sn">04</span><span><b>Question the standard boundary conditions.</b> The published sideways-fall conditions, even the detailed ones, stop the knee rotating about its axis. A real knee isn't a torsional restraint, so locking it adds a reaction moment that doesn't exist in a fall, and any restraint that shouldn't be there makes a structure look stronger than it is.</span></li>
+          <li><span class="sn">05</span><span><b>Design a better one.</b> Alongside the two standard conditions I designed a third: a multi-point constraint at the knee with axial rotation free through ±30°. It costs the same to run as the detailed standard condition, with behaviour approaching the accurate but expensive contact-based benchmark.</span></li>
+          <li><span class="sn">06</span><span><b>Sweep the load cases.</b> Nine loading angles across all three conditions gave 27 cases in total, which is exactly why the convergence work mattered.</span></li>
+          <li><span class="sn">07</span><span><b>Turn it into a clinical metric.</b> A <strong>maximum principal strain</strong> failure criterion converted strain into a predicted minimum failure load, which I benchmarked against published cadaver experiments and the patient's own bone density score.</span></li>
+        </ol>
+        <div class="figs f3">
+          <Fig n="80" cap="Automated segmentation across planes" />
+          <Fig n="82" cap="Convergence study, peak principal strain" />
+          <Fig n="83" cap="Ten-node tetrahedral mesh at 2 mm" />
+          <Fig n="84" cap="Greyscale-to-density calibration against the phantom" />
+          <Fig n="86" cap="Boundary condition models used in the literature" />
+          <Fig n="87" cap="Nine-angle load sweep across all conditions" />
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- METHOD ii -->
+  <!-- CS 5.1 RESULTS -->
   <section class="band">
     <div class="wrap">
-      <div class="phase-row"><span class="phase phase-solution">Solution</span><span class="phase-cs">A novel boundary condition</span></div>
-      <h2 class="sec-title">Testing a loading condition nobody had published</h2>
-      <div class="about-body" style="max-width:72ch">
-        <p>Standard sideways-fall <strong>boundary conditions</strong> in the literature, even the detailed ones, constrain the knee against axial rotation, which may overestimate how much load the bone carries before failing. The reasoning is straightforward once stated: a real knee is not a torsional restraint, so locking that degree of freedom adds a reaction moment that doesn't exist in the fall, and any spurious restraint makes a structure appear stronger than it truly is.</p>
-        <p>So alongside the two standard conditions, a frictionless slider and a multi-point constraint at the knee joint centre, I designed and ran a third that <b>frees axial rotation at the knee through ±30°</b>, at the cost of the detailed literature model but with behaviour approaching the accurate (and computationally expensive) surface-to-surface contact benchmark. I then swept nine loading angles across every condition, giving twenty-seven cases in total, which is precisely why the convergence work that kept each solve cheap mattered.</p>
-      </div>
-      <div class="figs">
-        <figure class="fig"><img src="/work/femur-bc.png" alt="The boundary condition models used in the literature, from frictionless slider to surface contact" loading="lazy" /><figcaption>Fig. 86, The literature boundary conditions, from cheapest and least representative to the accurate contact benchmark.</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- RESULTS -->
-  <section class="band alt">
-    <div class="wrap">
-      <div class="phase-row"><span class="phase">Results</span><span class="phase-cs">Patient-specific femur FEA</span></div>
-      <h2 class="sec-title">Turning simulation analysis into a clinical metric</h2>
-      <div class="about-body" style="max-width:72ch">
-        <p>I converted strain into a predicted minimum failure load using a maximum-principal-strain <strong>failure criterion</strong>, then benchmarked it against published cadaver experiments and against the patient's own bone-density score. The average predicted failure load of 1317&nbsp;N sits inside the osteoporotic range and at the low end of experimental cadaver failure loads of one to two-and-a-half kilonewtons, a number that can then be turned into a clinical prediction of fracture or refracture likelihood, with compressive strain the most likely failure mode, especially in falls.</p>
-        <p>My novel <strong>boundary condition</strong> predicted failure loads up to 4.5% lower, moving the prediction toward the far more accurate but expensive contact-based method without carrying its computational cost. The simulation results were <strong>empirically validated</strong> against cadaver testing, and, owing to the initial success of the study, the research is being continued.</p>
+      <div class="stage">
+        <div class="phase-row"><span class="phase">Results</span></div>
+        <h3>Turning simulation into a clinical prediction</h3>
+        <div class="mini"><div><b>1317 N</b>average predicted failure load</div><div><b>1 to 2.5 kN</b>cadaver failure range</div><div><b>−4.5%</b>from the new condition</div></div>
+        <div class="about-body">
+          <p>The average predicted minimum failure load of 1317&nbsp;N sits inside the osteoporotic range and at the low end of experimental cadaver failure loads, which run from 1,000 to 2,500&nbsp;N. That can then be turned into a clinical prediction of the likelihood of fracture or refracture. Compressive strain proved the most likely failure mode, especially in falls.</p>
+          <p>My boundary condition predicted failure loads up to 4.5% lower than the standard ones, moving the result toward the far more accurate contact-based method without its computing cost. The results were validated against in vitro and ex vitro cadaver testing, and the research is continuing because of how well the initial studies went.</p>
+          <p>This involved some of the most technical set-up, meshing, boundary conditions and post-processing an engineer is likely to take on, and it's the same discipline I bring to a pressed oven cavity or a moulded tray: quantify the physics, validate it, then let the analysis carry the decision.</p>
+        </div>
+        <div class="figs">
+          <Fig n="88" cap="Principal strain field, worst-case angle" />
+          <Fig n="89" cap="Healthy femur against osteoporotic femur, strain results" />
+        </div>
       </div>
     </div>
   </section>
 
   <!-- HOW I HELP -->
-  <section class="band">
+  <section class="band alt">
     <div class="wrap">
       <span class="sec-idx">How I could help you</span>
-      <h2 class="sec-title">Rigorous FEA, wherever it's needed</h2>
-      <p class="sec-intro">Structural analysis done properly, mesh convergence, real material behaviour, honest boundary conditions, and a result validated against measurement, is the backbone of <a href="/services/design-verification" style="color:var(--ember)">Design Verification</a>. Whether it's a consumer product, an industrial part or something stranger, if it carries load and has to not break, that's home territory.</p>
+      <h2 class="sec-title">The same process, on your product</h2>
+      <p class="sec-intro">Simulation is only as good as its mesh, its materials and its boundary conditions. Setting those up properly, and checking them against reality, is what makes the results worth acting on. It's the core of <a href="/services/design-verification" style="color:var(--ember)">Design Verification</a>.</p>
     </div>
   </section>
 
-  <section class="band alt" id="start">
+  <section class="band" id="start">
     <div class="wrap">
       <div class="cta">
         <div class="inner">
           <span class="eyebrow">Let's talk</span>
-          <h2 style="margin-top:14px">Need to know if it'll break?</h2>
-          <p>Book a free intro call and tell me what has to survive what. Analysis that's convergence-checked and validated, not just a colourful stress plot, is what I do.</p>
+          <h2 style="margin-top:14px">Need an analysis you can trust?</h2>
+          <p>Book a free intro call and tell me what you need to know. I'll be honest about whether simulation is the right tool and how I'd set it up.</p>
           <div class="row">
             <a class="btn btn-primary btn-lg" href="/#contact">Book a free intro call <span class="arw">→</span></a>
             <a class="btn btn-ghost btn-lg" href="/#work">See more work</a>
@@ -153,20 +194,4 @@ const jsonld = [
     </div>
   </section>
 </main>
-
-<style>
-  .headline{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
-  @media(max-width:760px){.headline{grid-template-columns:repeat(2,1fr)}}
-  .hstat{background:var(--surface);padding:22px 20px}
-  .hn{font-family:var(--font-display);font-size:2rem;font-weight:800;letter-spacing:-0.03em;color:var(--ink)}
-  .hl{color:var(--ink-2);font-size:.9rem;margin-top:6px;line-height:1.4}
-  .callout{border:1px solid var(--line-2);border-left:3px solid var(--ember);background:var(--surface);border-radius:4px;padding:14px 18px;margin-top:24px;font-family:var(--font-mono);font-size:13px;color:var(--ink-2);line-height:1.6;max-width:72ch}
-  .callout b{color:var(--ink)}
-  .figs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
-  @media(max-width:640px){.figs{grid-template-columns:1fr}}
-  .fig{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface);margin:0}
-  .fig img{display:block;width:100%;height:auto}
-  .fig figcaption{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);padding:9px 12px;border-top:1px solid var(--line);line-height:1.5}
-  .mono{font-family:var(--font-mono);font-size:.92em}
-</style>
 </Base>

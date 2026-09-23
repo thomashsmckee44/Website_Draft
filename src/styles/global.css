@@ -183,6 +183,7 @@
   }
   .sec-head.no-rule{border-top:0}
   .sec-title{font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:700}
+  .sec-title em{font-style:normal;color:var(--ember)}
   .sec-head .idx{font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;color:var(--ink-3);text-transform:uppercase}
   .sec-intro{color:var(--ink-2);max-width:60ch;font-size:1.06rem;margin-top:-8px}
 

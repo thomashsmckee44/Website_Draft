@@ -1,6 +1,8 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Fig from "../../components/Fig.astro";
 import "../../styles/service.css";
+import "../../styles/case.css";
 
 const SITE = "https://www.tmdesignengineering.com";
 const url = `${SITE}/work/water-rocket`;
@@ -9,12 +11,12 @@ const jsonld = [
     "@context": "https://schema.org",
     "@type": "Article",
     "@id": `${url}#article`,
-    headline: "Water Rocket, a first-principles flight model, validated to ±5%",
-    description: "Case study: modelling a water-powered rocket's flight path from first principles, thermodynamics, compressible nozzle flow and variable-mass kinematics, then coupling the parameters and optimising the design entirely in software. Predicts experiment within about 5% across fill, pressure and firing angle.",
+    headline: "Water Rocket, a first-principles flight model validated to ±5% and used to optimise the design",
+    description: "Case study: a first-principles model of a water rocket built from thermodynamics, compressible nozzle flow and flight dynamics, solved in MATLAB, validated to within 5% of experiment, and used to optimise the design with coupled structural constraints. Over 300 m with the heaviest payload.",
     url,
     author: { "@id": `${SITE}/#thomas-mckee` },
     publisher: { "@id": `${SITE}/#business` },
-    about: "Water rocket flight-dynamics model",
+    about: "Water rocket flight modelling and optimisation",
     isPartOf: { "@id": `${SITE}/#website` },
   },
   {
@@ -30,7 +32,7 @@ const jsonld = [
 ---
 <Base
   title="Water Rocket Case Study, First-Principles Flight Model | Thomas McKee"
-  description="Case study: a water-powered rocket modelled from first principles, thermodynamics, compressible nozzle flow and variable-mass flight dynamics, then optimised entirely in software. Predicts experiment within about 5% across fill, pressure and firing angle."
+  description="Case study: a water rocket modelled from first principles, thermodynamics, compressible flow and flight dynamics, validated to within 5% of experiment and optimised in software with coupled structural constraints. Over 300 m with the heaviest payload."
   type="website"
   jsonld={jsonld}>
 <main>
@@ -38,77 +40,128 @@ const jsonld = [
   <section class="svc-hero">
     <div class="wrap svc-hero-grid">
       <div>
-        <span class="eyebrow">Case Study · Independent Project</span>
-        <h1>A water rocket, flown thousands of times, <em>in software.</em></h1>
-        <p class="lede">A demonstration of the method I trust most: model the physics from first principles, validate it hard against real measurement, then let the model do the searching. I built a thermodynamic, compressible-flow and flight-dynamics model of a water rocket, validated it to within about 5% of experiment, and optimised the whole design in simulation, from a single built launcher.</p>
+        <span class="eyebrow">Case study · Engineering analysis</span>
+        <h1>A water rocket, flown thousands of times <em>in software first.</em></h1>
+        <p class="lede">A first-principles model of a water-powered rocket, built from thermodynamics, compressible flow and flight dynamics, checked against real launches, then used to optimise the design. I was designer and performance lead, owning the mathematical model, its MATLAB implementation, the experimental validation, the optimisation, and the structural analysis of the pressure vessel.</p>
         <div class="svc-hero-cta">
           <a class="btn btn-primary" href="/#contact">Start your project <span class="arw">→</span></a>
-          <a class="btn btn-ghost" href="/#work">More work</a>
+          <a class="btn btn-ghost" href="#process">See the process</a>
         </div>
       </div>
       <aside class="spec" aria-label="Project summary">
         <div class="spec-head"><span>Project</span><span>CASE 04</span></div>
         <div class="spec-row"><div class="spec-k">Role</div><div class="spec-v">Designer &amp; performance lead</div></div>
         <div class="spec-row"><div class="spec-k">Domain</div><div class="spec-v">Thermofluids · flight dynamics</div></div>
-        <div class="spec-row"><div class="spec-k">Tools</div><div class="spec-v">MATLAB · Runge–Kutta (4,5)</div></div>
+        <div class="spec-row"><div class="spec-k">Tools</div><div class="spec-v">MATLAB · Runge-Kutta (4,5)</div></div>
         <div class="spec-row"><div class="spec-k">Built</div><div class="spec-v">1 launcher</div></div>
         <div class="spec-row"><div class="spec-k">Validation</div><div class="spec-v">±5% vs experiment</div></div>
       </aside>
     </div>
   </section>
 
-  <!-- HEADLINE -->
+  <!-- RESULTS STRIP -->
   <section class="band alt">
     <div class="wrap">
       <div class="headline">
+        <div class="hstat"><div class="hn">&gt;300 m</div><div class="hl">with the heaviest payload the launcher could carry</div></div>
         <div class="hstat"><div class="hn">±5%</div><div class="hl">of experiment across fill, pressure and firing angle</div></div>
-        <div class="hstat"><div class="hn">&gt;300 m</div><div class="hl">range with the heaviest payload the launcher could carry</div></div>
-        <div class="hstat"><div class="hn">3</div><div class="hl">original contributions to the published model</div></div>
-        <div class="hstat"><div class="hn">0</div><div class="hl">optimisation prototypes, thousands of parameter sets, all in simulation</div></div>
+        <div class="hstat"><div class="hn">4</div><div class="hl">additions to the published models</div></div>
+        <div class="hstat"><div class="hn">1</div><div class="hl">launcher built, thousands of designs tested in simulation</div></div>
       </div>
     </div>
   </section>
 
-  <!-- PROBLEM -->
-  <section class="band">
+  <!-- PROCESS OVERVIEW -->
+  <section class="band" id="process">
     <div class="wrap">
-      <div class="phase-row"><span class="phase">Problem</span><span class="phase-cs">Water rocket flight model</span></div>
-      <h2 class="sec-title">Mathematically modelling the flight path from first principles, to test thousands of parameters without thousands of launches</h2>
-      <div class="about-body" style="max-width:72ch">
-        <p>Building and flying hundreds of design variants would have been slow, far less repeatable, and continually confounded by wind. So I simulated the trajectories in <strong>MATLAB</strong> from a <strong>mathematical model</strong> instead, but a model is only worth having if its assumptions are declared openly. I set them all out first, together with the theory each one rests on, before any equation appeared: Bernoulli through the nozzle, a polytropic gas expansion fitted from published experimental data rather than assumed isothermal, a constant <strong>drag coefficient</strong> taken from wind-tunnel results, and, the largest single divergence from reality, no wind, which is the first thing physical testing had to quantify.</p>
-      </div>
-      <div class="figs">
-        <figure class="fig"><img src="/work/rocket-model.png" alt="First-principles thermofluid model: variable-mass motion, polytropic pressure ODE, compressible nozzle flow and exit Mach number equations" loading="lazy" /><figcaption>Fig. 71, Flight phases and the free body diagram, reproduced from sketch.</figcaption></figure>
-        <figure class="fig"><img src="/work/rocket-launch.png" alt="A water rocket launching from a field, plume of water trailing beneath it" loading="lazy" /><figcaption>Fig. 77, The single built launcher, used to validate the model rather than to iterate the design.</figcaption></figure>
-      </div>
+      <span class="sec-idx">The design process</span>
+      <h2 class="sec-title">How the project ran, end to end</h2>
+      <p class="sec-intro">Building and flying hundreds of rockets would have been slow, hard to repeat and constantly thrown off by the wind. So I built the rocket in maths first and let the model do the searching. It's the same method I later used on the Volt 2 elements and firmware, against a production deadline.</p>
+      <ol class="proc">
+        <li><div><h3>Define the goal and the ground rules</h3><p>Carry the heaviest payload as far as possible, safely. Before writing a single equation I set out every assumption and the theory behind it, because a model is only worth having if its limits are clear.</p><div class="uses">Problem definition · stating assumptions</div></div></li>
+        <li><div><h3>Research the published models</h3><p>I built on the existing literature and looked for where it fell short, which is where my four additions came from.</p><div class="uses">Literature review · critical analysis</div></div></li>
+        <li><div><h3>Derive the model from first principles</h3><p>Newton's second law for a body losing mass, Bernoulli for the water jet, polytropic gas expansion, compressible nozzle flow and quadratic drag, in three derivations.</p><div class="uses">Thermodynamics · compressible flow · dynamics</div></div></li>
+        <li><div><h3>Implement and solve it</h3><p>I coded the model in MATLAB and solved it with a fourth and fifth order Runge-Kutta method.</p><div class="uses">MATLAB · numerical methods</div></div></li>
+        <li><div><h3>Validate it against real launches</h3><p>I tested the model against my own launches and against published experimental data.</p><div class="uses">Experimental testing · validation</div></div></li>
+        <li><div><h3>Couple the parameters and optimise</h3><p>Every design variable was linked to the others, so the search only ever tried designs that could actually be built.</p><div class="uses">Parametric modelling · optimisation</div></div></li>
+        <li><div><h3>Make it safe, then build it</h3><p>Hoop stress analysis set the allowable pressure with a safety factor, so the design met the relevant standards before it was ever pressurised.</p><div class="uses">Structural analysis · pressure vessel design · design to standards</div></div></li>
+      </ol>
     </div>
   </section>
 
-  <!-- METHOD -->
+  <!-- SKILLS -->
   <section class="band alt">
     <div class="wrap">
-      <div class="phase-row"><span class="phase phase-solution">Solution</span><span class="phase-cs">First-principles model, three derivations</span></div>
-      <h2 class="sec-title">General motion, the air thrust phase, and coupling the parameters</h2>
-      <div class="about-body" style="max-width:72ch">
-        <p><b>Water thrust.</b> Newton's second law on a variable-mass vehicle, resolved into path coordinates, with the drag group collapsed to a single constant. Thrust comes from the momentum flux of the jet, with the exhaust velocity from Bernoulli. Here the model parts company with the literature: I treated the air expansion as <b>polytropic rather than isothermal</b>, which, via the chain rule and the polytropic relation, leaves a single ODE in pressure alone, cheap to integrate alongside the equations of motion.</p>
-        <p><b>Air thrust.</b> After blow-out the vessel is a fixed-volume reservoir of compressed air, and I <b>split the air phase into choked and unchoked regimes</b>, the throat sits at Mach one until ambient rises above the critical pressure, then the exit Mach number is set by the pressure ratio. Treating the whole air phase as unchoked, as most published models do, discards the pressure-thrust term exactly where thrust is at its highest. I also <b>carried the mass of the air still inside the vessel</b> in the vehicle mass, which the standard treatments neglect.</p>
-        <p><b>Coupled optimisation and structure.</b> The vessel is a thin-walled cylinder, so a <strong>structural analysis</strong> of hoop stress governs the allowable pressure, and specifying wall thickness as a fraction of radius collapses that to <span class="mono">P_all = 2βσ_y / SF</span>, independent of radius. That means radius is free to be optimised for volume and drag while the <strong>safety factor</strong> still caps the fill pressure. In a <strong>coupled optimisation</strong> I wrote the parameters as linked functions so an illegal combination can't be evaluated by accident, fitted the optimum firing angle as a function of pressure (rather than sweeping it inside every loop), and found the wall-thickness design point where the vessel first survives the cartridge pressure.</p>
-        <p>Validated against both my own experimental results and the published data, the model predicted more closely than the reference model, holding accuracy to within roughly 5% across fill, pressure and firing angle alike.</p>
-      </div>
-      <div class="figs">
-        <figure class="fig"><img src="/work/rocket-validation.png" alt="Graph of predicted range versus experiment, my model tracking the experimental points within 5% and beating the literature model" loading="lazy" /><figcaption>Fig. 72, Experiment against the literature models and against mine.</figcaption></figure>
-        <figure class="fig"><img src="/work/rocket-range-surface.png" alt="3D response surface of maximum horizontal range against initial pressure and firing angle" loading="lazy" /><figcaption>Fig. 73, Range against pressure and firing angle.</figcaption></figure>
+      <span class="sec-idx">Skills used</span>
+      <h2 class="sec-title">What this project called on</h2>
+      <div class="skills">
+        <div><div class="sk-h">Engineering</div><div class="sk-tags"><span>Mathematical modelling</span><span>Numerical methods</span><span>Parameter optimisation</span><span>Structural analysis</span><span>Pressure vessel design</span><span>Experimental validation</span><span>Design to safety standards</span></div></div>
+        <div><div class="sk-h">Theory</div><div class="sk-tags"><span>Variable-mass dynamics</span><span>Bernoulli's equation</span><span>Polytropic expansion</span><span>Isentropic nozzle flow</span><span>Choked flow</span><span>Quadratic drag</span><span>Hoop stress</span></div></div>
+        <div><div class="sk-h">Tools</div><div class="sk-tags"><span>MATLAB</span><span>Runge-Kutta (4,5), Dormand-Prince</span><span>Hand derivation</span><span>Launch testing</span></div></div>
       </div>
     </div>
   </section>
 
-  <!-- RESULTS -->
+  <!-- CS 4.1 PROBLEM -->
+  <section class="band" id="cs-4-1">
+    <div class="wrap">
+      <span class="sec-idx">Case study 4.1 · Mathematical model</span>
+      <h2 class="sec-title">Mathematically modelling the flight path from first principles, so thousands of parameters could be tested without thousands of launches</h2>
+
+      <div class="stage">
+        <div class="phase-row"><span class="phase">Problem</span></div>
+        <div class="about-body">
+          <p>The launcher had to deliver the heaviest payload it could, as far as it could, and stay safe. There are a lot of variables in play: vessel radius and length, wall thickness, water fill, pressure, nozzle size and firing angle, and they all affect each other. Testing them physically would have meant hundreds of builds and launches, each one affected by the wind on the day.</p>
+          <p>A simulation was the answer, but only one I could trust. That meant deriving it properly, stating its assumptions openly, and proving it against real launches.</p>
+        </div>
+        <div class="callout"><b>Assumptions declared up front</b>: quasi-steady inviscid flow through the nozzle · water inertia and thrust concentration neglected, as the two largely cancel · polytropic expansion with γ from published data · constant ambient pressure, temperature and gravity · constant drag coefficient from wind-tunnel results · no wind, the largest divergence from reality.</div>
+        <div class="figs">
+          <Fig n="71" cap="Flight phases and the free body diagram, reproduced from sketch" />
+          <Fig n="72" cap="Experiment against the literature models and my model" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CS 4.1 PROCESS -->
+  <section class="band alt">
+    <div class="wrap">
+      <div class="stage">
+        <div class="phase-row"><span class="phase phase-solution">Process</span></div>
+        <h3>Three derivations, a validation, and a coupled optimisation</h3>
+        <ol class="steps-inline">
+          <li><span class="sn">01</span><span><b>Derivation I, the water thrust phase.</b> Newton's second law on the vehicle, resolved along its flight path, with thrust, drag, weight and mass all changing over time. Bernoulli through the nozzle gives the jet velocity, and the thrust becomes a function of pressure alone. This is where I departed from the published model: the air expands <strong>polytropically</strong> rather than isothermally, and the vehicle mass includes the air still inside the bottle. The result is one first-order equation in pressure, which makes the whole water phase almost free to solve, and that's what makes sweeping thousands of designs practical.</span></li>
+          <li><span class="sn">02</span><span><b>Derivation II, the air thrust phase.</b> Once the water has gone, the bottle is a fixed volume of compressed air. While the pressure is high the nozzle is <strong>choked</strong> at Mach one and pressure thrust has to be counted; below the critical ratio it unchokes. Most published models treat the whole air phase as unchoked, which throws away the pressure thrust exactly where thrust is highest, so splitting the two regimes was my third addition.</span></li>
+          <li><span class="sn">03</span><span><b>Solve it accurately.</b> The literature uses a first-order method. I used a fourth and fifth order <strong>Runge-Kutta</strong> pair in <strong>MATLAB</strong>, which removes that source of error, my fourth addition.</span></li>
+          <li><span class="sn">04</span><span><b>Validate against more than my own data.</b> I tested the model against my launches and against Barrio-Perotti et al.'s experimental results, since a model tuned only to its author's data proves very little. It held to within about 5% across water fill, pressure and firing angle, and predicted more closely than their model.</span></li>
+          <li><span class="sn">05</span><span><b>Let the structure set the pressure.</b> The vessel is a thin-walled cylinder, so hoop stress governs: <span class="mono">P<sub>all</sub> = 2tσ<sub>y</sub> / (r·SF)</span>. Setting wall thickness as a fraction of radius, <span class="mono">t = βr</span>, collapses that to <span class="mono">P<sub>all</sub> = 2βσ<sub>y</sub> / SF</span>, which doesn't depend on radius at all. Radius is then free to be optimised for volume and drag, and the cost of a bigger vessel shows up in mass. A wall of 5 to 6% of the radius was the first point where the allowable pressure beat the cartridge pressure, so that became the design point.</span></li>
+          <li><span class="sn">06</span><span><b>Couple the parameters so only legal designs are tried.</b> Changing the radius changes the wall thickness, which changes the mass, which changes the trajectory, and the allowable pressure caps what fill pressure can be tried. Written as functions in the code, an illegal combination simply can't be evaluated.</span></li>
+          <li><span class="sn">07</span><span><b>Turn the firing angle into a function.</b> The best angle falls as pressure rises, and sweeping it inside every loop would have squared the run time. I ran angle against pressure once, fitted the ridge of the response, <span class="mono">θ<sub>opt</sub>(P) = θ<sub>∞</sub> + (θ<sub>0</sub> − θ<sub>∞</sub>)e<sup>−P/P*</sup></span>, and tested every design at its own best angle so the comparisons stayed fair.</span></li>
+        </ol>
+        <div class="figs f3">
+          <Fig n="73" cap="Range against pressure and firing angle" />
+          <Fig n="74" cap="Radius against mass, allowable pressure and volume" />
+          <Fig n="75" cap="Wall thickness study: where the vessel first survives the cartridge" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CS 4.1 RESULTS -->
   <section class="band">
     <div class="wrap">
-      <div class="phase-row"><span class="phase">Results</span><span class="phase-cs">Water rocket flight model</span></div>
-      <h2 class="sec-title">Over 300 metres with the heaviest payload</h2>
-      <div class="about-body" style="max-width:72ch">
-        <p>The optimised launcher was made safe and delivered its heaviest deliverable payload over 300&nbsp;metres, while the structural analysis set the allowable pressure with a safety factor, so the design was already compliant with the relevant standards before it was ever pressurised. The number matters less than the method, though: an empirically validated model let me test thousands of parameter combinations, where the alternative would have been to build hundreds of prototypes and test them one at a time. It's the same method I used on the Volt 2 heating elements and firmware five years later, and against a production deadline, establish the physics, validate against measurement, then let the model do the searching.</p>
+      <div class="stage">
+        <div class="phase-row"><span class="phase">Results</span></div>
+        <h3>Over 300 metres with the heaviest payload</h3>
+        <div class="mini"><div><b>&gt;300 m</b>heaviest payload</div><div><b>±5%</b>of experiment</div><div><b>1</b>launcher built</div></div>
+        <div class="about-body">
+          <p>The launcher was optimised, made safe, and carried the heaviest payload it could over 300 metres. The structural analysis set the allowable pressure with a safety factor, so the design already met the relevant standards before it was ever pressurised.</p>
+          <p>The method matters more than the number. A model validated against measurement let me test thousands of parameter combinations, where the alternative was building hundreds of prototypes and testing them one at a time. Establish the physics, validate it against reality, then let the model do the searching: it's the same approach I used on the Volt 2 five years later.</p>
+        </div>
+        <div class="figs">
+          <Fig n="76" cap="Trajectory families for vessel radius at 4% wall thickness" />
+          <Fig n="77" cap="Optimised design, firing over 200 metres on test" />
+        </div>
       </div>
     </div>
   </section>
@@ -117,8 +170,8 @@ const jsonld = [
   <section class="band alt">
     <div class="wrap">
       <span class="sec-idx">How I could help you</span>
-      <h2 class="sec-title">First-principles thinking, on your product</h2>
-      <p class="sec-intro">Building a validated model to answer a question before committing money is exactly what a <a href="/services/feasibility-study" style="color:var(--ember)">Feasibility Study</a> and <a href="/services/design-verification" style="color:var(--ember)">Design Verification</a> are for. If your problem is thermal, fluid or dynamic and the honest answer is "we don't know yet", that's precisely the kind of thing I like to pin down.</p>
+      <h2 class="sec-title">The same process, on your product</h2>
+      <p class="sec-intro">When physical testing is slow, expensive or unrepeatable, a model you can trust saves both time and money. Building and validating that kind of model is a big part of a <a href="/services/feasibility-study" style="color:var(--ember)">Feasibility Study</a> and <a href="/services/design-verification" style="color:var(--ember)">Design Verification</a>.</p>
     </div>
   </section>
 
@@ -127,8 +180,8 @@ const jsonld = [
       <div class="cta">
         <div class="inner">
           <span class="eyebrow">Let's talk</span>
-          <h2 style="margin-top:14px">Got a question worth modelling?</h2>
-          <p>Book a free intro call and tell me what you need to know before you commit. If it can be modelled and validated, it can usually be answered far more cheaply than by building.</p>
+          <h2 style="margin-top:14px">Too many variables to test by hand?</h2>
+          <p>Book a free intro call and tell me about the problem. I'll tell you honestly whether a model would help and what it would take.</p>
           <div class="row">
             <a class="btn btn-primary btn-lg" href="/#contact">Book a free intro call <span class="arw">→</span></a>
             <a class="btn btn-ghost btn-lg" href="/#work">See more work</a>
@@ -138,20 +191,4 @@ const jsonld = [
     </div>
   </section>
 </main>
-
-<style>
-  .headline{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
-  @media(max-width:760px){.headline{grid-template-columns:repeat(2,1fr)}}
-  .hstat{background:var(--surface);padding:22px 20px}
-  .hn{font-family:var(--font-display);font-size:2rem;font-weight:800;letter-spacing:-0.03em;color:var(--ink)}
-  .hl{color:var(--ink-2);font-size:.9rem;margin-top:6px;line-height:1.4}
-  .callout{border:1px solid var(--line-2);border-left:3px solid var(--ember);background:var(--surface);border-radius:4px;padding:14px 18px;margin-top:24px;font-family:var(--font-mono);font-size:13px;color:var(--ink-2);line-height:1.6;max-width:72ch}
-  .callout b{color:var(--ink)}
-  .figs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
-  @media(max-width:640px){.figs{grid-template-columns:1fr}}
-  .fig{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface);margin:0}
-  .fig img{display:block;width:100%;height:auto}
-  .fig figcaption{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);padding:9px 12px;border-top:1px solid var(--line);line-height:1.5}
-  .mono{font-family:var(--font-mono);font-size:.92em}
-</style>
 </Base>
